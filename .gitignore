@@ -1,6 +1,7 @@
 # Build and Release Folders
 bin-debug/
 bin-release/
+js/mathjax
 
 # Project property files
 .actionScriptProperties
