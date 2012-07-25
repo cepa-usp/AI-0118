@@ -57,19 +57,21 @@ h1 {
 #etapaAtual {
 	margin-left:auto;
 	margin-right:auto;
-	width:780px;
+	width:680px;
+	text-align:justify;
 	background-color:#fff;
 	height:auto;
 	padding-left:10px;
 	padding-right:10px;	
 	overflow:hidden;
-	border:1px solid red;
+	border:1px solid black;
 }
 
 .etapa {
 	position:inherit;
-	width:780px;
+	width:700px;
 	height:120px;
+	text-align:left;
 	background-color:#efefef;
 	margin-bottom:5px;
 	margin-top:5px;
@@ -88,7 +90,7 @@ h1 {
 #atividade {
 	width:700px;
 	height:600px;
-	background-color:#e33333;
+	background-color:#333333;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:5px;
@@ -101,32 +103,38 @@ h1 {
 
 }
 
-.errada {
-	background-color:#FFCCCC;
-	font-weight:bold;
-	text-align:center;
-	height:inherit;
+.visible {
+	/*display:block;*/
 }
 
-.correta {
+.invisible {
+	/*display:none;*/
+}
+
+.errado {
+	background-color:#FFCCCC;
+	padding-left:30px;
+}
+
+.correto {
 	background-color:#CCFFCC;
-	font-weight:bold;
-	text-align:center;
-	height:inherit;
+	padding-left:30px;
 }
 
 #total {
 	display:none;
+	
 	/*font-size:9px;
 	border:1px solid red;*/
 }
 
 #navegador {
 	background-color:white;
-	width:780px;
+	width:700px;
 	height:20px;
 	padding-left:20px;
-	border:1px solid #cccccc;	
+	margin-top:4px;
+	/*border:1px solid #cccccc;	*/
 	margin-left:auto;
 	margin-right:auto;
 }

@@ -4,11 +4,27 @@ var movie;
 var memento = {};
 var session = {};
 var t1;
+
+var oaData = new Object();
+var lastBreakpoint = 1;
+var currentSlide;
 var projetor = false;
+
+var positions = new Object();
+
+function Position(name) {
+	this.breakpoint=1;
+	this.breakpointPos=1;
+	this.isbreak=false;
+	this.name=name;
+	this.visited=false;
+	
+}
+
 var AI_WIDTH = 700;
-var AI_HEIGHT = 600;
+var AI_HEIGHT = 708;
 var AI_NAV_HEIGHT = 20;
-var AI_MOVIE_HEIGHT_MIN = 20;
+var AI_MOVIE_HEIGHT_MIN = 0;
 var AI_MOVIE_HEIGHT = 480;
 
 
@@ -29,16 +45,17 @@ function init() {
 }
 
 function setInitialSizes(){	
-	$("#atividade").css("width", AI_WIDTH+"px");
-	$("#fls").css("width", AI_WIDTH+"px");
-	$("#navegador").css("width", AI_WIDTH+"px");
-	$("#etapaAtual").css("width", AI_WIDTH+"px");
+	//$("#atividade").css("width", AI_WIDTH+"px");
+	//$("#fls").css("width", AI_WIDTH+"px");
+	//$("#navegador").css("width", AI_WIDTH+"px");
+	//$("#etapaAtual").css("width", AI_WIDTH+"px");
 	//$("#aicontainer").css("width", AI_WIDTH+"px");
 	
 	$("#fls").css("height", AI_MOVIE_HEIGHT_MIN + "px");
 	$("#navegador").css("height", AI_NAV_HEIGHT+"px");
 	$("#atividade").css("height", AI_HEIGHT+"px");
-	$("#etapaAtual").css("height", (AI_WIDTH - AI_MOVIE_HEIGHT_MIN - AI_NAV_HEIGHT) + "px");
+	$("#etapaAtual").css("height", (AI_HEIGHT - AI_MOVIE_HEIGHT_MIN - AI_NAV_HEIGHT) + "px");
+	
 	
 }
 
@@ -83,7 +100,7 @@ function onFlash_Loaded(){
 	
 	currentPosition = 1;	
 	//hideProjector();
-	loadContent();	
+	
 }
 
 function upScreen(){
@@ -96,6 +113,7 @@ function downScreen(){
 	//$( "#flscontent" ).show();
 	$( "#fls" ).animate({height:  + AI_MOVIE_HEIGHT + "px"}, 500)
 	$( "#etapaAtual" ).animate({height: (AI_HEIGHT - AI_NAV_HEIGHT - AI_MOVIE_HEIGHT) + "px"}, 500)
+	
 }
 
 
@@ -119,14 +137,20 @@ function loadContent(){
 		
 		$('#total').html(data);
 		//alert($('#total').html())
-		
-		loadConteudo('conteudo1')
+		//MathJax.Hub.Typeset();
 		createNavigator()
+		//MathJax.CallBack.Queue.push([onInitialize])
+		//MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 		
+		
+		onInitialize();
 		//console.log("carregou conteúdo");
 	}
 });
 }
+
+
+
 
 function hideProjector(){
 	$('#aicontainer').hide('slow');
@@ -177,9 +201,9 @@ function fetch() {
 	session.connected = scorm.init();
 	session.standalone = !session.connected;
 	if (session.standalone) {
-		var stream = localStorage.getItem("AI-0125-memento");
-		if (stream != null)
-			ans = JSON.parse(stream);
+		var stream = localStorage.getItem(oaName + "-memento");
+		
+		if (stream != null)	ans = JSON.parse(stream);
 	} else {
 		var completionstatus = scorm.get("cmi.completion_status");
 		switch (completionstatus) {
@@ -189,7 +213,7 @@ function fetch() {
 			ans.learner = scorm.get("cmi.learner_name");
 			break;
 		case "incomplete":
-			var stream = scorm.get("cmi.location");
+			var stream = scorm.get("cmi.location");			
 			if (stream != "")
 				ans = JSON.parse(stream);
 			ans.learner = scorm.get("cmi.learner_name");
@@ -208,7 +232,8 @@ function commit(data) {
 	var success = false;
 	if (session.standalone) {
 		var stream = JSON.stringify(data);
-		localStorage.setItem("AI-0125-memento", stream);
+		
+		localStorage.setItem(oaName + "-memento", stream);
 		success = true;
 	} else {
 		if (session.connected) {
@@ -227,21 +252,26 @@ function loadConteudo(c){
 	//if (projetor) hideProjector();	
 	$('#posicaoconteudo').html('');
 	$('#posicaoconteudo').append($('#'+ c).html());	
-	onInitialize();
+
 }
 
 function loadBlock(n, f){	
 	if(n>maxPos && DEBUG==false) return;
-	iluminar(f);	
+	
 	loadSlide(f);
 }
 
 
 function loadSlide(n){
 	
-	//if(!projetor) showProjetor();	
 	$('#etapaAtual').html($('#'+ n).html());
-	
+	if(positions[n].isbreak){
+		lastBreakpoint = Math.max(lastBreakpoint, positions[n].breakpoint);
+		
+	}
+	currentSlide = n;
+	positions[n].visited = true;
+	iluminar();
 	var qtde = $(".breakpoint").size();
 	for(var i=0; i<qtde;i++){
 		var arr = $(".breakpoint")[i].id.split("_");
@@ -259,8 +289,10 @@ function loadSlide(n){
 	}
 	
 	var ret;
+	MathJax.Hub.Typeset("etapaAtual");
 	trace("start_"+n+"()");
 	ret = eval("start_"+n+"()");
+	
 	
 
 	
@@ -268,24 +300,45 @@ function loadSlide(n){
 
 
 function createNavigator(){
+	var pos = $(".etapa");	
+	for(var x=0; x<pos.size();x++){
+		var name = pos[x].id;
+		newPosition = new Position(name);
+		newPosition.name = name;
+		positions[name] = newPosition;
+		
+		
+	}
+
 	var qtde = $(".breakpoint").size();
 	var str = "";
 	for(var i=0; i<qtde;i++){
-		var arr = $(".breakpoint")[i].id.split("_");
-		var number = arr[1]
-		var framename = arr[2]
-		
-			 str += "<div id='bl_"+number+"' class='bloco' onClick=\"loadBlock('" + number + "', '"+framename+"');\">" + number + "</div><div class='linha'></div>"
+		var slideName = $(".breakpoint")[i].id;
+			positions[slideName].breakpoint = i+1;
+			positions[slideName].isbreak = true;
+			onclk = " onClick=\"loadSlide('"+slideName+"');\" "
+			if(lastBreakpoint<(i+1)) onclk = "";
+			 
+			 str += "<div id='bl_"+i+"' class='bloco' " + onclk + ">" + (i+1) + "</div><div class='linha'></div>"
 	}
-	str += "<div id='blocofinal' class='bloco'>x</div>"
+	//str += "<div id='blocofinal' class='bloco'>x</div>"
 	
 	$("#navegador").html(str);
 }
 
-function iluminar(b){
+function disableElement(elementString){
+	$(elementString).attr('disabled', 'disabled');
+}
+function enableElement(elementString){
+	$(elementString).removeAttr('disabled');
+
+}
+
+function iluminar(){
 	resetarBlocos();
-	$("#"+b).css("backgroundColor", "yellow")	
-	$("#"+b).css("color", "black")
+	var b = positions[currentSlide].breakpoint-1;
+	$("#bl_"+b).css("backgroundColor", "yellow")	
+	$("#bl_"+b).css("color", "black")
 }
 
 function resetarBlocos(){

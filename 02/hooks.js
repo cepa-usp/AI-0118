@@ -14,9 +14,8 @@ function AILocalStorageData() {
 var ai_data;
 
 function startAI(){
-	loadScreen("../flash/AI0125.swf", 640, 480);
+	loadScreen("../swf/AI-0111.swf", 640, 480);
 	loadContent();
-
 }
 
 /**
@@ -24,35 +23,18 @@ function startAI(){
 */
 function onInitialize(){	
 
-	loadSlide("quadro_1_1");
+	loadSlide("quadro1");
 	
 	
 }
 
 
-function start_quadro_1_1(){
+function start_quadro1(){
 	
 	// popular o slide com as variáveis colhidas do scorm;
-	
 		
-	$("#correto1").hide();
-	$("#errado1").hide();
-	$("#errado2").hide();
-	$("#avancar1").hide();
-	popularQuadro1();
-	avaliarQuadro1();
-	
-	$("#bt-01-01").button().click(function(){
-		var tx = $("#txResposta1").val();
-		if(tx==""){
-			alert("Escreva um valor");
-			return;
-		}
-		avaliarQuadro1();
-	});
-	
-	$("#btAvancar01").button().click(function(){
-		loadSlide("quadro_1_2");
+	$("#bt-02-01").button().click(function(){
+		loadSlide("quadro2");
 	});	
 }
 
