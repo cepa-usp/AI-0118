@@ -63,7 +63,7 @@ h1 {
 	height:auto;
 	padding-left:10px;
 	padding-right:10px;	
-	overflow:hidden;
+	overflow:auto;
 	border:1px solid black;
 }
 

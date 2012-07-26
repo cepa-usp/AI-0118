@@ -7,16 +7,23 @@
 */
 var DEBUG = false; //MUDE DEBUG PARA TRUE PRA FACILITAR A NAVEGAÇÃO PELA ATIVIDADE!!!
 
-var oaName = "AI-0118_1"
+var oaName = "AI-0118_2"
 function AILocalStorageData() {
-	this.txResposta1 = "";
+	this.cp1 = "";
+    this.cp2 = "";
+    this.cp3 = "";
+    this.cp4 = "";
 }
 var ai_data;
 
 function startAI(){
-	loadScreen("../swf/AI-0111.swf", 640, 480);
+    oaData = fetch();
+    if(oaData.slides==undefined) oaData.slides = new AILocalStorageData();
+    loadScreen("../swf/AI-0111.swf", 640, 480);
 	loadContent();
 }
+
+
 
 /**
 	Determinar o comportamento inicial da atividade que está sendo inserida
@@ -35,52 +42,85 @@ function start_quadro1(){
 		
 	$("#bt-02-01").button().click(function(){
 		loadSlide("quadro2");
+
 	});	
 }
 
-function popularQuadro1(){
-	oaData = fetch();
-	dt = oaData.slides;
-	if(dt==undefined) return;
-	$("#txResposta1").val(dt.txResposta1);
+
+
+
+
+
+function start_quadro2(){
+    $("#errou01").hide();
+    $("#acertou01").hide();
+    $("#resp").hide();
+
+    $("#btToSlide3").button().click(function(){
+        loadSlide("quadro4")
+    });
+    $("#bt-02-02").button().click(function(){
+        avaliarQuadro2()
+    });
 }
 
-function persistirQuadro1(){	
-	if(ai_data==null) ai_data = new AILocalStorageData();
-	ai_data.txResposta1 = $("#txResposta1").val();	
-	oaData.slides = ai_data;
-	commit(oaData);
+function avaliarQuadro2() {
+
+    if($("select[name='cp1'] :selected").val() == "maior" && $("select[name='cp2'] :selected").val() == "0" && $("select[name='cp3'] :selected").val() == "maior" && $("select[name='cp4'] :selected").val() == "0")
+    {
+        //console.log("correto");
+        oaData.slides.score_02_02 = 100;
+    }else if($("select[name='cp1'] :selected").val() == "maiorigual" && $("select[name='cp2'] :selected").val() == "0" && $("select[name='cp3'] :selected").val() == "maior" && $("select[name='cp4'] :selected").val() == "0")
+    {
+        //console.log("correto/2-1");
+        oaData.slides.score_02_02 = 90;
+    }else if($("select[name='cp1'] :selected").val() == "maior" && $("select[name='cp2'] :selected").val() == "0" && $("select[name='cp3'] :selected").val() == "maiorigual" && $("select[name='cp4'] :selected").val() == "0")
+    {
+        //console.log("correto/2-2");
+        oaData.slides.score_02_02 = 90;
+    }else if($("select[name='cp1'] :selected").val() == "maiorigual" && $("select[name='cp2'] :selected").val() == "0" && $("select[name='cp3'] :selected").val() == "maiorigual" && $("select[name='cp4'] :selected").val() == "0")
+    {
+        //console.log("correto/2-3");
+
+        oaData.slides.score_02_02 = 80;
+    }else
+    {
+        //console.log("errado");
+
+        oaData.slides.score_02_02 = 0;
+    }
+    //console.log(oaData.slides.score_02_02);
+    //console.log("saindo");
+    //Armazenando os valores no array de avaliação dos selects
+    oaData.slides.resp_02_02_01 = $("select[name='cp1'] :selected").val();
+    oaData.slides.resp_02_02_02 = $("select[name='cp2'] :selected").val();
+    oaData.slides.resp_02_02_03 = $("select[name='cp3'] :selected").val();
+    oaData.slides.resp_02_02_04 = $("select[name='cp4'] :selected").val();
+
+    //Atualizando a visibilidade da próxima parte
+    disableElement("cp1");
+    disableElement("cp2");
+    disableElement("cp3");
+    disableElement("cp4");
+    disableElement("#bt-02-02");
+
+
+
+
+
+        loadScreen("../swf/ai-0119.swf", 640, 480)
+    alert(oaData.slides.score_02_02)
+
+
+    if(oaData.slides.score_02_02 < 100)
+    {
+        $("#errou01").show();
+    }else{
+        $("#acertou01").show();
+    }
+    $("#resp").show();
+
 }
-
-function avaliarQuadro1(){
-		var tx = $("#txResposta1").val();
-		if(tx=="") return;
-		$("#suaresposta1").text(tx)
-		if(tx=="xy"){
-			$("#correto1").show();
-		} else {
-			$("#errado1").show();
-			$("#errado2").show();
-			
-		}
-		$("#avancar1").show();
-		disableElement("#txResposta1")
-		disableElement("#bt-01-01");
-		persistirQuadro1();
-}
-
-
-function start_quadro_1_2(){
-	$("#btConcluir02").button().click(function(){
-		//loadSlide("quadro_1_1")
-		alert("fim")
-	});
-}
-
-function eval_quadro_1_2(){
-
-}
-
 
 function notificar(tx){
 	//TODO: substituir o 'alert' por um pseudo pop-up (?)

@@ -289,7 +289,9 @@ function loadSlide(n){
 	}
 	
 	var ret;
-	MathJax.Hub.Typeset("etapaAtual");
+
+    //MathJax.Hub.Typeset("etapaAtual");
+
 	trace("start_"+n+"()");
 	ret = eval("start_"+n+"()");
 	
