@@ -50,7 +50,6 @@ function start_quadro1(){
 
 
 
-
 function start_quadro2(){
     $("#errou01").hide();
     $("#acertou01").hide();
@@ -65,6 +64,12 @@ function start_quadro2(){
 }
 
 function avaliarQuadro2() {
+    for(var j = 0; j<5;j++){
+        if($("select[name='cp'+j] :selected").val() == ""){
+            return;
+        }
+    }
+
 
     if($("select[name='cp1'] :selected").val() == "maior" && $("select[name='cp2'] :selected").val() == "0" && $("select[name='cp3'] :selected").val() == "maior" && $("select[name='cp4'] :selected").val() == "0")
     {
@@ -108,7 +113,7 @@ function avaliarQuadro2() {
 
 
 
-        loadScreen("../swf/ai-0119.swf", 640, 480)
+    loadScreen("../swf/ai-0119.swf", 640, 480)
     alert(oaData.slides.score_02_02)
 
 
