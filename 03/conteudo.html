@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>03</title>
+
+</head>
+<body>
+<div id="global">
+	<div id="top">
+	</div>
+	<div id="content">
+
+		<span id="quadro1" class="etapa breakpoint">
+			<span class="title">Domínio aberto ou fechado?</span>
+			<p class="visible">Sempre que falamos em domínio de uma função, precisamos saber identificar se ele é <i>aberto</i> ou <i>fechado</i>. Esta característica é importante porque ela está no cerne da definição de limites e derivadas, que veremos em breve.</p>
+			<p class="visible">Dizemos que <i>um domínio é aberto se todos os seus pontos são interiores</i>. E por exclusão, um domínio é fechado se ele não for aberto. Mas, o que são <i>pontos interiores</i>? A resposta é mais ou menos a que você espera, com alguma sutilezas. Vamos começar analisando a figura na janela de atividades, que agora exibe o domínio de <i>f</i> no nosso contexto (em cinza);(caso você não esteja vendo a atividade <a href="javascript:downScreen()">clique aqui</a>).</p>
+			<p class="visible">Ao redor do ponto (<i>x</i>,<i>y</i>) definimos um círculo de raio &#948;(cinza escuro) e o chamamos de <i>a vizinhança de (x,y)</i>. Assim, (<i>x</i>,<i>y</i>) será um ponto interior a <i>D<sub>f</sub></i> se pudermos ajustar &#948; de tal modo que toda a vizinhança de (<i>x</i>,<i>y</i>) também pertença a <i>D<sub>f</sub></i>. Visualmente isto significa que o círculo ao redor de (<i>x</i>,<i>y</i>) deve ficar inteiramente dentro de <i>D<sub>f</sub></i>.</p>
+			<p class="visible">Faça o seguinte, sempre mantendo (<i>x</i>,<i>y</i>) <i>dentro</i> do domínio:</p>
+			<p class="passos visible"><b>Passo 1:</b> arraste (<i>x</i>,<i>y</i>) para perto da fronteira do domínio.</p>
+			<p><button type="button" name="bt-03-01" id="bt-03-01">OK</button></p>
+		</span>
+		<span id="quadro2" class="etapa breakpoint">
+			<p class="visible"><b>Passo 2:</b> reduza &#948; de modo que toda vizinhança fique dentro do domínio.</p>
+			<p><button type="button" name="bt-03-02" id="bt-03-02">OK</button></p>
+			
+			
+			<p class="visible"><button type="button" id="bt-02-02">OK</button></p>
+
+
+			<p id="errou01" class="errado invisible">A resposta correta é $x>0$ e $y>0$. E deste modo definimos o domínio:</p>
+			<p id="acertou01" class="correto invisible">Correto! E deste modo definimos o domínio:</p>
+			<div id="resp">
+			<p class="visible">$D_f = {(x,y) \in \mathscr{R} | x > 0 e y > 0}$ </p>
+			<p class="visible">Você deve ler esta expressão assim: $D_f$ é o conjunto de pares</i> $(x, y)$<i>pertencentes a</i>
+                $\mathscr{R}^2$  <i>tal que $x>0$ e $y>0$. E caso você não se lembre, $\mathscr{R}^2$ é simplesmente
+                    uma notação reprimida de $\mathscr{R}^2 \times \mathscr{R}^2$, que por sua vez significa que tanto $x$ quanto $y$ são números Reais($\mathscr{R}^2$).</p>
+			<p class="visible">Para que esta leitura acima fique clara, associe os símbolos com seus significados na
+                janela de atividade: (caso você não esteja vendo
+                a atividade,  <a href="javascript:downScreen()">clique aqui</a>)</p>
+			</div>
+            <p class="visible"><button type="button" id="btToSlide3">Avançar</button></p>
+		</span>
+
+		
+		<span id="quadro4" class="etapa breakpoint">
+			<p class="visible">Finalmente podemos expressar $f$ apropriadamente:</p></br>
+			<p class="visible">$f$ : $D_f$ &#8594; &#8476; </p>
+			<p class="visible">$f(x,y) = xy$</p>
+			<p class="visible">A primeira linha diz que $f$ é uma regra que associa $D_f$ a $\mathscr{R}$, e a segunda
+                linha diz <i>como</i> fazer essa associação.</p>
+			<p class="visible"><button type="button" id="bt-02-03">Avançar</button></p>
+		</span>
+		
+		
+	</div>
+	<div id="botton">
+		
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>03</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<NOSCRIPT><meta http-equiv="refresh" content="1;url=../error.html"></NOSCRIPT>
+	<link type="text/css" href="css/style.css" rel="Stylesheet" />
+	<link type="text/css" href="../css/style.css" rel="Stylesheet" />
+	<link type="text/css" href="../css/overcast/jquery-ui-1.8.6.custom.css" rel="Stylesheet" />
+	<script type="text/javascript" src="../js/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui-1.8.6.custom.min.js"></script>
+	<script type="text/javascript" src="../js/SCORM_API_wrapper.js"></script>
+	<script type="text/javascript" src="../js/jquery-swfobject.js"></script>
+	<script type="text/javascript" src="../js/jquery.tooltip.pack.js"></script>
+	<script type="text/javascript" src="js/ai.js"></script>
+</head>
+<body>
+<div id="global">
+	<div id="top">
+	</div>
+	<div id="content">
+		<div id="slidebottom" class="slide">
+			<div class="borda"> >></div>
+			<div class="inner">Atividade Interativa</div>
+		</div>
+		<span class="title">Domínio aberto ou fechado?</span>
+		<span class="text parada-1 visible">
+			<p class="visible">Sempre que falamos em domínio de uma função, precisamos saber identificar se ele é <i>aberto</i> ou <i>fechado</i>. Esta característica é importante porque ela está no cerne da definição de limites e derivadas, que veremos em breve.</p>
+			<p class="visible">Dizemos que <i>um domínio é aberto se todos os seus pontos são interiores</i>. E por exclusão, um domínio é fechado se ele não for aberto. Mas, o que são <i>pontos interiores</i>? A resposta é mais ou menos a que você espera, com alguma sutilezas. Vamos começar analisando a figura na janela de atividades, que agora exibe o domínio de <i>f</i> no nosso contexto (em cinza);(caso você não esteja vendo a atividade <a href="javascript:abrejanela()">clique aqui</a>).</p>
+			<p class="visible">Ao redor do ponto (<i>x</i>,<i>y</i>) definimos um círculo de raio &#948;(cinza escuro) e o chamamos de <i>a vizinhança de (x,y)</i>. Assim, (<i>x</i>,<i>y</i>) será um ponto interior a <i>D<sub>f</sub></i> se pudermos ajustar &#948; de tal modo que toda a vizinhança de (<i>x</i>,<i>y</i>) também pertença a <i>D<sub>f</sub></i>. Visualmente isto significa que o círculo ao redor de (<i>x</i>,<i>y</i>) deve ficar inteiramente dentro de <i>D<sub>f</sub></i>.</p>
+			<p class="visible">Faça o seguinte, sempre mantendo (<i>x</i>,<i>y</i>) <i>dentro</i> do domínio:</p>
+			<p class="passos visible"><b>Passo 1:</b> arraste (<i>x</i>,<i>y</i>) para perto da fronteira do domínio.</p>
+			<p><button type="button" name="bt-03-01" id="bt-03-01">OK</button></p>
+		</span>
+		<span class="text parada-2 invisible">
+			<p class="passos visible"><b>Passo 2:</b> reduza &#948; de modo que toda vizinhança fique dentro do domínio.</p>
+			<p><button type="button" name="bt-03-02" id="bt-03-02">OK</button></p>
+		</span>
+		<span class="text parada-3 invisible">
+			<p class="passos visible"><b>Passo 3:</b> amplie a figura (botão +) e volte ao passo 1. Refaça esses passos algumas vezes antes de continuar.</p>
+			<p><button type="button" name="bt-03-03" id="bt-03-03">OK</button></p>
+		</span>
+		<span class="text parada-4 invisible">
+			<p class="visible">Você percebe que é possível continuar assim indefinidamente, e que sempre é possível ajustar &#948; de modo que toda a vizinhança de (<i>x</i>,<i>y</i>) fique dentro de <i>D<sub>f</sub></i>? Isto acontece porque (<i>x</i>,<i>y</i>), nesta situação, é um ponto interior. Ou seja: <i>ponto interior a um domínio é aquele para o qual é possível definir uma vizinhança inteiramente contida no domínio.</i></p>
+			<p><button type="button" name="bt-03-04" id="bt-03-04">OK</button></p>
+		</span>
+		<span class="text parada-5 invisible">
+			<p class="visible">Pergunta: o que você acha que é um ponto <i>exterior</i>?</p>
+			<p><button type="button" name="bt-03-05" id="bt-03-05">OK</button></p>
+		</span>
+		<span class="text parada-6 invisible">
+			<p class="visible">No final das contas, a definição de pontos interior e exterior não foge muito do que esperaríamos. Mas existem pontos que não são nem interiores e nem exteriores, e esta é a sutiliza mencionada há pouco. Esses são pontos que estão na <i>fronteira</i> do domínio.</p>
+			<p class="visible">Para entendermos isso, trocarei <i>x</i> > 0 por <i>x</i> &#8805; 0 (o mesmo para <i>y</i>) na definição do domínio de <i>f</i>.</p>
+			<p class="visible">Faça o seguinte: coloque (<i>x</i>,<i>y</i>) precisamente sobre a fronteira do domínio. Para isso, arraste-o cuidadosamente para lá até que sua fronteira comece a brilhar, e solte-o quando isso acontecer.</p>
+			<div id="dialog-confirm" title="Posição incorreta">
+				<p>O ponto (<i>x</i>,<i>y</i>) não está na fronteira. O que você deseja fazer?</p>
+			</div>
+			<p><button type="button" name="bt-03-06" id="bt-03-06">OK</button></p>
+		</span>
+		<span class="text parada-7 invisible">
+			<p class="visible">O objetivo é reduzir &#948; até que a vizinhança de (<i>x</i>,<i>y</i>) fique toda dentro ou fora do domínio. Faça isso: reduza &#948;, amplie a figura, reduza ainda mais &#948;, amplie de novo... Qual é a sua conclusão?</p>
+			<p><button type="button" name="bt-03-07" id="bt-03-07">OK</button></p>
+		</span>
+		<span class="text parada-8 invisible">
+			<p class="visible">Perceba que, mesmo estando na fronteira, (<i>x</i>,<i>y</i>) pertence ao domínio. Ainda assim, não podemos classificá-lo como ponto interior. Com isto em mente, responda: o domínio {(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup> | <i>x</i> &#8805; 0 &#8743; <i>y</i> &#8805; 0} é aberto ou fechado?</p>
+			<p class="visible">
+				<select name="sl-03-dom-01"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select><span class="invisible suaresp-01"></span>
+			</p>
+			<p><button type="button" name="bt-03-08" id="bt-03-08">OK</button></p>
+		</span>
+		<span class="text parada-9 invisible">
+			<p class="invisible error">Este domínio é <i>fechado</i>, pois os pontos que ficam na fronteira não são pontos interiores, e ainda assim fazem parte do domínio. Logo, nem todos os pontos do domínio são interiores (definição de domínio aberto).</p>
+			<p class="visible">E se alterarmos a desigualdade em <i>x</i> e <i>y</i>, voltando para a definição inicial de <i>D<sub>f</sub></i>, isto é, {(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup> | <i>x</i> > 0 &#8743; <i>y</i> > 0}. É aberto ou fechado?</p>
+			<p class="visible"><select name="sl-03-dom-02"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select> <span class="invisible suaresp-02"></span> </p>
+			<p><button type="button" name="bt-03-09" id="bt-03-09">OK</button></p>
+		</span>
+		<span class="text parada-10 invisible">
+			<p class="visible">Este domínio é <i>aberto</i>, pois a fronteira (<i>x</i> = 0 e <i>y</i> = 0) não pertence a ele. Ou seja, apenas pontos interiores compõem o domínio.</p>
+			<p><button type="button" name="bt-03-10" id="bt-03-10">OK</button></p>
+		</span>
+		<span class="text parada-11 invisible">
+			<p class="visible">Mas cuidado: não podemos simplesmente associar desigualdades a domínios abertos. Vejamos um exemplo: suponha que nosso retângulo tenha lados <i>maiores ou iguais</i> a <i>&#960;</i>(pi), um número irracional: <i>x</i> &#8805; <i>&#960;</i> e <i>y</i> &#8805; <i>&#960;</i> (veja figura acima). Veja se você consegue encontrar algum ponto na fronteira.</p>
+			<p><button type="button" name="bt-03-11" id="bt-03-11">OK</button></p>
+		</span>
+		<span class="text parada-12 invisible">
+			<p class="visible">Este domínio é aberto ou fechado?</p>
+			<p class="visible"><select name="sl-03-dom-03"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select><span class="invisible suaresp-03"></span></p>
+			<p><button type="button" name="bt-03-12" id="bt-03-12">OK</button></p>
+		</span>
+		<span class="text parada-13 invisible">
+			<p class="visible">Desta vez não foi possível encontrar um ponto de fronteira porque, apesar de usar uma igualdade na restrição de <i>x</i> e <i>y</i>, <i>&#960;</i> é um número irracional. Ou seja, nós podemos sempre fazer <i>x</i> = 3.14, <i>x</i> = 3.141, <i>x</i> = 3,1415... sem nunca chegar a <i>&#960;</i> (na verdade, a fronteira não existe neste caso). E pelo mesmo motivo, podemos sempre encontrar um &#948; suficientemente pequeno para garantir que a vizinhança de (<i>x</i>,<i>y</i>) esteja dentro domínio. Assim, apesar da igualdade, todos os pontos deste domínio são interiores. Logo o domínio é <i>aberto</i>.</p>
+			<p class="visible">Para exercitar esses conceitos, classifique os domínios abaixo (eles não têm relação com a figura acima):</p>
+			<p class="visible"><table class="tabela">
+				<tr class="coluna">
+					<td class="linha">{(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup> | <i>x</i> &#8805; e &#8743; <i>y</i> &#8804; e}</td>
+					<td class="linha"><select name="sl-03-dom-04"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></td>
+					<td class="linha resposta invisible">Este domínio é aberto pois <i>e</i> é um número irracional.</td>
+				</tr>
+				<tr class="coluna">
+					<td class="linha">{(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup> | <i>x</i> &#8805; ln <i>e</i> &#8743; <i>y</i> < 0}</td>
+					<td class="linha"><select name="sl-03-dom-05"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></td>
+					<td class="linha resposta invisible">Este domínio é fechado, pois ln <i>e</i> = 1, de modo que <i>x</i> &#8805; 1.</td>
+				</tr>
+				<tr class="coluna">
+					<td class="linha">{(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup>}</td>
+					<td class="linha"><select name="sl-03-dom-06"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></td>
+					<td class="linha resposta invisible">Este domínio é aberto pois não há limites impostos a <i></i>x</i> ou a <i>y</i>.</td>
+				</tr>
+				<tr class="coluna">
+					<td class="linha">{(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup> | <i>x</i> &#8804; 1/3 &#8743; <i>y</i> &#8805; 1}</td>
+					<td class="linha"><select name="sl-03-dom-07"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></td>
+					<td class="linha resposta invisible">Este domínio é fechado pois 1/3 é um número racional.</td>
+				</tr>
+			</table> </p>
+			<p><button type="button" name="bt-03-13" id="bt-03-13">OK</button></p>
+		</span>
+		<span class="text parada-14 invisible">
+			<p class="visible">Que tal discutir o que você aprendeu até agora com seus colegas no <a href="#" title="Fórum" target="_blank">fórum</a> desta atividade <i><a href="#" title="Fórum" target="_blank">online</a></i></p>
+			<p><button type="button" name="bt-03-14" id="bt-03-14">Avançar</button></p>
+		</span>
+	</div>
+	<div id="botton">
+		
+	</div>
+</div>
+</body>
+</html>

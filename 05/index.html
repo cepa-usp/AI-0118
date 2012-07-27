@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>05</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<NOSCRIPT><meta http-equiv="refresh" content="1;url=../error.html"></NOSCRIPT>
+	<link type="text/css" href="css/style.css" rel="Stylesheet" />
+	<link type="text/css" href="../css/style.css" rel="Stylesheet" />
+	<link type="text/css" href="../css/overcast/jquery-ui-1.8.6.custom.css" rel="Stylesheet" />
+	<script type="text/javascript" src="../js/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui-1.8.6.custom.min.js"></script>
+	<script type="text/javascript" src="../js/SCORM_API_wrapper.js"></script>
+	<script type="text/javascript" src="../js/jquery-swfobject.js"></script>
+	<script type="text/javascript" src="../js/jquery.tooltip.pack.js"></script>
+	<script type="text/javascript" src="js/ai.js"></script>
+</head>
+<body>
+<div id="global">
+	<div id="top">
+	</div>
+	<div id="content">
+		<div id="slidebottom" class="slide">
+			<div class="borda"> >></div>
+			<div class="inner">Atividade Interativa</div>
+		</div>
+		<span class="title">Gráficos e curvas de nível</span>
+		<span class="text parada-1 visible">
+			<p class="visible">Rigorosamente, o <i>gráfico de f</i> é simplesmente o conjunto de todos os <b>ternos</b> (<i>x</i>,<i>y</i>,<i>z</i>) com <i>z</i> = <i>f</i>(<i>x</i>,<i>y</i>). Mas é quando definimos um sistema de coordenadas e interpretamos esses número como coordenadas que surge a idéia de gráfico como <i>lugar geométrico</i> dos <b>pontos</b> (<i>x</i>,<i>y</i>,<i>z</i>) com <i>z</i> = <i>f</i>(<i>x</i>,<i>y</i>). É o que exploraremos agora.</p>
+			<p class="visible">Discuta com seus colegas no <a href="#" alt="forum" target="_blank">forum</a>: por que eu usei a palavra "terno" no começo do parágrafo anterior, e "ponto" no final.</p>
+			<p class="visible">Existem vários <i>softwares</i> capazes de desenhar gráficos, muitos deles gratuitos. No entanto, a análise de problemas que podem ser representados por gráficos geralmente requer conhecimento da <i>estrutura</i> do gráfico. E para isso, saber <i>esboçar</i> um gráfico é uma habilidade sempre bem-vinda.</p>
+			<p class="visible">Uma maneira de fazer isso, bastante utilizada por <i>softwares</i>, é definir uma malha regular de pontos (x; y) e calcular <i>z</i> = <i>f</i>(<i>x</i>,<i>y</i>). Mas quando precisamos esboçar o gráfico de uma função, em geral não estamos interessados nos <i>valores</i> <i>f</i>(<i>x</i>,<i>y</i>), e sim na <i>estrutura</i> de <i>f</i>. Para estes casos há uma técnica simples, mas que exigirá algum treinamento da sua parte. Vejamos como ela funciona para a nossa função, <i>f</i>(<i>x</i>,<i>y</i>) = <i>xy</i>, através do aplicativo acima.</p>
+			<p><button type="button" id="bt-05-01" name="bt-05-01">OK</button></p>
+		</span>
+		<span class="text parada-2 invisible">
+			<p class="visible">A ideia consiste em fixar uma das variáveis e determinar o comportamento de <i>f</i> como função da outra variável apenas. Por exemplo, fazendo <i>y</i> = 1 nossa função fica <i>z</i> = <i>f</i>(<i>x</i>,<i>1</i>) = <i>x</i>, uma reta com coeficiente angular 1 e que passa pela origem do sistema de coordenadas.</p>
+			<p class="visible">Veja na figura acima: à esquerda temos o plano <i>y</i> = 1, no qual esboçamos o gráfico de <i>z</i> = <i>f</i>(<i>x</i>,<i>1</i>) (observe que os eixos coordenados são <i>x</i> e <i>z</i>); e à direita vemos como este plano se encaixa no sistema de coordenadas cartesiano de três dimensões. A lista à esquerda relaciona os planos para os quais desenhamos <i>f</i>(<i>x</i>,<i>y</i>). Por enquanto há apenas um: o plano <i>y</i> = 1.</p>
+			<p><button type="button" id="bt-05-02" name="bt-05-02">OK</button></p>
+		</span>
+		<span class="text parada-3 invisible">
+			<p class="visible">Agora, vamos juntos criar o plano <i>y</i> = 2. Neste caso <i>z</i> = <i>f</i>(<i>x</i>,<i>2</i>) = <i>2x</i>, de modo que precisamos desenhar uma reta de coeficiente anular 2 e que passa pela origem do sistema de coordenadas. Uma dica é usar a grade que aparece na área de desenho. Ou podemos perceber que nossa reta deve partir de (0,0) e atingir o valor máximo de <i>z</i>(5) em x = 2,5.</p>
+			<p class="visible">De qualquer modo, o primeiro passo é adicionar o plano <i>y</i> = 2 à lista: pressione o botão "+" logo acima dela e, na janela que abre, selecione <i>y</i>(a variável que manteremos fixa). Em seguida, digite o valor de <i>y</i>: 2. Pressione "ok" para começar a desenhar <i>f</i>(<i>x</i>,2).</p>
+			<p class="visible">A área de desenho agora está vazia, aguardando que você desenhe a função f (x; 2). Com a <i>ferramenta lápis</i> (à esquerda) selecionada, pressione o mouse perto de (0,0) e arraste-o até (2.5,5). Não seja perfeccionista. Afinal, é apenas um esboço. Para apagar partes do seu desenho, selecione a <i>ferramenta borracha</i> e arraste o <i>mouse</i> sobre a área a ser apagada. Experimente fazer isso pressionando a tecla <i>shift</i> para manter a continuidade do traço.</p>
+			<p class="visible">Caso este plano não esteja presente no gráfico à direita, pressione o botão [ÍCONE] para visualizá-lo.</p>
+			<p><button type="button" id="bt-05-03" name="bt-05-03">OK</button></p>
+		</span>
+		<span class="text parada-4 invisible">
+			<p class="visible">Agora é sua vez: esboce o gráfico de <i>f</i> no plano <i>y</i> = 0,5. Depois, faça o mesmo para os planos <i>x</i> = 2, <i>x</i> = 1 e <i>x</i> = 0,5.</p>
+			<p><button type="button" id="bt-05-04" name="bt-05-04">OK</button></p>
+		</span>
+		<span class="text parada-5 invisible">
+			<p class="visible">Desse estudo nós podemos tirar duas conclusões acerca da área do nosso retângulo: a primeira é que, se fixarmos um dos lados, a área varia <i>linearmente</i> com o outro lado; segundo, a taxa dessa variação (derivada) é igual à medida do outro lado.</p>
+			<p class="visible">Estas conclusões também pode ser obtidas diretamente da expressão de <i>f</i> e de sua derivada. Veja, se fixarmos <i>y</i> = <i>l</i> podemos reescrever <i>f</i>(<i>x</i>,<i>l</i>) como uma função <i>g</i> de <i>x</i> apenas. Assim:</p>
+			<p class="visible">Área = <i>f</i>(<i>x</i>,<i>l</i>) = <i>g</i>(<i>x</i>) = <i>lx</i>.</p>
+			<p class="visible">Logo, a área é diretamente proporcional ao lado <i>x</i> (primeira conclusão). Além disso, se derivarmos <i>g</i>(<i>x</i>) com relação a <i>x</i>,</p>
+			<p class="visible"><i>dg/dx</i> = <i>l</i>.</p>
+			<p class="visible">Ou seja, a taxa de variação da área é igual à medida do outro lado: <i>l</i> (segunda conclusão).</p>
+			<p class="visible">É importante aprender a utilizar essas ferramentas algébricas, como a derivação e a integração, pois elas ajudam muito nessas análises. Além disso, muitas vezes as funções com as quais temos de trabalhar têm mais de duas variáveis, o que torna impossível representá-las graficamente (pois estamos limitados ao espaço tridimensinal). Nestes casos essas ferramentas são <b>as ferramentas</b> de análise.</p>
+			<p><button type="button" id="bt-05-05" name="bt-05-05">OK</button></p>
+		</span>
+		<span class="text parada-6 invisible">
+			<p class="visible">Mas a nossa análise gráfica não terminou. Da mesma maneira que fixamos <i>x</i> e <i>y</i>, nós podemos fixar <i>z</i>. Ou seja, podemos fixar a área do retângulo e perguntar: quais (<i>x</i>,<i>y</i>) resultam um mesmo <i>z</i> = <i>f</i>(<i>x</i>,<i>y</i>)? O procedimento é similar ao que já fizemos para <i>x</i> e <i>y</i>, exceto que tem um passo a mais: nós precisamos inverter <i>f</i>.</p>
+			<p class="visible">Nada como um exemplo: primeiro, fixamos <i>z</i> = 1. Depois invertemos <i>f</i> de modo a isolar <i>y</i>:</p>
+			<p class="visible"><i>z</i> = 1 = <i>xy</i> &#8658; <i>y</i> = 1/<i>x</i>.</p>
+			<p class="visible">Veja como fica na figura acima (note que eu adicionei o plano <i>z</i> = 1). Esta curva é chamada de <i>hipérbole</i>.</p>
+			<p><button type="button" id="bt-05-06" name="bt-05-06">OK</button></p>
+		</span>
+		<span class="text parada-7 invisible">
+			<p class="visible">Agora é a sua vez: refaça o procedimento acima para <i>z</i> = 2 e para <i>z</i> = 4. A dica é procurar três ou quatro pontos fáceis de calcular e ligá-los com uma curva similar àquela para <i>z</i> = 1. Afinal, a estrutura de <i>y</i> = <i>z</i>/<i>x</i> não muda; só os valores de (<i>x</i>,<i>y</i>).</p>
+			<p><button type="button" id="bt-05-07" name="bt-05-07">OK</button></p>
+		</span>
+		<span class="text parada-8 invisible">
+			<div id="#movie-0113"></div>
+			<p class="visible">Essas curvas para <i>f</i>(<i>x</i>,<i>y</i>) constante são particularmente importantes na análise de gráficos, e por isso recebem um nome próprio: <i>curvas de nível</i>.</p>
+			<p class="visible">Veja a figura a seguir, que apresenta o gráfico de f à esquerda (agora não é um esboço). Se interpretarmos x, y e z como coordenadas <i>espaciais</i>, <i>f</i> será então uma <i>superfície</i> que lembra um aclive. E se desenharmos neste gráfico um plano <i>z</i> = <i>h</i> (constante), a interseção dele com <i>f</i> será justamente o conjunto de pontos (<i>x</i>,<i>y</i>) que têm a mesma altura/nível h. Daí o nome curvas de nível.</p>
+			<p class="visible">Se olharmos a interseção do plano com o gráfico de <i>f</i>, veremos as curvas desenhadas à direita. Experimente variar <i>z</i> = <i>h</i> para cima e para baixo, observando a interseção com <i>f</i> e as curvas de nível que ela gera, à direita. Compare-as com as curvas que você desenhou há pouco.</p>
+			<p><button type="button" id="bt-05-08" name="bt-05-08">Avançar</button></p>
+		</span>
+	</div>
+	<div id="botton">
+		
+	</div>
+</div>
+</body>
+</html>

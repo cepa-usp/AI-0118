@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>06</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<NOSCRIPT><meta http-equiv="refresh" content="1;url=../error.html"></NOSCRIPT>
+	<link type="text/css" href="css/style.css" rel="Stylesheet" />
+	<link type="text/css" href="../css/style.css" rel="Stylesheet" />
+	<link type="text/css" href="../css/overcast/jquery-ui-1.8.6.custom.css" rel="Stylesheet" />
+	<script type="text/javascript" src="../js/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui-1.8.6.custom.min.js"></script>
+	<script type="text/javascript" src="../js/SCORM_API_wrapper.js"></script>
+	<script type="text/javascript" src="../js/jquery-swfobject.js"></script>
+	<script type="text/javascript" src="../js/jquery.tooltip.pack.js"></script>
+	<script type="text/javascript" src="js/ai.js"></script>
+</head>
+<body>
+<div id="global">
+	<div id="top">
+	</div>
+	<div id="content">
+		<div id="slidebottom" class="slide">
+			<div class="borda"> >></div>
+			<div class="inner">Atividade Interativa</div>
+		</div>
+		<span class="title">A forma implícita</span>
+		<span class="text parada-1 visible">
+			<p class="visible">Quando escrevemos <i>z</i> = <i>f</i>(<i>x</i>,<i>y</i>) = <i>xy</i>, estamos usando a chamada <i>forma explícita</i> de <i>f</i> , pois a regra está pronta para ser usada; basta substituir os valores de <i>x</i> e <i>y</i>. Mas existe outra maneira de a escrevermos, também muito útil: a <i>forma implícita</i>: </p>
+			<p class="visible">&#966;(<i>x</i>,<i>y</i>,<i>z</i>) = 0.</p>
+			<p class="visible">Para obter a forma implícita, simplesmente reorganizamos <i>z</i> = <i>f</i>(<i>x</i>,<i>y</i>) de modo que no primeiro membro da igualdade tenhamos <i>x</i>,<i>y</i>,<i>z</i>, e no segundo, <b>zero</b> (o zero é importante). Como você acha que deve ser a dorma implícita de <i>z</i> = <i>f</i>(<i>x</i>,<i>y</i>) = <i>xy</i>?</p>
+			<p class="p-06-01 visible">&#966;(<i>x</i>,<i>y</i>,<i>z</i>) = <input id="06-01" name="06-01" size="20"/> = 0 <button type="button" id="bt-06-01" name="bt-06-01">OK</button></p>
+			<p class="correto invisible">&#966;(<i>x</i>,<i>y</i>,<i>z</i>) = z - xy = 0.</p>
+			<p class="errado invisible">A resposta correta é &#966;(<i>x</i>,<i>y</i>,<i>z</i>) = z - xy = 0 <span class="resposta">Sua resposta: <span class="sua-resposta"></span></span></p>
+		</span>
+		<span class="text parada-2 invisible">
+			<p class="visible">Vejamos um exemplo de como esta forma pode ser útil. Para isso, deixemos de lado <i>f</i> e recordemos a equação da reta na geometria analítica: <i>y</i> = <i>ax</i> + <i>c</i>. <i>a</i> é o coeficiente angular e <i>b</i>, o coeficiente linear. A figura acima ilustra uma reta (OBS: Se a figura não estiver na tela <a href="javascript:abrejanela()">clique aqui.)</a>. Quais são <i>a</i> e <i>c</i></p>
+			<p class="p-06-02 visible"><i>y</i> = <input id="06-02-01" name="06-02-01" size="20"/>x + <input id="06-02-02" name="06-02-02" size="20"/> <button type="button" id="bt-06-02" name="bt-06-02">OK</button></p>
+			<p class="errado invisible">A resposta correta é <i>y</i> = <span class="coefa"></span>x + <span class="coefc"></span>. <span class="resposta">Sua resposta: <i>y</i> = <span class="coefa-aluno"></span>x + <span class="coefb-aluno"></span></span></p>
+		</span>
+		<span class="text parada-3 invisible">
+			<p class="visible">Isto funciona muito bem desde que a reta não seja vertical (veja figura novamente). Embora ainda seja uma reta, <i>y</i> não é mais uma função, pois um mesmo <i>x</i> resulta em <i>y</i> diferentes. A situação é análoga a dizer que nosso retângulo de lados <i>x</i> e <i>y</i> tem, ao mesmo tempo, áreas <i>z<sub>1</sub></i> e <i>z<sub>2</sub></i>. Ainda assim é uma reta, e a forma implícita dela resolve o problema: <i>ax</i> + <i>by</i> + <i>c</i> = 0. Tente identificar <i>a</i>,<i>b</i> e <i>c</i> para a reta acima (dica: comece escrevendo <i>x</i> = 1).</p>
+			<p class="p-06-03 visible">&#966;(<i>x</i>,<i>y</i>,<i>z</i>) = <input id="06-03-01" name="06-03-01" size="20"/>x + <input id="06-03-02" name="06-03-02" size="20"/><i>y</i> + <input id="06-03-03" name="06-03-03" size="20"/> = 0 <button type="button" id="bt-06-03" name="bt-06-03">OK</button></p>
+			<p class="errado invisible">A resposta correta é &#966;(<i>x</i>,<i>y</i>,<i>z</i>) = <i>x</i> - 1 = 0. Isto é, <i>a</i> = 1, <i>b</i> = 0 e <i>c</i> = -1. <span class="resposta">Sua resposta: &#966;(<i>x</i>,<i>y</i>,<i>z</i>) = <span class="coefa-aluno"></span>x + <span class="coefb-aluno"></span>y + <span class="coefc-aluno"></span> = 0</span></p>
+		</span>
+		<span class="text parada-4 invisible">
+			<p class="visible">Como você pode ver, a forma implícita da reta não tem a mesma limitação da forma explícita. Esta é apenas uma das vantagens. Nos próximos tópicos você verá outras utilidades dela.</p>
+			<p class="visible">Para terminar, determine a forma implícita da reta <i>y</i> - <i>y<sub>0</sub></i> = <i>m</i>(<i>x</i> - <i>x<sub>0</sub></i>) [use x0 para representar <i>x<sub>0</sub></i> e y0 para <i>y<sub>0</sub></i>]</p>
+			<p class="p-06-04 visible">&#966;(<i>x</i>,<i>y</i>,<i>z</i>) = <input id="06-04-01" name="06-04-01" size="20"/>x + <input id="06-04-02" name="06-04-02" size="20"/><i>y</i> + <input id="06-04-03" name="06-04-03" size="20"/> = 0 <button type="button" id="bt-06-04" name="bt-06-04">OK</button></p>
+			<p class="errado invisible">A resposta correta é <i>a</i> = -m, <i>b</i> = 1 e <i>c</i> = m*x0-y0.</p>
+			<p class="avancar invisible"><button type="button" id="bt-06-05" name="bt-06-05">Avançar</button></p>
+		</span>
+	</div>
+	<div id="botton">
+		
+	</div>
+</div>
+</body>
+</html>
