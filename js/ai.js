@@ -66,7 +66,9 @@ function loadScreen(swfpath, w, h){
 	flashvars.ai = swfpath;
 	flashvars.width = w;
 	flashvars.height = h;
-	
+
+    $("#fls").html("<div id=\"flscontent\">.</div>")
+
 	var params = {};
 	params.menu = "false";
 	//params.scale = "noscale";
