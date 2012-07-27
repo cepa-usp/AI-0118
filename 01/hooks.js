@@ -14,7 +14,7 @@ function AILocalStorageData() {
 var ai_data;
 
 function startAI(){
-	loadScreen("../flash/AI0125.swf", 640, 480);
+	//loadScreen("../flash/AI0125.swf", 640, 480);
 	loadContent();
 
 }

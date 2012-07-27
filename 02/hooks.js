@@ -8,19 +8,25 @@
 var DEBUG = false; //MUDE DEBUG PARA TRUE PRA FACILITAR A NAVEGAÇÃO PELA ATIVIDADE!!!
 
 var oaName = "AI-0118_2"
+oaData.slides = new AILocalStorageData()
 function AILocalStorageData() {
 	this.cp1 = "";
     this.cp2 = "";
     this.cp3 = "";
     this.cp4 = "";
+    this.score_02_02 = 0;
+    this.score_02_03 = 0;
+    this.resp_02_03_verify = "";
 }
 var ai_data;
 
 function startAI(){
     oaData = fetch();
-    if(oaData.slides==undefined) oaData.slides = new AILocalStorageData();
+    oaData.slides = new AILocalStorageData()
+//    if(oaData.slides==undefined) oaData.slides = new AILocalStorageData();
     loadScreen("../swf/AI-0111.swf", 640, 480);
 	loadContent();
+
 }
 
 
@@ -46,6 +52,20 @@ function start_quadro1(){
 	});	
 }
 
+/**
+ * A função que recebe o conteúdo da AI-0119
+ */
+function sendToJavaScript()
+{
+
+
+    ai.finish();
+    oaData.slides.score_02_03 = ai.getScore();
+    oaData.slides.resp_02_03_verify = "done";
+    commit(state);
+    loadSlide("quadro4");
+
+}
 
 
 
@@ -54,6 +74,12 @@ function start_quadro2(){
     $("#errou01").hide();
     $("#acertou01").hide();
     $("#resp").hide();
+    $("#aDownScreen1").click(function(){
+        downScreen();
+        $('#etapaAtual').fadeIn().delay(1000).scrollTop(300);
+    });
+
+
 
     $("#btToSlide3").button().click(function(){
         loadSlide("quadro4")
@@ -65,7 +91,7 @@ function start_quadro2(){
 
 function avaliarQuadro2() {
     for(var j = 0; j<5;j++){
-        if($("select[name='cp'+j] :selected").val() == ""){
+        if($("select[name='cp" + j + "'] :selected").val() == ""){
             return;
         }
     }
@@ -114,7 +140,7 @@ function avaliarQuadro2() {
 
 
     loadScreen("../swf/ai-0119.swf", 640, 480)
-    alert(oaData.slides.score_02_02)
+    //alert(oaData.slides.score_02_02)
 
 
     if(oaData.slides.score_02_02 < 100)
@@ -128,7 +154,7 @@ function avaliarQuadro2() {
 }
 
 function notificar(tx){
-	//TODO: substituir o 'alert' por um pseudo pop-up (?)
+	//substituir o 'alert' por um pseudo pop-up (?)
 	alert(tx);
 }
 
