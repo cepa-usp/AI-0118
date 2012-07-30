@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>06</title>
+</head>
+<body>
+<div id="global">
+	<div id="top">
+	</div>
+	<div id="content">
+		<span id="quadro1" class="etapa breakpoint">
+			<p>Quando escrevemo $z=f(x,y)=xy$, estamos usando a chamada <i>forma explícita</i> de $f$ , pois a regra
+                está pronta para ser usada; basta substituir os valores de $x$ e $y$. Mas existe outra maneira de a
+                escrevermos, também muito útil: a <i>forma implícita</i>: </p>
+			<p>$\phi(x, y, z) = 0$.</p>
+			<p>Para obter a forma implícita, simplesmente reorganizamos $z=f(x,y)$ de modo que no primeiro membro da
+                igualdade tenhamos $x, y, z$, e no segundo, <b>zero</b> (o zero é importante). Como você acha que deve
+                ser a forma implícita de $z=f(x,y)=xy$?</p>
+			<p>>$\phi(x, y, z) =$ <input id="06-01" name="06-01" size="20"/> = 0 <button type="button" id="bt-06-01" name="bt-06-01">OK</button></p>
+			<p>>$\phi(x, y, z) = z - xy = 0$.</p>
+			<p>A resposta correta é $\phi(x, y, z) = z - xy = 0$ <span class="resposta">Sua resposta: <span class="sua-resposta"></span></span></p>
+		</span>
+		<span id="quadro2" class="etapa breakpoint">
+			<p class="visible">Vejamos um exemplo de como esta forma pode ser útil. Para isso, deixemos de lado $f$ e
+                recordemos a equação da reta na geometria analítica: $y = ax + c$. $a$ é o coeficiente angular e $b$, o coeficiente linear.
+                A figura acima ilustra uma reta (OBS: Se a figura não estiver na tela <a href="javascript:downScreen()">clique aqui.)</a>.
+                Quais são $a$ e $c$</p>
+			<p class="p-06-02 visible">$y = $<input id="06-02-01" name="06-02-01" size="20"/>$x + $ <input id="06-02-02" name="06-02-02" size="20"/>
+                <button type="button" id="bt-06-02" name="bt-06-02">OK</button></p>
+			<p class="errado invisible">A resposta correta é $y = $<span class="coefa"></span>$x + $<span class="coefc"></span>.
+                <span class="resposta">Sua resposta: $y = $<span class="coefa-aluno"></span>$x + $<span class="coefb-aluno"></span></span></p>
+		</span>
+		<span id="quadro3" class="etapa breakpoint">
+			<p class="visible">Isto funciona muito bem desde que a reta não seja vertical (veja figura novamente).
+                Embora ainda seja uma reta, $y$ não é mais uma função, pois um mesmo $x$ resulta em $y$ diferentes.
+                A situação é análoga a dizer que nosso retângulo de lados $x$ e $y$ tem, ao mesmo tempo,
+                áreas $z_1$ e $z_2$. Ainda assim é uma reta, e a forma implícita dela resolve o problema:
+                $ax + by + c = 0$. Tente identificar $a$, $b$ e $c$ para a reta acima (dica: comece escrevendo $x=1$).</p>
+			<p class="p-06-03 visible">$\phi(x, y, z) = $<input id="06-03-01" name="06-03-01" size="20"/>$x + $
+                <input id="06-03-02" name="06-03-02" size="20"/>$y + $<input id="06-03-03" name="06-03-03" size="20"/>$ = 0$
+                <button type="button" id="bt-06-03" name="bt-06-03">OK</button></p>
+			<p class="errado invisible">A resposta correta é &#966;(<i>x</i>,<i>y</i>,<i>z</i>) = <i>x</i> - 1 = 0. Isto é, <i>a</i> = 1, <i>b</i> = 0 e <i>c</i> = -1. <span class="resposta">Sua resposta: &#966;(<i>x</i>,<i>y</i>,<i>z</i>) = <span class="coefa-aluno"></span>x + <span class="coefb-aluno"></span>y + <span class="coefc-aluno"></span> = 0</span></p>
+		</span>
+		<span id="quadro4" class="etapa breakpoint">
+			<p class="visible">Como você pode ver, a forma implícita da reta não tem a mesma limitação da forma explícita. Esta é apenas uma das vantagens. Nos próximos tópicos você verá outras utilidades dela.</p>
+			<p class="visible">Para terminar, determine a forma implícita da reta <i>y</i> - <i>y<sub>0</sub></i> = <i>m</i>(<i>x</i> - <i>x<sub>0</sub></i>) [use x0 para representar <i>x<sub>0</sub></i> e y0 para <i>y<sub>0</sub></i>]</p>
+			<p class="p-06-04 visible">$\phi(<i>x</i>,<i>y</i>,<i>z</i>) = <input id="06-04-01" name="06-04-01" size="20"/>x + <input id="06-04-02" name="06-04-02" size="20"/><i>y</i> + <input id="06-04-03" name="06-04-03" size="20"/> = 0 <button type="button" id="bt-06-04" name="bt-06-04">OK</button></p>
+			<p class="errado invisible">A resposta correta é <i>a</i> = -m, <i>b</i> = 1 e <i>c</i> = m*x0-y0.</p>
+			<p class="avancar invisible"><button type="button" id="bt-06-05" name="bt-06-05">Avançar</button></p>
+		</span>
+	</div>
+	<div id="botton">
+		
+	</div>
+</div>
+</body>
+</html>
