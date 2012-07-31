@@ -1,143 +1,60 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<head>
-	<title>07</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<NOSCRIPT><meta http-equiv="refresh" content="1;url=../error.html"></NOSCRIPT>
-	<link type="text/css" href="css/style.css" rel="Stylesheet" />
-	<link type="text/css" href="../css/style.css" rel="Stylesheet" />
-	<link type="text/css" href="../css/overcast/jquery-ui-1.8.6.custom.css" rel="Stylesheet" />
-	<script type="text/javascript" src="../js/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="../js/jquery-ui-1.8.6.custom.min.js"></script>
-	<script type="text/javascript" src="../js/SCORM_API_wrapper.js"></script>
-	<script type="text/javascript" src="../js/jquery-swfobject.js"></script>
-	<script type="text/javascript" src="../js/jquery.tooltip.pack.js"></script>
-	<script type="text/javascript" src="js/ai.js"></script>
-</head>
-<body>
-<div id="global">
-	<div id="top">
-	</div>
-	<div id="content">
-		<div id="slidebottom" class="slide">
-			<div class="borda"> >></div>
-			<div class="inner">Atividade Interativa</div>
+  <head>
+  	<title>Objeto de Aprendizagem</title>
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<link type="text/css" href="../css/oa.css" rel="stylesheet"/>
+  	<link type="text/css" href="../css/smoothness/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
+  
+  	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+  	<script type="text/javascript" src="../js/swfobject.js"></script>
+   	<script type="text/javascript" src="../js/scorm_wrapper.min.js"></script>
+	<script type="text/javascript" src="../js/ai.js"></script>
+   	<script type="text/javascript" src="../js/jquery-ui-1.8.6.custom.min.js"></script>
+  	
+	<script type="text/javascript" src="hooks.js"></script>
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+
+	<script type="text/javascript"
+	  src="http://cepa.if.usp.br/arthur/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>	
+	</head>  
+  <body>	
+	<div id="aicontainer">	
+		<!-- esta é a div onde vai o navegador -->
+		<div id="navegador"></div>		
+		<div id="textos"> 
+			<div id="atividade">			
+				<!-- esta é a div onde vai o arquivo swf -->
+				<div id="fls"><div id="flscontent"><img src="temp.png" /></div></div>
+
+				<!-- esta é a div onde vai o conteúdo de texto -->
+				<div id="etapaAtual">
+					<h2 style="text-align:center">Carregando atividade, por favor aguarde.<br /><img src="../figures/ampulheta.gif" /></h2>		
+				</div >		
+			</div>
+		<div id="paginaleitura">
+			
 		</div>
-		<span class="title">Limites e continuidade</span>
-		<span class="text parada-1 visible">
-			<p class="visible">O valor de <i>f</i>(<i>x</i>,<i>y</i>) para <i>x</i> = <i>x<sub>0</sub></i> e <i>y</i> = <i>y<sub>0</sub></i> é simplesmente <i>f</i>(<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>). Mas e se <i>x</i> e <i>y</i> forem número muito <i>próximos</i> de <i>x<sub>0</sub></i> e <i>y<sub>0</sub></i>, embora diferentes? Intuitivamente, podemos responder:"<i>f</i>(<i>x</i>,<i>y</i>) é muito próximo de <i>f</i>(<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>)" (é possível finalizar esta frase com "embora diferente"?). Este realmente é o caso na <i>maioria das vezes</i>; mas nem sempre. Veja esta equação:</p>
-			<p class="visible"><img src="../images/limite.jpg" title="limite"/></p>
-			<p class="visible">Ela deve ser lida assim: o limite de <i>f</i> quando <i>x</i> tende a <i>x<sub>0</sub></i> (<i>x</i> &#8594; <i>x<sub>0</sub></i>) e <i>y</i> tende a <i>y<sub>0</sub></i> (<i>y</i> &#8594; <i>y<sub>0</sub></i>) é igual a <i>L</i>.Ou seja, se <i>x</i> e <i>y</i> forem muito próximos de <i>x<sub>0</sub></i> e <i>y<sub>0</sub></i>, respectivamente, <i>f</i>(<i>x</i>,<i>y</i>) será igual a <i>L</i>, um número que não conhecemos a priori. <i>L</i> é dito "o limite" de <i>f</i> em (<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>).</p>
-			<p class="visible">Dois detalhes podem ter passado despercebidos: primeiro <i>L</i> não é necessariamente igual a <i>f</i>(<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>)</i> (veremos que isto tem a ver com a <i>continuidade</i> de <i>f</i>). Segundo, o que significa dizer que <i>x</i> é "próximo" de <i>x<sub>0</sub></i>?</p>
-			<p class="visible">Para responder esta pergunta, veja a janela de atividades(OBS: Se a figura não estiver na tela <a href="javascript:abrejanela()">clique aqui</a>.). (<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>) é um <i>ponto interior</i> ao domínio de <i>f</i> (você pode arrastá-lo), enquanto (<i>x</i>,<i>y</i>) é um ponto qualquer da vizinhança de (<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>), o cículo de raio &#948; > 0 (experimente arrastar (<i>x</i>,<i>y</i>) também).</p>
-			<p><button type="button" name="bt-07-01" id="bt-07-01">OK</button></p>
-		</span>
-		<span class="text parada-2 invisible">
-			<p class="visible box">Discutir no fórum: Por que (<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>) deve ser um ponto interior ao domínio de <i>f</i>?</p>
-			<p class="visible">A função <i>f</i> é calculada sempre em (<i>x</i>,<i>y</i>) [nunca em (<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>)], e resulta no número <i>f</i>(<i>x</i>,<i>y</i>), também apresentado na figura, na reta &#8476; à direita [você só pode alterar <i>f</i>(<i>x</i>,<i>y</i>) mexendo em (<i>x</i>,<i>y</i>)]. Há também o ponto <i>L</i>, no centro do intervalo aberto ]<i>L</i> - &#949;, <i>L</i> + &#949;[, com &#949; > 0. Arraste <i>L</i> e os colchetes ao redor dele para entender a construção da figura antes de continuar.</p>
-			<p><button type="button" name="bt-07-02" id="bt-07-02">OK</button></p>
-		</span>
-		<span class="text parada-3 invisible">
-			<p class="visible box">Discutir no fórum: Por que o <i>software</i> não permite mover <i>f</i>(<i>x</i>,<i>y</i>)? Qual é a implicação disso em (<i>x</i>,<i>y</i>)?</p>
-			<p class="visible">
-				Com isto tudo em mente, dizer que <i>L</i> é o limite de <i>f</i> quando (<i>x</i>,<i>y</i>) tende a (<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>) significa o seguinte: se eu escolher um &#949; arbitrariamente pequeno, você pode encontrar um &#948; tal que, para qualquer (<i>x</i>,<i>y</i>) na vizinhança de (<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>), <i>f</i>(<i>x</i>,<i>y</i>) pertence ao intervalo ]<i>L</i> - &#949;, <i>L</i> + &#949;[.
-			</p>
-			<p class="visible"> 
-				Caso não se lembre, dizer que <i>f</i>(<i>x</i>,<i>y</i>) pertence (&#8712;) ao intervalo ]<i>L</i> - &#949;, <i>L</i> + &#949;[ é o mesmo que escrever:
-			</p>
-			<p class="visible">
-				<i>L</i> - &#949; < <i>f</i>(<i>x</i>,<i>y</i>) < <i>L</i> + &#949;.
-			</p>
-			<p class="visible">
-				|<i>L</i> - <i>f</i>(<i>x</i>,<i>y</i>)| < &#949;
-			</p>
-			<p><button type="button" name="bt-07-03" id="bt-07-03">OK</button></p>
-		</span>
-		<span class="text parada-4 invisible">
-			<p class="visible">Parece complicado, mas a idéia é simples. Vamos experimentá=la passo-a-passo na figura acima. Nosso objetivo é determinar <i>L</i>, partindo de um valor arbitrariamente escolhido. Não é necessário preocupar-se com valores numéricos, embora você possa vê-los passando o <i>mouse</i> por cima de <i>L</i>, &#949;, &#948; <i>etc</i>.</p>
-			<p class="visible">
-				<b>Passo 1</b> Coloque (<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>) próximo de (2,2) e ajuste &#948; &#8776; 1 (de modo que a vizinhança fique toda dentro do domínio de <i>f</i>. Este é o ponto no qual calcularemos o limite.
-			</p>
-			<p><button type="button" name="bt-07-04" id="bt-07-04">OK</button></p>
-		</span>
-		<span class="text parada-5 invisible">
-			<p class="visible">
-				<b>Passo 2</b> Arraste <i>L</i> para direita, até 20, mais ou menos.
-			</p>
-			<p><button type="button" name="bt-07-05" id="bt-07-05">OK</button></p>
-		</span>
-		<span class="text parada-6 invisible">
-			<p class="visible">
-				Pela definição acima, se <i>L</i> &#8776; 20 for o limite procurado, então podemos arrastar (<i>x</i>,<i>y</i>) livremente que sempre obteremos <i>f</i>(<i>x</i>,<i>y</i>) entre colchetes ao redor de <i>L</i>. Veja se isto acontece.
-			</p>
-			<p><button type="button" name="bt-07-06" id="bt-07-06">OK</button></p>
-		</span>
-		<span class="text parada-7 invisible">
-			<p class="visible">
-				Como você pode perceber, em nenhum momento <i>f</i>(<i>x</i>,<i>y</i>) &#8712; ]<i>L</i> - &#949;, <i>L</i> + &#949;[. Logo, <i>L</i> &#8776; 20 não é o valor que procuramos. Na verdade, <i>L</i> deve estar mais próximo de <i>f</i>(<i>x</i>,<i>y</i>).
-			</p>
-			<p class="visible">
-				<b>Passo 3</b> Faça <i>L</i> &#8776; 6. Qual é o comportamento de <i>f</i>(<i>x</i>,<i>y</i>) agora?
-			</p> 
-			<p><button type="button" name="bt-07-07" id="bt-07-07">OK</button></p>
-		</span>
-		<span class="text parada-8 invisible">
-			<p class="visible">
-				Desta vez <i>f</i>(<i>x</i>,<i>y</i>) hora esta dentro do intervalo, hora não. O problema é que a vizinhança de (<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>) está muito grande.
-			</p>
-			<p class="visible">
-				<b>Passo 4</b> Faça &#948; &#8776; 0,2 (use a <i>ferramenta zoom</i>) ou simplesmente pressione o botão "avançar" (eu farei isso por você).
-			</p> 
-			<p><button type="button" name="bt-07-08" id="bt-07-08">Avançar</button></p>
-		</span>
-		<span class="text parada-9 invisible">
-			<p class="visible">
-				Agora <i>f</i>(<i>x</i>,<i>y</i>) está totalmente contido no intervalo ]<i>L</i> - &#949;, <i>L</i> + &#949;[.<button type="button" name="bt-07-09-01" id="bt-07-09-01">OK</button><span class="invisible continua"> No entanto, ainda pela definição de limite, eu posso reduzir &#949; (para 1), diminuindo assim a extensão desse intervalo, e novamente colocando <i>f</i>(<i>x</i>,<i>y</i>) fora dele. Verifique.<button type="button" name="bt-07-09-02" id="bt-07-09-02">OK</button></span>
-			</p>
-		</span>
-		<span class="text parada-10 invisible">
-			<p class="visible">
-				O que devemos fazer para corrigir isto é, novamente, aproximar <i>L</i> de <i>f</i>(<i>x</i>,<i>y</i>).
-			</p>
-			<p class="visible">
-				<b>Passo 5</b> Faça <i>L</i> = 4 e verifique o comportamento de <i>f</i>(<i>x</i>,<i>y</i>).
-			</p>
-			<p><button type="button" name="bt-07-10" id="bt-07-10">OK</button></p>
-		</span>
-		<span class="text parada-11 invisible">
-			<p class="visible">
-				Parece que <i>f</i>(<i>x</i>,<i>y</i>), voltou a manter-se entre os colchetes. Mas agora eu reduzi ainda mais &#949; para 0,5.
-			</p>
-			<p class="visible">
-				<b>Passo 6</b> Reduza &#948; mais um pouco (não se esqueça da ferramenta de <i>zoom</i>), de modo a devolver <i>f</i>(<i>x</i>,<i>y</i>) para o intervalo ]<i>L</i> - &#949;, <i>L</i> + &#949;[. Ou simplesmente pressione prosseguir (eu farei isso por você).
-			</p>
-			<p><button type="button" name="bt-07-11" id="bt-07-11">OK</button></p>
-		</span>
-		<span class="text parada-12 invisible">
-			<p class="visible">
-				Você percebe que eu posso continuar reduzindo &#949;, e você pode continuar ajustando <b><i>L</i></b> e &#948; de modo a manter <i>f</i>(<i>x</i>,<i>y</i>) no intervalo ]<i>L</i> - &#949;, <i>L</i> + &#949;[ para qualquer (<i>x</i>,<i>y</i>) na vizinhança de (<i>x<sub>0</sub></i>,<i>y<sub>0</sub></i>)?.
-			</p>
-			<p class="visible">
-				<b>Passo 7</b> Pressione o botão [ÍCONE ZOOM MENOS] algumas vezes para voltar à visualização inicial e responda: quanto vale <i>L</i>?
-			</p>
-			<p class="p-07-12 visible"><i>L</i> = <input id="07-12" name="07-12" size="20"/> <button type="button" id="bt-07-12" name="bt-07-12">OK</button></p>
-			<p class="errado invisible">A resposta correta é <i>L</i> = 4. Se você não chegou a este resultado (aproximadamente), refaça os passos acima antes de prosseguir.</p>
-		</span>
-		<span class="text parada-13 invisible">
-			<p class="visible">Ou seja,</p>
-			<p class="visible"><img src="../images/limite2.jpg" title="limite2"/></p>
-			<p class="visible">Finalmente, note que <i>L</i> = <i>f</i>(<i>2</i>,<i>2</i>). Em outras palavras, o limite de <i>f</i> em (<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>) é simplesmente <i>f</i>(<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>). Quando isto acontece, dizemos que <i>f é contínua em</i> (<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>). E quando isto acontece para <i>todos</i> os pontos do domínio de <i>f</i>, dizemos que <i>f é contínua</i> (em todos os pontos).</p>
-			<p class="visible">Finalmente, note que <i>L</i> = <i>f</i>(<i>2</i>,<i>2</i>). Em outras palavras, o limite de <i>f</i> em (<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>) é simplesmente <i>f</i>(<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>). Quando isto acontece, dizemos que <i>f é contínua em</i> (<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>). E quando isto acontece para <i>todos</i> os pontos do domínio de <i>f</i>, dizemos que <i>f é contínua</i> (em todos os pontos).</p>
-			<p class="visible">Acontece que nem sempre é o caso. A figura acima agora ilustra uma outra função, diferente de <i>f</i>(<i>x</i>,<i>y</i>) = <i>xy</i>, e que não é contínua. Refaça os passos anteriores na busca por <i>L</i> para (<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>) = (2,2) e discuta com seus colegas no fórum: é possível determinar o limite dessa função em (2,2)? Por que? E que função é essa?</p>
-			<p><button type="button" name="bt-07-13" id="bt-07-13">Finalizar</button></p>
-		</span>
 	</div>
-	<div id="botton">
+		
+		<a href="#" onClick="downScreen()">down</a> 
+	<a href="#" onClick="upScreen()">up</a>
 		
 	</div>
-</div>
-</body>
+
+		
+  	<h1>Campos e suas propriedades</h1>
+	<div class="bor"></div>
+	<div id="posicaoconteudo"></div>
+	
+	<div id="total"></div>
+	<div id="debug">debug</div>
+
+
+	
+  </body>
 </html>
