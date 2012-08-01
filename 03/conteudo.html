@@ -13,42 +13,114 @@
 		<span id="quadro1" class="etapa breakpoint">
 			<span class="title">Domínio aberto ou fechado?</span>
 			<p class="visible">Sempre que falamos em domínio de uma função, precisamos saber identificar se ele é <i>aberto</i> ou <i>fechado</i>. Esta característica é importante porque ela está no cerne da definição de limites e derivadas, que veremos em breve.</p>
-			<p class="visible">Dizemos que <i>um domínio é aberto se todos os seus pontos são interiores</i>. E por exclusão, um domínio é fechado se ele não for aberto. Mas, o que são <i>pontos interiores</i>? A resposta é mais ou menos a que você espera, com alguma sutilezas. Vamos começar analisando a figura na janela de atividades, que agora exibe o domínio de <i>f</i> no nosso contexto (em cinza);(caso você não esteja vendo a atividade <a href="javascript:downScreen()">clique aqui</a>).</p>
+			<p class="visible">Dizemos que <i>um domínio é aberto se todos os seus pontos são interiores</i>. E por exclusão, um domínio é fechado se ele não for aberto. Mas, o que são <i>pontos interiores</i>? A resposta é mais ou menos a que você espera, com alguma sutilezas. Vamos começar analisando a figura na janela de atividades, que agora exibe o domínio de <i>f</i> no nosso contexto (em cinza); (caso você não esteja vendo a atividade <a href="javascript:downScreen()">clique aqui</a>).</p>
 			<p class="visible">Ao redor do ponto (<i>x</i>,<i>y</i>) definimos um círculo de raio &#948;(cinza escuro) e o chamamos de <i>a vizinhança de (x,y)</i>. Assim, (<i>x</i>,<i>y</i>) será um ponto interior a <i>D<sub>f</sub></i> se pudermos ajustar &#948; de tal modo que toda a vizinhança de (<i>x</i>,<i>y</i>) também pertença a <i>D<sub>f</sub></i>. Visualmente isto significa que o círculo ao redor de (<i>x</i>,<i>y</i>) deve ficar inteiramente dentro de <i>D<sub>f</sub></i>.</p>
+			<p class="visible"><button type="button" id="avancar1">Avançar</button></p>
+		</span>
+		<span id="quadro2" class="etapa breakpoint">
 			<p class="visible">Faça o seguinte, sempre mantendo (<i>x</i>,<i>y</i>) <i>dentro</i> do domínio:</p>
 			<p class="passos visible"><b>Passo 1:</b> arraste (<i>x</i>,<i>y</i>) para perto da fronteira do domínio.</p>
 			<p><button type="button" name="bt-03-01" id="bt-03-01">OK</button></p>
-		</span>
-		<span id="quadro2" class="etapa breakpoint">
+			<span id="parada-2">
 			<p class="visible"><b>Passo 2:</b> reduza &#948; de modo que toda vizinhança fique dentro do domínio.</p>
-			<p><button type="button" name="bt-03-02" id="bt-03-02">OK</button></p>
-			
-			
-			<p class="visible"><button type="button" id="bt-02-02">OK</button></p>
-
-
-			<p id="errou01" class="errado invisible">A resposta correta é $x>0$ e $y>0$. E deste modo definimos o domínio:</p>
-			<p id="acertou01" class="correto invisible">Correto! E deste modo definimos o domínio:</p>
-			<div id="resp">
-			<p class="visible">$D_f = {(x,y) \in \mathscr{R} | x > 0 e y > 0}$ </p>
-			<p class="visible">Você deve ler esta expressão assim: $D_f$ é o conjunto de pares</i> $(x, y)$<i>pertencentes a</i>
-                $\mathscr{R}^2$  <i>tal que $x>0$ e $y>0$. E caso você não se lembre, $\mathscr{R}^2$ é simplesmente
-                    uma notação reprimida de $\mathscr{R}^2 \times \mathscr{R}^2$, que por sua vez significa que tanto $x$ quanto $y$ são números Reais($\mathscr{R}^2$).</p>
-			<p class="visible">Para que esta leitura acima fique clara, associe os símbolos com seus significados na
-                janela de atividade: (caso você não esteja vendo
-                a atividade,  <a href="javascript:downScreen()">clique aqui</a>)</p>
-			</div>
-            <p class="visible"><button type="button" id="btToSlide3">Avançar</button></p>
+			<p><button type="button" name="bt-03-02" id="bt-03-02">OK</button></p>		
+			</span>
+			<span id="parada-3">
+			<p><b>Passo 3:</b> amplie a figura (botão +) e volte ao passo 1. Refaça esses passos algumas vezes antes de continuar.</p>
+			<p><button type="button" name="bt-03-03" id="bt-03-03">OK</button></p>
+			</span>
+			<span id="parada-4">
+			<p>Você percebe que é possível continuar assim indefinidamente, e que sempre é possível ajustar &#948; de modo que toda a vizinhança de (<i>x</i>,<i>y</i>) fique dentro de <i>D<sub>f</sub></i>? Isto acontece porque (<i>x</i>,<i>y</i>), nesta situação, é um ponto interior. Ou seja: <i>ponto interior a um domínio é aquele para o qual é possível definir uma vizinhança inteiramente contida no domínio.</i></p>
+			<p><button type="button" name="bt-03-04" id="bt-03-04">OK</button></p>
+			</span>
+			<span id="parada-5">
+			<p class="visible">Pergunta: o que você acha que é um ponto <i>exterior</i>?</p>
+			<p><button type="button" name="bt-03-05" id="bt-03-05">OK</button></p>
+			</span>
 		</span>
-
-		
-		<span id="quadro4" class="etapa breakpoint">
-			<p class="visible">Finalmente podemos expressar $f$ apropriadamente:</p></br>
-			<p class="visible">$f$ : $D_f$ &#8594; &#8476; </p>
-			<p class="visible">$f(x,y) = xy$</p>
-			<p class="visible">A primeira linha diz que $f$ é uma regra que associa $D_f$ a $\mathscr{R}$, e a segunda
-                linha diz <i>como</i> fazer essa associação.</p>
-			<p class="visible"><button type="button" id="bt-02-03">Avançar</button></p>
+		<span id="quadro3" class="etapa breakpoint">
+			<span id="parada-6">
+			<p class="visible">No final das contas, a definição de pontos interior e exterior não foge muito do que esperaríamos. Mas existem pontos que não são nem interiores e nem exteriores, e esta é a sutiliza mencionada há pouco. Esses são pontos que estão na <i>fronteira</i> do domínio.</p>
+			<p class="visible">Para entendermos isso, trocarei <i>x</i> > 0 por <i>x</i> &#8805; 0 (o mesmo para <i>y</i>) na definição do domínio de <i>f</i>.</p>
+			<p class="visible">Faça o seguinte: coloque (<i>x</i>,<i>y</i>) precisamente sobre a fronteira do domínio. Para isso, arraste-o cuidadosamente para lá até que sua fronteira comece a brilhar, e solte-o quando isso acontecer.</p>
+			<div id="dialog-confirm" title="Posição incorreta" style="display:none;">
+				<p>O ponto (<i>x</i>,<i>y</i>) não está na fronteira. O que você deseja fazer?</p>
+			</div>
+			<p><button type="button" name="bt-03-06" id="bt-03-06">OK</button></p>
+			</span>
+			<span id="parada-7">
+			<p class="visible">O objetivo é reduzir &#948; até que a vizinhança de (<i>x</i>,<i>y</i>) fique toda dentro ou fora do domínio. Faça isso: reduza &#948;, amplie a figura, reduza ainda mais &#948;, amplie de novo... Qual é a sua conclusão?</p>
+			<p><button type="button" name="bt-03-07" id="bt-03-07">OK</button></p>
+			</span>
+			<span id="parada-8">			
+			<p class="visible">Perceba que, mesmo estando na fronteira, (<i>x</i>,<i>y</i>) pertence ao domínio. Ainda assim, não podemos classificá-lo como ponto interior. Com isto em mente, responda: o domínio {(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup> | <i>x</i> &#8805; 0 &#8743; <i>y</i> &#8805; 0} é aberto ou fechado?</p>
+			<p class="visible">
+				<select id="sl-03-dom-01"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select><span class="invisible suaresp-01"></span>
+			</p>
+			<p id="errou01" class="errado invisible">Este domínio é <i>fechado</i>, pois os pontos que ficam na fronteira não são pontos interiores, e ainda assim fazem parte do domínio. Logo, nem todos os pontos do domínio são interiores (definição de domínio aberto).</p>
+			<p id="acertou01" class="correto invisible">Resposta correta!</p>
+			<p><button type="button" name="bt-03-08" id="bt-03-08">OK</button></p>
+			</span>
+			<span id="parada-9">
+			<p class="visible">E se alterarmos a desigualdade em <i>x</i> e <i>y</i>, voltando para a definição inicial de <i>D<sub>f</sub></i>, isto é, {(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup> | <i>x</i> > 0 &#8743; <i>y</i> > 0}. É aberto ou fechado?</p>
+			<p class="visible"><select id="sl-03-dom-02"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p>
+			<p id="errou02" class="errado invisible">Este domínio é <i>aberto</i>, pois a fronteira (<i>x</i> = 0 e <i>y</i> = 0) não pertence a ele. Ou seja, apenas pontos interiores compõem o domínio.</p>
+			<p id="acertou02" class="correto invisible">Resposta correta!</p>
+			<p><button type="button" name="bt-03-09" id="bt-03-09">OK</button></p>
+			</span>
+			<span id="parada-10">
+			<p class="visible">Mas cuidado: não podemos simplesmente associar desigualdades a domínios abertos. Vejamos um exemplo: suponha que nosso retângulo tenha lados <i>maiores ou iguais</i> a <i>&#960;</i>(pi), um número irracional: <i>x</i> &#8805; <i>&#960;</i> e <i>y</i> &#8805; <i>&#960;</i> (veja figura acima). Veja se você consegue encontrar algum ponto na fronteira.</p>
+			<p><button type="button" name="bt-03-10" id="bt-03-10">OK</button></p>
+			</span>
+			<span id="parada-11">
+			<p class="visible">Este domínio é aberto ou fechado?</p>
+			<p class="visible"><select id="sl-03-dom-03"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p>
+			<p id="errou03" class="errado invisible">Resposta incorreta.</p>
+			<p id="acertou03" class="correto invisible">Resposta correta!</p>
+			<p><button type="button" name="bt-03-11" id="bt-03-11">OK</button></p>
+			</span>
+			<span id="parada-12">
+			<p class="visible">Desta vez não foi possível encontrar um ponto de fronteira porque, apesar de usar uma igualdade na restrição de <i>x</i> e <i>y</i>, <i>&#960;</i> é um número irracional. Ou seja, nós podemos sempre fazer <i>x</i> = 3.14, <i>x</i> = 3.141, <i>x</i> = 3,1415... sem nunca chegar a <i>&#960;</i> (na verdade, a fronteira não existe neste caso). E pelo mesmo motivo, podemos sempre encontrar um &#948; suficientemente pequeno para garantir que a vizinhança de (<i>x</i>,<i>y</i>) esteja dentro domínio. Assim, apesar da igualdade, todos os pontos deste domínio são interiores. Logo o domínio é <i>aberto</i>.</p>
+			<p class="visible">Para exercitar esses conceitos, classifique os domínios abaixo (eles não têm relação com a figura acima):</p>
+				<table>
+				<tr>
+					<td width="250px"><p>{(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup> | <i>x</i> &#8805; e &#8743; <i>y</i> &#8804; e}</td>
+					<td><select id="sl-03-dom-04"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p id="errou03-1" class="errado invisible">Este domínio é aberto pois <i>e</i> é um número irracional.</p>
+					<p id="acertou03-1" class="correto invisible">Resposta correta!</p></td>
+				</tr>
+				<tr>
+					<td><p>{(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup> | <i>x</i> &#8805; ln <i>e</i> &#8743; <i>y</i> < 0}</td>
+					<td><select id="sl-03-dom-05"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p id="errou03-2" class="errado invisible">Este domínio é fechado, pois ln <i>e</i> = 1, de modo que <i>x</i> &#8805; 1.</p>
+					<p id="acertou03-2" class="correto invisible">Resposta correta!</p></td>
+				</tr>
+				<tr>
+					<td><p>{(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup>}</td>
+					<td><select id="sl-03-dom-06"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p id="errou03-3" class="errado invisible">Este domínio é aberto pois não há limites impostos a <i></i>x</i> ou a <i>y</i>.</p>
+					<p id="acertou03-3" class="correto invisible">Resposta correta!</p></td>
+				</tr>
+				<tr>
+					<td><p>{(<i>x</i>,<i>y</i>) &#8712; &#8476;<sup>2</sup> | <i>x</i> &#8804; 1/3 &#8743; <i>y</i> &#8805; 1}</td>
+					<td><select id="sl-03-dom-07"><option value="" selected></option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></td>
+				</tr>
+				<tr>
+					<td colspan="2"><p id="errou03-4" class="errado invisible">Este domínio é fechado pois 1/3 é um número racional.</p>
+					<p id="acertou03-4" class="correto invisible">Resposta correta!</p></td>
+				</tr>
+				</table>
+			<p><button type="button" name="bt-03-12" id="bt-03-12">OK</button></p>
+			</span>
+			<span id="parada-13">
+			<p class="visible">Que tal discutir o que você aprendeu até agora com seus colegas no <a href="#" title="Fórum" target="_blank">fórum</a> desta atividade <i><a href="#" title="Fórum" target="_blank">online</a></i> ? Talvez algum colega seu precise de ajuda, ou talvez você possa conseguir ajuda por lá.</p>
+		</span>
 		</span>
 		
 		
