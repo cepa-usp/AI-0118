@@ -30,7 +30,7 @@
 		<item identifier="item4" identifierref="resource_item4">
 			<title>Função inversa</title>
 		</item>
-		<!--<item identifier="item5" identifierref="resource_item5">
+		<item identifier="item5" identifierref="resource_item5">
 			<title>Gráficos e curvas de nível</title>
 		</item>
 		<item identifier="item6" identifierref="resource_item6">
@@ -38,7 +38,7 @@
 		</item>
 		<item identifier="item7" identifierref="resource_item7">
 			<title>Limites e continuidade</title>
-		</item>-->
+		</item>
 		<imsss:sequencing>
 			<imsss:controlMode choiceExit="true" flow="true"/>
 			<imsss:deliveryControls completionSetByContent="true" objectiveSetByContent="true"/>

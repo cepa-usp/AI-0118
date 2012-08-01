@@ -10,7 +10,7 @@ var a_sort;
 var c_sort;
 
 
-var oaName = "AI-0118_5"
+var oaName = "AI-0118_6"
 function AILocalStorageData() {
     this.resp_06_01_verify = "";
 
