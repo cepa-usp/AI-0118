@@ -1,62 +1,57 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<head>
-	<title>04</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<NOSCRIPT><meta http-equiv="refresh" content="1;url=../error.html"></NOSCRIPT>
-	<link type="text/css" href="css/style.css" rel="Stylesheet" />
-	<link type="text/css" href="../css/style.css" rel="Stylesheet" />
-	<link type="text/css" href="../css/overcast/jquery-ui-1.8.6.custom.css" rel="Stylesheet" />
-	<script type="text/javascript" src="../js/jquery-1.5.1.min.js"></script>
-	<script type="text/javascript" src="../js/jquery-ui-1.8.6.custom.min.js"></script>
-	<script type="text/javascript" src="../js/SCORM_API_wrapper.js"></script>
-	<script type="text/javascript" src="../js/jquery-swfobject.js"></script>
-	<script type="text/javascript" src="../js/jquery.tooltip.pack.js"></script>
-	<script type="text/javascript" src="js/ai.js"></script>
-	
-</head>
-<body>
-<div id="global">
-	<div id="top">
+  <head>
+  	<title>Objeto de Aprendizagem</title>
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<link type="text/css" href="../css/oa.css" rel="stylesheet"/>
+  	<link type="text/css" href="../css/smoothness/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
+	<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui-1.8.22.custom.min.js"></script>
+  	<script type="text/javascript" src="../js/swfobject.js"></script>
+   	<script type="text/javascript" src="../js/scorm_wrapper.min.js"></script>
+	<script type="text/javascript" src="../js/ai.js"></script>  	
+	<script type="text/javascript" src="hooks.js"></script>
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript"
+	  src="http://cepa.if.usp.br/arthur/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>	
+	</head>  
+  <body>	
+	<div id="aicontainer">	
+		<!-- esta é a div onde vai o navegador -->
+		<div id="navegador"></div>		
+		<div id="textos"> 
+			<div id="atividade">			
+				<!-- esta é a div onde vai o arquivo swf -->
+				<div id="fls"><div id="flscontent"><img src="temp.png" /></div></div>
+
+				<!-- esta é a div onde vai o conteúdo de texto -->
+				<div id="etapaAtual">
+					<h2 style="text-align:center">Carregando atividade, por favor aguarde.<br /><img src="../figures/ampulheta.gif" /></h2>		
+				</div >		
+			</div>
+		<div id="paginaleitura">
+			
+		</div>
 	</div>
-	<div id="content">
-		<span class="title">Função inversa</span>
-		<span class="text parada-1 visible">
-			<p class="visible">Responda: se nosso retângulo tem área <i>z</i> = <i>f</i>(<i>x</i>,<i>y</i>) = 30 e seu lado <i>x</i> = 5, quanto vale <i>y</i>?</p>
-			<p class="p-04-01 visible"><i>y</i> = <input id="04-01" name="04-01" size="20"/> <button type="button" id="bt-04-01" name="bt-04-01">OK</button></p>
-			<p class="correto invisible"><i>y</i> = 6</p>
-			<p class="errado invisible"><i>y</i> = 6 <span class="resposta">Sua resposta: <span class="sua-resposta"></span></span></p>
-			<p class="errado invisible">A resposta correta é <i>y</i> = 30/5 = 6.</p>
-		</span>
-		<span class="text parada-2 invisible">
-			<p class="visible">E de forma genérica: se a área <i>z</i> e o lado <i>x</i> forem dados, qual é a expressão que define <i>y</i>?</p>
-			<p class="p-04-02 visible"><i>y</i> = <input id="04-02" name="04-02" size="20"/> <button type="button" id="bt-04-02" name="bt-04-02">OK</button></p>
-			<p class="correto invisible"><i>y</i> = <i>z</i>/<i>x</i></p>
-			<p class="errado invisible"><span class="resposta">Sua resposta: <span class="sua-resposta"></span></span></p>
-			<p class="errado invisible">A resposta correta é <i>y</i> = <i>z</i>/<i>x</i>.</p>
-		</span>
-		<span class="text parada-3 invisible">
-			<p class="visible">Outra pergunta: se a área do retângulo é 30 e <i>x = 0</i>, quanto vale <i>y</i>?</p>
-			<p class="p-04-03 visible"><i>y</i> = <input id="04-03" name="04-03" size="20"/> <button type="button" id="bt-04-03" name="bt-04-03">OK</button></p>
-			<p class="invisible"><span class="resposta">Sua resposta: <span class="sua-resposta"></span></span></p>
-		</span>
-		<span class="text parada-4 invisible">
-			<p class="visible">Opa! Divisão por zero. Mais ainda: a pergunta não faz sentido, pois o retângulo simplesmente não existe. Não foi à toa que excluímos a possibilidade <i>x</i> = 0 do domínio de f.</p>
-			<p class="visible">Este problema ilustra uma questão importante: nossa função nem sempre pode ser invertida. Isto é, desde que <i>x</i> &#8800; 0 podemos inverter <i>f</i> e determinar <i>y</i> como uma função de <i>x</i> e <i>z</i>. Mas para <i>x</i> = 0 isto não pode ser feito. Isto acontece com bastante frequência na Matemática.</p>
-			<p class="visible">Mas independente de qual seja a função, o importante é compreender que a possibilidade de inversão de uma função qualquer depende do domínio dela. No nosso caso, <i>D<sub>f</sub></i> não inclui <i>x</i> = 0 e, por isso, podemos inverter <i>f</i>. Mas se <i>D<sub>f</sub></i> incluísse <i>x</i> = 0, não poderíamos fazer isso. Reveja a definição de <i>f</i>:</p>
-			<p class="visible"><i>f</i> : <i>D<sub>f</sub></i> &#8594; &#8476;</p>
-			<p class="visible"><i>f</i>(<i>x</i>,<i>y</i>) = <i>xy</i></p>
-			<p class="visible">Lembre-se: o domínio faz parte da definição de <i>f</i>.</p>
-			<p><button type="button" id="bt-04-04" name="bt-04-04">Avançar</button></p>
-			<p class="invisible final">Continua no Tópico 2.</p>
-		</span>
-	</div>
-	<div id="botton">
+		
+		<a href="#" onClick="downScreen()">down</a> 
+	<a href="#" onClick="upScreen()">up</a>
 		
 	</div>
-</div>
-</body>
+
+		
+  	<h1>Domínio Aberto ou Fechado?</h1>
+	<div class="bor"></div>
+	<div id="posicaoconteudo"></div>
+	
+	<div id="total"></div>
+	<div id="debug">debug</div>
+
+
+	
+  </body>
 </html>
