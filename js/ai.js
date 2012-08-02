@@ -22,8 +22,8 @@ function Position(name) {
 }
 
 var AI_WIDTH = 700;
-var AI_HEIGHT = 708;
-var AI_NAV_HEIGHT = 20;
+var AI_HEIGHT = 700;
+var AI_NAV_HEIGHT = 30;
 var AI_MOVIE_HEIGHT_MIN = 0;
 var AI_MOVIE_HEIGHT = 480;
 
@@ -341,15 +341,15 @@ function enableElement(elementString){
 function iluminar(){
 	resetarBlocos();
 	var b = positions[currentSlide].breakpoint-1;
-	$("#bl_"+b).css("backgroundColor", "yellow")	
-	$("#bl_"+b).css("color", "black")
+	//$("#bl_"+b).css("backgroundColor", "yellow")	
+	//$("#bl_"+b).css("color", "black")
 }
 
 function resetarBlocos(){
 	var qtde = $(".bloco").size();
 	for(var i=0; i<qtde;i++){
-		$(".bloco").css("backgroundColor", "#000000")
-		$(".bloco").css("color", "#FFFFFF")
+		//$(".bloco").css("backgroundColor", "#000000")
+		//$(".bloco").css("color", "#FFFFFF")
 	}
 
 }
