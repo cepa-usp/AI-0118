@@ -5,6 +5,7 @@ html {
 	padding:0px 0px 0px 0px;
 	margin-top:0px;
 	padding-top:0px;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
 }
 body {
 	background-color:#ffffff;
@@ -61,10 +62,11 @@ h1 {
 	text-align:justify;
 	background-color:#fff;
 	height:auto;
+	padding-top: 10px;
 	padding-left:10px;
 	padding-right:10px;	
 	overflow:auto;
-	border:1px solid black;
+	border:1px solid #dbdbdb;
 }
 
 .etapa {
@@ -88,9 +90,9 @@ h1 {
 }
 
 #atividade {
-	width:700px;
+	width:710px;
 	height:600px;
-	background-color:#333333;
+	background-color:#dbdbdb;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:5px;
@@ -111,15 +113,24 @@ h1 {
 	/*display:none;*/
 }
 
-.errado {
-	background-color:#FFCCCC;
-	padding-left:30px;
+.correto{
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  color: #008800;
+  padding: 0px;
+  display: inline-block;
 }
 
-.correto {
-	background-color:#CCFFCC;
-	padding-left:30px;
+.errado  {
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  color: #FF0000;
+  padding: 0px;
+  display: inline-block;
 }
+
 
 #total {
 	display:none;
@@ -133,40 +144,44 @@ h1 {
 	width:700px;
 	height:20px;
 	padding-left:20px;
-	margin-top:4px;
+	margin-top:5px;
 	/*border:1px solid #cccccc;	*/
 	margin-left:auto;
 	margin-right:auto;
 }
 
 .bloco {
-	height:16px;
-	width:16px;
-	font-size:10px;
+	height:29px;
+	width:29px;
+	font-size:12px;
 	font-weight:bold;
 	text-align:center;
+	padding-top:6px;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
 	float:left;	
-	color:white;
-	background-color:black;
+	color:black;
+	background-image:url('step.png');
+	background-repeat:no-repeat;
 	cursor:pointer;
 	cursor:hand;
 	
-	border:2px #550000 solid;
+	/*border:2px #550000 solid;*/
 }
 
 .bloco:hover {
 	
-	color:red;
+	/*color:red;*/
 	
-	background-color:#333333;
+	/*background-color:#333333;*/
 }
 
 .linha {
 	height:8px;
 	width:10px;
 	float:left;
+	padding-top:5px;
 	font-size:10px;
-	border-bottom:2px solid black;
+	border-bottom:2px solid #dbdbdb;
 	font-weight:bold;
 	color:white;
 }
@@ -180,4 +195,14 @@ h1 {
 	margin-right:auto;
 	background-color:white;
 	text-align:center;
+}
+
+.title {
+	
+	font-size:14px;
+	font-weight:bold;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	color:black;
+	
+	/*border:2px #550000 solid;*/
 }
