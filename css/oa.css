@@ -58,6 +58,7 @@ h1 {
 #etapaAtual {
 	margin-left:auto;
 	margin-right:auto;
+	margin-top: 4px;
 	width:680px;
 	text-align:justify;
 	background-color:#fff;
@@ -169,10 +170,19 @@ h1 {
 }
 
 .bloco:hover {
-	
-	/*color:red;*/
-	
-	/*background-color:#333333;*/
+	padding-top:6px;
+	height:29px;
+	width:29px;
+	background-image:url('step_hover.png');
+	background-repeat:no-repeat;
+}
+
+.bloco:active{
+	padding-top:6px;
+	height:29px;
+	width:29px;
+	background-image:url('step_active.png');
+	background-repeat:no-repeat;
 }
 
 .linha {
