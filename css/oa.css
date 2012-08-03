@@ -161,27 +161,17 @@ h1 {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	float:left;	
 	color:black;
-	background-image:url('step.png');
+	background-image:url('/118/figures/step.png');
 	background-repeat:no-repeat;
 	cursor:pointer;
 	cursor:hand;
-	
-	/*border:2px #550000 solid;*/
 }
 
 .bloco:hover {
 	padding-top:6px;
 	height:29px;
 	width:29px;
-	background-image:url('step_hover.png');
-	background-repeat:no-repeat;
-}
-
-.bloco:active{
-	padding-top:6px;
-	height:29px;
-	width:29px;
-	background-image:url('step_active.png');
+	background-image:url('/118/figures/step_hover.png');
 	background-repeat:no-repeat;
 }
 

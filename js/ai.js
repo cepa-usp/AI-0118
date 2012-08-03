@@ -284,7 +284,7 @@ function loadSlide(n){
 			iluminar('bl_'+number);
 			if(maxPos<=number) {
 				maxPos = number;
-				$("#bl_"+number).css("border", "2px green solid");
+				//$("#bl_"+number).css("border", "2px green solid");
 			}
 			
 		}
@@ -341,8 +341,7 @@ function enableElement(elementString){
 function iluminar(){
 	resetarBlocos();
 	var b = positions[currentSlide].breakpoint-1;
-	//$("#bl_"+b).css("backgroundColor", "yellow")	
-	//$("#bl_"+b).css("color", "black")
+	$("#bl_"+b).css('background-image', 'url("/118/figures/step_active.png")');
 }
 
 function resetarBlocos(){
