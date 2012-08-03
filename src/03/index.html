@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+  	<title>Objeto de Aprendizagem</title>
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<link type="text/css" href="../css/oa.css" rel="stylesheet"/>
+  	<link type="text/css" href="../css/smoothness/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
+	<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui-1.8.22.custom.min.js"></script>
+  	<script type="text/javascript" src="../js/swfobject.js"></script>
+   	<script type="text/javascript" src="../js/scorm_wrapper.min.js"></script>
+	<script type="text/javascript" src="../js/ai.js"></script>  	
+	<script type="text/javascript" src="hooks.js"></script>
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript"
+	  src="http://cepa.if.usp.br/arthur/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>	
+	</head>  
+  <body>	
+	<div id="aicontainer">	
+		<!-- esta é a div onde vai o navegador -->
+		<div id="navegador"></div>		
+		<div id="textos"> 
+			<div id="atividade">			
+				<!-- esta é a div onde vai o arquivo swf -->
+				<div id="fls"><div id="flscontent"><img src="temp.png" /></div></div>
+
+				<!-- esta é a div onde vai o conteúdo de texto -->
+				<div id="etapaAtual">
+					<h2 style="text-align:center">Carregando atividade, por favor aguarde.<br /><img src="../figures/ampulheta.gif" /></h2>		
+				</div >		
+			</div>
+		<div id="paginaleitura">
+			
+		</div>
+	</div>
+		
+		<a href="#" onClick="downScreen()">down</a> 
+	<a href="#" onClick="upScreen()">up</a>
+		
+	</div>
+
+		
+  	<h1>Domínio Aberto ou Fechado?</h1>
+	<div class="bor"></div>
+	<div id="posicaoconteudo"></div>
+	
+	<div id="total"></div>
+	<div id="debug">debug</div>
+
+
+	
+  </body>
+</html>
