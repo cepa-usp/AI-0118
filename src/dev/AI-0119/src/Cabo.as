@@ -17,6 +17,7 @@ package
 		private var _posExpr:Point = new Point(0, 0);
 		private var _posMat:Point = null;
 		private var contr:Point = new Point(0, 0);
+		private var _state:int = 0;
 		
 		
 		public function Cabo() 
@@ -26,8 +27,7 @@ package
 		
 		public function bindMouseEvents():void 
 		{
-			stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
-			
+			stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);			
 		}
 		
 		public function setDestination(dest:SimbExpr):void 
@@ -38,17 +38,17 @@ package
 			stage.removeEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 		}
 		
-		private function onMouseMove(e:MouseEvent):void 
+		public function onMouseMove(e:MouseEvent):void 
 		{
 			posExpr.x = e.stageX;
 			posExpr.y = e.stageY;
 			draw();
 		}
 		
-		private function draw():void 
+		public function draw():void 
 		{
 			this.graphics.clear();
-			this.graphics.lineStyle(2, 0xFF8000, 1);
+			this.graphics.lineStyle(2, 0xEA5515, 1);
 			this.graphics.moveTo(posMat.x, posMat.y);
 			//this.graphics.lineTo(posExpr.x, posExpr.y);
 			contr.x = _posMat.x + (posExpr.x - _posMat.x)/2;
@@ -60,7 +60,7 @@ package
 			var ang:Number = Math.atan2(posExpr.y-posMat.y, posExpr.x-posMat.x);
 			
 			
-			trace(Math.cos(ang))
+			//trace(Math.cos(ang))
 		}
 		
 
@@ -103,6 +103,16 @@ package
 		public function set posMat(value:Point):void 
 		{
 			_posMat = value;
+		}
+		
+		public function get state():int 
+		{
+			return _state;
+		}
+		
+		public function set state(value:int):void 
+		{
+			_state = value;
 		}
 		
 	}

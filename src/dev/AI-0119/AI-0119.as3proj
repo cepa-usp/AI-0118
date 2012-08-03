@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="bin\AI0119.swf" />
     <movie fps="30" />
-    <movie width="800" />
-    <movie height="600" />
+    <movie width="640" />
+    <movie height="480" />
     <movie version="10" />
     <movie minorVersion="1" />
     <movie platform="Flash Player" />
@@ -16,7 +16,7 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
-    <class path="..\..\..\..\..\..\..\..\Source\as3\Actuate 1.23" />
+    <class path="..\..\..\..\..\..\..\..\..\Source\as3\Actuate 1.23" />
   </classpaths>
   <!-- Build options -->
   <build>
