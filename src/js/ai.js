@@ -341,7 +341,7 @@ function enableElement(elementString){
 function iluminar(){
 	resetarBlocos();
 	var b = positions[currentSlide].breakpoint-1;
-	$("#bl_"+b).css('background-image', 'url("/118/figures/step_active.png")');
+	$("#bl_"+b).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_active.png")');
 }
 
 function resetarBlocos(){

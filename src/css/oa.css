@@ -146,7 +146,6 @@ h1 {
 	height:20px;
 	padding-left:20px;
 	margin-top:5px;
-	/*border:1px solid #cccccc;	*/
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -161,7 +160,7 @@ h1 {
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 	float:left;	
 	color:black;
-	background-image:url('/118/figures/step.png');
+	background-image:url('http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step.png');
 	background-repeat:no-repeat;
 	cursor:pointer;
 	cursor:hand;
@@ -171,7 +170,7 @@ h1 {
 	padding-top:6px;
 	height:29px;
 	width:29px;
-	background-image:url('/118/figures/step_hover.png');
+	background-image:url('http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_hover.png');
 	background-repeat:no-repeat;
 }
 
