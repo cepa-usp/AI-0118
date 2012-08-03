@@ -22,7 +22,7 @@ function startAI(){
 	state = fetch();
 	
     if(oaData.slides==undefined) oaData.slides = new AILocalStorageData();
-    loadScreen("../swf/AI-0114.swf", 640, 480);
+    loadScreen("../swf/AI-0114.swf", 700, 500);
 	loadContent();
 	
 	
@@ -81,7 +81,8 @@ function start_quadro2(){
 		disableElement("#bt-03-04");
     });	
 	$("#bt-03-05").button().click(function(){
-		movie.setDomainClosed(true);// Verificar a função que coloca x = 0 e y = 0 no domínio e reinicializa a atividade
+		movie.reset();
+		movie.openDomain(false);// Verificar a função que coloca x = 0 e y = 0 no domínio e reinicializa a atividade
         loadSlide("quadro3");
 		disableElement("#bt-03-05");
     });
@@ -113,27 +114,29 @@ function start_quadro3(){
     $("#bt-03-06").button().click(function(){
 		if(movie.onBorder())// Função que verifica se o ponto está ou não na fronteira
 		{
-		$("#parada-7").show();
-		disableElement("#bt-03-06");
+			$("#parada-7").show();
+			disableElement("#bt-03-06");
 		}else {
-			/*alert("O ponto (x,y) está fora da borda. Posicione novamente.\nDica: Arraste o ponto para a borda da função até que o eixo fique vermelho.");*/
 			//Confirm box de avaliação do ponto na fronteira
 			
 			$("#dialog-confirm").dialog({
 			
 				resizable: false,
 				modal: true,
-				position: ['center',530],
+				position: ['center',550],
 				buttons: {
 					"Posicione (x,y) por mim": function() {
-						movie.setPos(2,0);// Verificar função que posiciona ponto na fronteira(2,0)					
+						movie.setCircunferenceX(2);
+						movie.setCircunferenceY(0);
+						
+						//onborder tem que mudar para true!!!
 						$(this).dialog( "close" );
 					},
 					"Ok": function() {
 						$(this).dialog( "close" );
 					}
 				}
-			});
+			});	
 		return;	
 		}
     });
