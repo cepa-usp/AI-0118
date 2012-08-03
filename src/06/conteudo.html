@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>06</title>
+</head>
+<body>
+<div id="global">
+	<div id="top">
+	</div>
+	<div id="content">
+		<span id="quadro1" class="etapa breakpoint">
+			<p>Quando escrevemo $z=f(x,y)=xy$, estamos usando a chamada <i>forma explícita</i> de $f$ , pois a regra
+                está pronta para ser usada; basta substituir os valores de $x$ e $y$. Mas existe outra maneira de a
+                escrevermos, também muito útil: a <i>forma implícita</i>: $$\phi(x, y, z) = 0$$</p>
+			<p>Para obter a forma implícita, simplesmente reorganizamos $z=f(x,y)$ de modo que no primeiro membro da
+                igualdade tenhamos $x, y, z$, e no segundo, <b>zero</b> (o zero é importante). Como você acha que deve
+                ser a forma implícita de $z=f(x,y)=xy$?</p>
+
+            <p>$\phi(x, y, z) =$ <input id="06-01" type="text" size="20"/> = 0 <button type="button" id="bt-06-01">OK</button></p>
+
+            <p id="quadro1_correto" class="correto">$\phi(x, y, z) = z - xy = 0$.</p>
+			<p id="quadro1_errado" class="errado">A resposta correta é $\phi(x, y, z) = z - xy = 0$
+               <br /><span class="resposta">Sua resposta: <span id="quadro1_respostausuario"></span></span></p>
+               <p id="quadro1_prosseguir"> <button type="button" id="btAbrirQuadro2">OK</button></p>
+		</span>
+		<span id="quadro2" class="etapa breakpoint">
+			<p>Vejamos um exemplo de como esta forma pode ser útil. Para isso, deixemos de lado $f$ e
+                recordemos a equação da reta na geometria analítica: $y = ax + c$. $a$ é o coeficiente angular e $b$, o coeficiente linear.
+                A figura acima ilustra uma reta (OBS: Se a figura não estiver na tela <a href="javascript:downScreen()">clique aqui.)</a>.
+                Quais são $a$ e $c$</p>
+			<p>$y = $<input type="text" id="txQuadro2A" size="5"/>$x + $ <input type="text" id="txQuadro2C" size="5"/>
+            <button type="button" id="btAvaliarQuadro2">OK</button></p>
+			<p id="quadro2_errado" class="errado">A resposta correta é $y = $<span id="coefa"></span>$x + $<span id="coefc"></span>.<br />
+            <span class="resposta">Sua resposta: $y = $<span id="coefa-aluno"></span>$x + $<span id="coefc-aluno"></span></span></p>
+			<p id="quadro2_correto" class="correto">Resposta correta</p>
+            <p id="quadro2_prosseguir"> <button type="button" id="btAbrirQuadro3">OK</button></p>
+		</span>
+		<span id="quadro3" class="etapa breakpoint">
+			<p>Isto funciona muito bem desde que a reta não seja vertical (veja figura novamente).
+                Embora ainda seja uma reta, $y$ não é mais uma função, pois um mesmo $x$ resulta em $y$ diferentes.
+                A situação é análoga a dizer que nosso retângulo de lados $x$ e $y$ tem, ao mesmo tempo,
+                áreas $z_1$ e $z_2$. Ainda assim é uma reta, e a forma implícita dela resolve o problema:
+                $ax + by + c = 0$. Tente identificar $a$, $b$ e $c$ para a reta acima (dica: comece escrevendo $x=1$).</p>
+			<p>$\phi(x, y, z) = $<input id="txQ3_1" size="5"/>$x + $
+                <input id="txQ3_2" size="5"/>$y + $<input id="txQ3_3" size="5"/>$ = 0$
+                <button type="button" id="btAvaliarQuadro3">OK</button></p>
+			<p id="quadro3_errado" class="errado">A resposta correta é $\phi(x,y,z) = x-1 = 0$. Isto é, $a=1, b=0, c=-1$. <br />
+                <span class="resposta">Sua resposta: $\phi(x,y,z) = $<span id="coefa-aluno2"></span>$x + $
+                    <span id="coefb-aluno2"></span>$y + $ <span id="coefc-aluno2"></span>$ = 0$</span></p>
+			<p id="quadro3_correto" class="correto">Resposta correta.</p>
+            <p id="quadro3_prosseguir"> <button type="button" id="btAbrirQuadro4">OK</button></p>
+		</span>
+		<span id="quadro4" class="etapa breakpoint">
+			<p>Como você pode ver, a forma implícita da reta não tem a mesma limitação da forma explícita.
+                Esta é apenas uma das vantagens. Nos próximos tópicos você verá outras utilidades dela.</p>
+			<p>Para terminar, determine a forma implícita da reta $y - y_0 = m(x - x_0)$ [use x0 para representar $x_0$ e y0 para $y_0$]</p>
+			<p>$\phi(x, y, z) = $<input id="txQ4_1" name="06-04-01" size="5"/>$x + $
+                <input id="txQ4_2" size="5"/>$y + $
+                <input id="txQ4_3" size="5"/>$ = 0 $
+                <button type="button" id="btAvaliarQuadro4">OK</button></p>
+			<p id="quadro4_errado" class="errado">A resposta correta é $a = -m, b = 1$ e $c = mx_0-y_0$.</p>
+            <p id="quadro4_correto" class="correto">Resposta correta.</p>
+			<p id="encerrar"><button type="button" id="btEncerrar" name="bt-06-05">Avançar</button></p>
+		</span>
+	</div>
+	<div id="botton">
+		
+	</div>
+</div>
+</body>
+</html>

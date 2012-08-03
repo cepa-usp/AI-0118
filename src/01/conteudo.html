@@ -1,0 +1,37 @@
+﻿<?xml versioid="n1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+  <head>
+  	<title>Objeto de Aprendizagem</title>
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<link type="text/css" href="css/oa.css" rel="stylesheet"/>
+  </head>
+  
+  <body>	
+		<div id="quadro_1_1" class="etapa breakpoint">
+			<p class="visible">Nesta atividade <i>online</i> nós exploraremos alguns conceitos importantes sobe funções de muitas variáveis. 
+			Para começar, imagine o retângulo de lados <i>x</i> e <i>y</i>. Como podemos expressar a <i>área</i> deste retângulo? Escreva-a abaixo:</p>
+			
+			<p class="visible">Área = <input id="txResposta1" size="20"/> <button type="button" id="bt-01-01" name="bt-01-01">OK</button></p>
+			<p id="correto1" class="correto invisible">Área = $f(x,y) = xy$</p>
+			<p id="errado1" class="errado invisible">Área = $f(x,y) = xy$ <br /><span class="resposta">Sua resposta: <span id="suaresposta1">RESP</span></span></p>
+			<p id="errado2" class="invisible">A resposta correta é $xy$, ou seja, o produto de um lado ($x$) pelo outro ($y$).</p>
+			<p id="avancar1"><button type="button" id="btAvancar01">Avançar</button></p>
+		</div>
+		<div  id="quadro_1_2" class="etapa breakpoint">
+			<p>Deste modo, a área do retângulo é uma <i>função</i> de $x$ e $y$; uma função de <i>duas</i> variáveis 
+			[observe que eu coloquei um $f(x,y)$ logo antes da sua resposta]. 
+			Chamaremos de $f$ esta <i>regra</i> que nos permite obter a área do retângulo, e escrevemos $f(x,y)$ ao invés de "área".</p>
+			<p>Note que existem combinações diferentes de $x$ e $y$ que resultam num mesmo $f(x,y)$. 
+			No nosso cenário, isto equivale a dizer, por exemplo, que um retângulo de lados 2 e 3 tem a mesma área $f(2,3)$ de um retângulo de lados 3 e 2:
+			$f(3,2)$. Por outro lado, e mais importante do que isto, perceba que <i>não</i> podemos dizer 
+			que este retângulo tem duas ou mais áreas distintas. Ou seja, $f(x,y)$é o único para o par $(x,y)$, e é 
+			justamente esta característica que nos permite dizer que $f$ é uma <i>função</i>. 
+			Isto pode parecer óbvio, mas veremos logo mais que às vezes esta característica não é tão evidente.</p>
+			<p><button type="button" id="btConcluir02">Concluir</button></p>
+		</div>
+		
+	</div>	
+  </body>
+</html>

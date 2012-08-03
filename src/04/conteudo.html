@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>03</title>
+
+</head>
+<body>
+<div id="global">
+	<div id="top">
+	</div>
+	<div id="content">
+
+		<span id="quadro1" class="etapa breakpoint">
+			<span class="title">Função Inversa</span>
+			<p class="visible">Responda: se nosso retângulo tem área $z = f(x,y) =$ 30 e seu lado $x =$ 5, quanto vale $y$?</p>
+			<p class="p-04-01 visible">$y$ = <input id="04-01" name="04-01" size="20" maxlength="4"/> <button type="button" id="bt-04-01" name="bt-04-01">OK</button></p>
+			<p id="acertou1" class="correto invisible">Resposta correta!</p>
+			<p id="errou1" class="errado invisible">A resposta correta é $y = \frac{30}{5} =$ 6.</p>
+			<p class="visible"><button type="button" id="avancar1">Avançar</button></p>
+		</span>
+		<span id="quadro2" class="etapa breakpoint">
+			<p class="visible">E de forma genérica: se a área $z$ e o lado $x$ forem dados, qual é a expressão que define $y$?</p>
+			<p class="p-04-02 visible">$y =$ <input id="04-02" name="04-02" size="20" maxlength="3"/> <button type="button" id="bt-04-02" name="bt-04-02">OK</button></p>
+			<p id="acertou2" class="correto invisible">Resposta correta!</p>
+			<p id="errou2" class="errado invisible">A resposta correta é $y = z/x$. Este processo se chama <i>inversão</i> de $f(x,y)$ com relação à variável $y$.</p>
+			<p class="visible"><button type="button" id="avancar2">Avançar</button></p>
+		</span>
+		<span id="quadro3" class="etapa breakpoint">
+			<p class="visible">Outra pergunta: se a área do retângulo é 30 e $x =$ 0, quanto vale $y$?</p>
+			<p class="p-04-03 visible">$y =$ <input id="04-03" name="04-03" size="20"/> <button type="button" id="bt-04-03" name="bt-04-03">OK</button></p>
+			<p class="visible"><button type="button" id="avancar3">Avançar</button></p>
+		</span>
+		<span id="quadro4" class="etapa breakpoint">
+			<p class="visible">Opa! Divisão por zero. Mais ainda: a pergunta não faz sentido, pois o retângulo simplesmente não existe. Não foi à toa que excluímos a possibilidade $x =$ 0 do domínio de $f$.</p>
+			<p class="visible">Este problema ilustra uma questão importante: nossa função nem sempre pode ser invertida. Isto é, desde que $x$ $\neq$ 0 podemos inverter $f$ e determinar $y$ como uma função de $x$ e $z$. Mas para $x =$ 0 isto não pode ser feito. Isto acontece com bastante frequência na Matemática.</p>
+			<p class="visible">Mas independente de qual seja a função, o importante é compreender que a possibilidade de inversão de uma função qualquer depende do domínio dela. No nosso caso, $D_{f}$ não inclui $x =$ 0 e, por isso, podemos inverter $f$. Mas se $D_{f}$ incluísse $x =$ 0, não poderíamos fazer isso. Reveja a definição de $f$:</p>
+			<p class="visible">$f:D_{f} \to \mathbb{R}$</p>
+			<p class="visible">$f(x,y) = xy$</p>
+			<p class="visible">Lembre-se: o domínio faz parte da definição de $f$.</p>			
+		</span>
+
+		
+		
+	</div>
+	<div id="botton">
+		
+	</div>
+</div>
+</body>
+</html>
