@@ -58,8 +58,8 @@ h1 {
 #etapaAtual {
 	margin-left:auto;
 	margin-right:auto;
-	margin-top: 4px;
-	width:680px;
+	margin-top: 5px;
+	width:679px;
 	text-align:justify;
 	background-color:#fff;
 	height:auto;
@@ -91,7 +91,7 @@ h1 {
 }
 
 #atividade {
-	width:710px;
+	width:705px;
 	height:600px;
 	background-color:#dbdbdb;
 	margin-left:auto;

@@ -68,10 +68,10 @@
 			<p id="errou01" class="errado invisible">A resposta correta é $x>0$ e $y>0$. E deste modo definimos o domínio:</p>
 			<p id="acertou01" class="correto invisible">Correto! E deste modo definimos o domínio:</p>
 			<div id="resp">
-			<p class="visible">$D_f = {(x,y) \in \mathscr{R} | x > 0 e y > 0}$ </p>
+			<p class="visible">$D_f = {(x,y) \in \mathbb{R} | x > 0 \wedge y > 0}$ </p>
 			<p class="visible">Você deve ler esta expressão assim: $D_f$ é o conjunto de pares</i> $(x, y)$<i>pertencentes a</i>
-                $\mathscr{R}^2$  <i>tal que $x>0$ e $y>0$. E caso você não se lembre, $\mathscr{R}^2$ é simplesmente
-                    uma notação reprimida de $\mathscr{R}^2 \times \mathscr{R}^2$, que por sua vez significa que tanto $x$ quanto $y$ são números Reais($\mathscr{R}^2$).</p>
+                $\mathbb{R}^2$  <i>tal que $x>0$ e $y>0$. E caso você não se lembre, $\mathbb{R}^2$ é simplesmente
+                    uma notação reprimida de $\mathbb{R}^2 \times \mathbb{R}^2$, que por sua vez significa que tanto $x$ quanto $y$ são números Reais($\mathbb{R}^2$).</p>
 			<p class="visible">Para que esta leitura acima fique clara, associe os símbolos com seus significados na
                 janela de atividade: (caso você não esteja vendo
                 a atividade,  <a id="aDownScreen1" href="#">clique aqui</a>)</p>
@@ -79,14 +79,22 @@
 
 		</span>
 
+        <span id="quadro2meio" class="etapa">
+            <p class="visible">
+                Você acertou <span id="acertoseq"></span>%
+                <p class="visible"><button type="button" id="btAvancarParaQuadro4">Avançar</button></p>
+            </p>
+        </span>
+
+
 
 		<span id="quadro4" class="etapa breakpoint">
 			<p class="visible">Finalmente podemos expressar $f$ apropriadamente:</p></br>
-			<p class="visible">$f$ : $D_f$ &#8594; &#8476; </p>
+			<p class="visible">$f$ : $D_f$ &#8594; $\mathbb{R}$ </p>
 			<p class="visible">$f(x,y) = xy$</p>
-            <p class="visible">A primeira linha diz que $f$ é uma regra que associa $D_f$ a $\mathscr{R}$, e a segunda
+            <p class="visible">A primeira linha diz que $f$ é uma regra que associa $D_f$ a $\mathbb{R}$, e a segunda
                 linha diz <i>como</i> fazer essa associação.</p>
-			<p class="visible"><button type="button" id="bt-02-03">Avançar</button></p>
+			<!--p class="visible"><button type="button" id="bt-02-03">Avançar</button></p-->
 		</span>
 		
 		

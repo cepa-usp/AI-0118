@@ -25,7 +25,7 @@ var AI_WIDTH = 700;
 var AI_HEIGHT = 700;
 var AI_NAV_HEIGHT = 30;
 var AI_MOVIE_HEIGHT_MIN = 0;
-var AI_MOVIE_HEIGHT = 480;
+var AI_MOVIE_HEIGHT = 500;
 
 
 $(document).ready(init);

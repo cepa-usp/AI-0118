@@ -137,9 +137,7 @@ function avaliarQuadro2() {
 
 
 
-
-
-    loadScreen("../swf/ai-0119.swf", 640, 480)
+    loadScreen("../swf/AI0119.swf", 640, 480)
     //alert(oaData.slides.score_02_02)
 
 
@@ -150,6 +148,24 @@ function avaliarQuadro2() {
         $("#acertou01").show();
     }
     $("#resp").show();
+
+}
+
+function onFlashAvaliou(){
+    loadSlide("quadro2meio");
+}
+
+function start_quadro4(){
+
+}
+
+function start_quadro2meio(){
+    $("#btAvancarParaQuadro4").button().click(function(){
+        loadSlide("quadro4");
+        upScreen();
+    })
+    var eq_score = movie.getScore();
+    $("#acertoseq").html(eq_score);
 
 }
 
