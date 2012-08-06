@@ -1,24 +1,7 @@
 Copying from /c/Users/Maria Isabel/AIs/AI-0118 to cepa@arquivos.atp.usp.br:/work/PUBLICACAO/atividades-interativas/AI-0118
 building file list ... done
-./
-index.html
-02/
-02/conteudo.html
-02/hooks.js
-03/
-03/conteudo.html
-03/hooks.js
-05/
-05/conteudo.html
-06/
-06/conteudo.html
-css/
-css/oa.css
-js/
-js/ai.js
-swf/
-swf/AI-0114.swf
-swf/AI0119.swf
+04/conteudo.html
+04/hooks.js
 
-sent 175350 bytes  received 1595 bytes  117963.33 bytes/sec
-total size is 15177081  speedup is 85.77
+sent 6349 bytes  received 140 bytes  12978.00 bytes/sec
+total size is 15177151  speedup is 2338.90

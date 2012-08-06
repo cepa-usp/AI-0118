@@ -114,9 +114,12 @@ function start_quadro2(){
 }
 
 function start_quadro3(){
+	$("#errou3").hide();
+
     $("#bt-04-03").button().click(function(){
 		disableElement("#bt-04-03");
-		$( "#04-03" ).attr("disabled",true);
+		$("#errou3").show();
+		$( "#04-03" ).attr("disabled",true);		
     });
 	
 	$("#avancar3").button().click(function(){

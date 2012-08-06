@@ -55,9 +55,13 @@ function avaliarQuadro1() {
     r_user = r_user.replace(" ", "");
     r_user = r_user.replace(" ", "");
     r_user = r_user.replace(" ", "");
-    r_user = r_user.replace("x.y", "xy");
+    r_user = r_user.replace(".", "");
+    r_user = r_user.replace("*", "");
+
+
     var r = "z-xy"
-    if(r_user==r){
+    var r2 = "z-yx"
+    if(r_user==r || r_user==r2){
         $("#quadro1_correto").show();
     } else {
         $("#quadro1_errado").show();

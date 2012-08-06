@@ -320,15 +320,22 @@ function createNavigator(){
 		var slideName = $(".breakpoint")[i].id;
 			positions[slideName].breakpoint = i+1;
 			positions[slideName].isbreak = true;
-			onclk = " onClick=\"loadSlide('"+slideName+"');\" "
-			if(lastBreakpoint<(i+1)) onclk = "";
+			onclk = " onClick=\"checkLoadSlide('"+slideName+"', " + (i+1) + ");\" "
+			//if(lastBreakpoint<(i+1)) onclk = "";
 			 
-			 str += "<div id='bl_"+i+"' class='bloco' " + onclk + ">" + (i+1) + "</div><div class='linha'></div>"
+			 str += "<div id='bl_"+i+"' class='bloco' " + onclk + ">" + (i+1)
+                if(i<qtde-1) str += "</div><div class='linha'></div>"
 	}
 	//str += "<div id='blocofinal' class='bloco'>x</div>"
 	
 	$("#navegador").html(str);
 }
+
+
+function checkLoadSlide(slideName, i){
+    if(i<=lastBreakpoint)  loadSlide(slideName);
+}
+
 
 function disableElement(elementString){
 	$(elementString).attr('disabled', 'disabled');
@@ -341,6 +348,7 @@ function enableElement(elementString){
 function iluminar(){
 	resetarBlocos();
 	var b = positions[currentSlide].breakpoint-1;
+    //  alert(b);
 	$("#bl_"+b).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_active.png")');
 }
 
@@ -349,6 +357,7 @@ function resetarBlocos(){
 	for(var i=0; i<qtde;i++){
 		//$(".bloco").css("backgroundColor", "#000000")
 		//$(".bloco").css("color", "#FFFFFF")
+        $("#bl_"+i).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step.png")');
 	}
 
 }
