@@ -50,6 +50,8 @@ function start_quadro1(){
 	});	
 }
 
+
+
 function start_quadro2(){
 	$("#parada-2").hide();
 	$("#parada-3").hide();
@@ -88,6 +90,26 @@ function start_quadro2(){
 
 function start_quadro3(){
     $("#parada-7").hide();
+    $("#parada-8").hide();
+    $("#parada-9").hide();	
+	$("#parada-10").hide();
+    $("#parada-11").hide();
+	$("#parada-12").hide();
+	$("#parada-13").hide();
+	$("#errou01").hide();
+    $("#acertou01").hide();
+	$("#errou02").hide();
+    $("#acertou02").hide();
+	$("#errou03").hide();
+    $("#acertou03").hide();
+	$("#acertou03-1").hide();
+    $("#acertou03-2").hide();
+	$("#acertou03-3").hide();
+    $("#acertou03-4").hide();
+	$("#errou03-1").hide();
+    $("#errou03-2").hide();
+	$("#errou03-3").hide();
+    $("#errou03-4").hide();
 	
     $("#bt-03-06").button().click(function(){
 		if(movie.onBorder())// Função que verifica se o ponto está ou não na fronteira
@@ -117,22 +139,13 @@ function start_quadro3(){
 			});	
 		return;	
 		}
-    });	
+    });
+	
     $("#bt-03-07").button().click(function(){
-		loadSlide("quadro4");
+        $("#parada-8").show();
 		disableElement("#bt-03-07");
     });
-}
 	
-function start_quadro4(){
-
-    $("#parada-9").hide();	
-	$("#parada-10").hide();	
-	$("#errou01").hide();
-    $("#acertou01").hide();
-	$("#errou02").hide();
-    $("#acertou02").hide();
-
     $("#bt-03-08").button().click(function(){
 		$( "#sl-03-dom-01" ).attr("disabled",true);
 	
@@ -170,31 +183,17 @@ function start_quadro4(){
 			 $("#errou02").show();
 			oaData.slides.score_02_03 = 0;
 		}
-			oaData.slides.resp_03_03_02 = $("select[name='sl-03-dom-02'] :selected").val();		
-			$("#parada-10").show();		
+			oaData.slides.resp_03_03_02 = $("select[name='sl-03-dom-02'] :selected").val();
+		
+			$("#parada-10").show();
 			disableElement("#bt-03-09");		
 	});	
+	    
 	$("#bt-03-10").button().click(function(){
-		loadSlide("quadro5");
+		$("#parada-11").show();
 		disableElement("#bt-03-10");
     });
-}
-
-
-function start_quadro5(){
-	$("#parada-12").hide();
-	$("#parada-13").hide();
-	$("#errou03").hide();
-    $("#acertou03").hide();
-	$("#acertou03-1").hide();
-    $("#acertou03-2").hide();
-	$("#acertou03-3").hide();
-    $("#acertou03-4").hide();
-	$("#errou03-1").hide();
-    $("#errou03-2").hide();
-	$("#errou03-3").hide();
-    $("#errou03-4").hide();
-	    	
+	
 	$("#bt-03-11").button().click(function(){
 		$("#parada-12").show();
 		$( "#sl-03-dom-03" ).attr("disabled",true);

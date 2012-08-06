@@ -1,4 +1,15 @@
-
+/*
+ ExternalInterface.addCallback("setA", setA);
+ ExternalInterface.addCallback("setB", setB);
+ ExternalInterface.addCallback("setC", setC);
+ ExternalInterface.addCallback("getA", getA);
+ ExternalInterface.addCallback("getB", getB);
+ ExternalInterface.addCallback("getC", getC);
+ ExternalInterface.addCallback("update", update);
+ ExternalInterface.addCallback("reseta", reset);
+ ExternalInterface.addCallback("f", f);
+ ExternalInterface.addCallback("doNothing", doNothing);
+ */
 
 var scorm = pipwerks.SCORM; // Seção SCORM
 scorm.version = "2004"; // Versão da API SCORM
@@ -76,6 +87,7 @@ function avaliarQuadro1() {
 
 function start_quadro2()
 {
+
         $("#quadro2_errado").hide();
         $("#quadro2_correto").hide();
         $("#quadro2_prosseguir").hide();
@@ -88,9 +100,15 @@ function start_quadro2()
 
         a_sort = Math.floor(Math.random()*(a.length-1));
         c_sort = Math.floor(Math.random()*(c.length-1));
-        ai.sendToActionScript(a_sort, -1, c_sort);
+        //ai.sendToActionScript(a_sort, -1, c_sort);
+        ai.setA(a_sort, false)
+        ai.setB(-1, false)
+        ai.setC(c_sort, false);
+        ai.update();
         $("#coefa").html(a_sort.toString());
         $("#coefc").html(c_sort.toString());
+        downScreen();
+
 
 }
 
@@ -124,7 +142,10 @@ function start_quadro3()
     var q3b = 0;
     var q3c = -1;
 
-    ai.sendToActionScript(q3a, q3b, q3c);
+    ai.setA(q3a, false);
+    ai.setB(q3b, false);
+    ai.setC(q3c, false);
+    ai.update();
 
     $("#quadro3_errado").hide();
     $("#quadro3_correto").hide();
