@@ -127,6 +127,7 @@ function start_quadro3(){
 function start_quadro4(){
 
     $("#parada-9").hide();	
+	$("#parada-10").hide();	
 	$("#errou01").hide();
     $("#acertou01").hide();
 	$("#errou02").hide();
@@ -170,14 +171,17 @@ function start_quadro4(){
 			oaData.slides.score_02_03 = 0;
 		}
 			oaData.slides.resp_03_03_02 = $("select[name='sl-03-dom-02'] :selected").val();		
-			loadSlide("quadro5");
+			$("#parada-10").show();		
 			disableElement("#bt-03-09");		
 	});	
+	$("#bt-03-10").button().click(function(){
+		loadSlide("quadro5");
+		disableElement("#bt-03-10");
+    });
 }
 
 
 function start_quadro5(){
-    $("#parada-11").hide();
 	$("#parada-12").hide();
 	$("#parada-13").hide();
 	$("#errou03").hide();
@@ -190,12 +194,7 @@ function start_quadro5(){
     $("#errou03-2").hide();
 	$("#errou03-3").hide();
     $("#errou03-4").hide();
-	    
-	$("#bt-03-10").button().click(function(){
-		$("#parada-11").show();
-		disableElement("#bt-03-10");
-    });
-	
+	    	
 	$("#bt-03-11").button().click(function(){
 		$("#parada-12").show();
 		$( "#sl-03-dom-03" ).attr("disabled",true);
