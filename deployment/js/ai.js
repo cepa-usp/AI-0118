@@ -9,7 +9,9 @@ var oaData = new Object();
 var lastBreakpoint = 1;
 var currentSlide;
 var projetor = false;
-
+var onDownScreenComplete = function(){
+    // nada
+};
 var positions = new Object();
 
 function Position(name) {
@@ -111,10 +113,12 @@ function upScreen(){
 	$( "#etapaAtual" ).animate({height: (AI_HEIGHT - AI_NAV_HEIGHT - AI_MOVIE_HEIGHT_MIN) + "px"}, 500)
 }
 
+
 function downScreen(){
 	//$( "#flscontent" ).show();
-	$( "#fls" ).animate({height:  + AI_MOVIE_HEIGHT + "px"}, 500)
-	$( "#etapaAtual" ).animate({height: (AI_HEIGHT - AI_NAV_HEIGHT - AI_MOVIE_HEIGHT) + "px"}, 500)
+	var AI_MOVIE_HEIGHT2 = $("#ai").height();
+    $( "#fls" ).animate({height:  + AI_MOVIE_HEIGHT2 + "px"}, 500)
+	$( "#etapaAtual" ).animate({height: (AI_HEIGHT - AI_NAV_HEIGHT - AI_MOVIE_HEIGHT2) + "px"}, 500, onDownScreenComplete)
 	
 }
 

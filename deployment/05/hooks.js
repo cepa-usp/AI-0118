@@ -20,6 +20,7 @@ scorm.version = "2004"; // Versão da API SCORM
 var DEBUG = false; //MUDE DEBUG PARA TRUE PRA FACILITAR A NAVEGAÇÃO PELA ATIVIDADE!!!
 
 var oaName = "AI-0118_5"
+
 function AILocalStorageData() {
     this.part_stop = 1;
     this.complete_05 = false;
@@ -31,6 +32,7 @@ var ai_data;
 function startAI(){
     loadScreen("../swf/AI-0112.swf", 640, 480);
     loadContent();
+    fetch(oaData);
 
 }
 
@@ -96,7 +98,8 @@ function start_quadro7(){
 }
 
 function start_quadro8(){
-
+    oaData.completed = true;
+    commit(oaData)
 }
 
 /*
