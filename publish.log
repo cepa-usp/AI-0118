@@ -1,7 +1,39 @@
 Copying from /c/Users/Maria Isabel/AIs/AI-0118 to cepa@arquivos.atp.usp.br:/work/PUBLICACAO/atividades-interativas/AI-0118
 building file list ... done
-04/conteudo.html
-04/hooks.js
+./
+index.html
+06/conteudo.html
+06/hooks.js
+css/oa.css
+dev/
+dev/AI-0119/
+dev/AI-0119/AI-0119.as3proj
+dev/AI-0119/AI-0119.lxml
+dev/AI-0119/bin/
+dev/AI-0119/bin/AI0119.swf
+dev/AI-0119/bin/expressInstall.swf
+dev/AI-0119/bin/index.html
+dev/AI-0119/bin/js/
+dev/AI-0119/bin/js/swfobject.js
+dev/AI-0119/obj/
+dev/AI-0119/obj/AI-0119Config.old
+dev/AI-0119/obj/AI-0119Config.xml
+dev/AI-0119/src/
+dev/AI-0119/src/119.swc
+dev/AI-0119/src/Cabo.as
+dev/AI-0119/src/Main.as
+dev/AI-0119/src/SimbExpr.as
+dev/AI-0119/src/SimbMat.as
+dev/AI-0119/src/ai-0119.fla
+dev/AI-0119/src/ai-0119.html
+dev/AI-0119/src/ai-0119.swf
+dev/AI-0119/src/cepa/
+dev/AI-0119/src/cepa/tutorial/
+dev/AI-0119/src/cepa/tutorial/CaixaTexto.as
+dev/AI-0119/src/cepa/tutorial/NextButton.as
+dev/AI-0119/src/cepa/tutorial/Tutorial.as
+dev/AI-0119/src/cepa/tutorial/TutorialEvent.as
+js/ai.js
 
-sent 6349 bytes  received 140 bytes  12978.00 bytes/sec
-total size is 15177151  speedup is 2338.90
+sent 313964 bytes  received 850 bytes  209876.00 bytes/sec
+total size is 15481650  speedup is 49.18
