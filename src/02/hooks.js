@@ -24,7 +24,7 @@ function startAI(){
     oaData = fetch();
     oaData.slides = new AILocalStorageData()
 //    if(oaData.slides==undefined) oaData.slides = new AILocalStorageData();
-    loadScreen("../swf/AI-0111.swf", 640, 480);
+    loadScreen("../swf/AI-0111.swf", 700, 350);
 	loadContent();
 
 }
@@ -74,8 +74,9 @@ function start_quadro2(){
     $("#errou01").hide();
     $("#acertou01").hide();
     $("#resp").hide();
+    downScreen();
     $("#aDownScreen1").click(function(){
-        downScreen();
+
         $('#etapaAtual').fadeIn().delay(1000).scrollTop(300);
     });
 
@@ -138,6 +139,14 @@ function avaliarQuadro2() {
 
 
     loadScreen("../swf/AI0119.swf", 640, 480)
+    onDownScreenComplete = function(){
+        $('#etapaAtual').scrollTop(300);
+    }
+
+    downScreen();
+    onDownScreenComplete = function(){
+        //
+    }
     //alert(oaData.slides.score_02_02)
 
 
