@@ -50,50 +50,85 @@ function start_quadro1(){
 	});	
 }
 
+
+function start_quadro4(){
+
+}
+
+
 function start_quadro2(){
 	$("#parada-2").hide();
 	$("#parada-3").hide();
 	$("#parada-4").hide();
 	$("#parada-5").hide();
+    downScreen();
+
     $("#bt-03-01").button().click(function(){
+
 	//Verificando se o ponto na atividade está dentro ou fora do domínio
 	if(movie.insideDomain())
 	{
 		$("#parada-2").show();
-		disableElement("#bt-03-01");
+		    disableElement("#bt-03-01");
 		}else{
 			alert("O ponto (x,y) está fora do domínio. Posicione novamente.");
 			return;
 		}
+        $('#etapaAtual').scrollTop(300);
     });
 	$("#bt-03-02").button().click(function(){
         $("#parada-3").show();
 		disableElement("#bt-03-02");
+        $('#etapaAtual').scrollTop(300);
     });
 	$("#bt-03-03").button().click(function(){
         $("#parada-4").show();
 		disableElement("#bt-03-03");
+        $('#etapaAtual').scrollTop(300);
     });	
 	$("#bt-03-04").button().click(function(){
         $("#parada-5").show();
 		disableElement("#bt-03-04");
+        $('#etapaAtual').scrollTop(300);
     });	
 	$("#bt-03-05").button().click(function(){
 		movie.reset();
 		movie.openDomain(false);// Verificar a função que coloca x = 0 e y = 0 no domínio e reinicializa a atividade
         loadSlide("quadro3");
+        //$('#etapaAtual').scrollTop(100);
 		disableElement("#bt-03-05");
     });
 }
 
 function start_quadro3(){
     $("#parada-7").hide();
+    $("#parada-8").hide();
+    $("#parada-9").hide();	
+	$("#parada-10").hide();
+    $("#parada-11").hide();
+	$("#parada-12").hide();
+	$("#parada-13").hide();
+	$("#errou01").hide();
+    $("#acertou01").hide();
+	$("#errou02").hide();
+    $("#acertou02").hide();
+	$("#errou03").hide();
+    $("#acertou03").hide();
+	$("#acertou03-1").hide();
+    $("#acertou03-2").hide();
+	$("#acertou03-3").hide();
+    $("#acertou03-4").hide();
+	$("#errou03-1").hide();
+    $("#errou03-2").hide();
+	$("#errou03-3").hide();
+    $("#errou03-4").hide();
 	
     $("#bt-03-06").button().click(function(){
 		if(movie.onBorder())// Função que verifica se o ponto está ou não na fronteira
 		{
 			$("#parada-7").show();
 			disableElement("#bt-03-06");
+            $('#etapaAtual').scrollTop(300);
 		}else {
 			//Confirm box de avaliação do ponto na fronteira
 			
@@ -117,22 +152,14 @@ function start_quadro3(){
 			});	
 		return;	
 		}
-    });	
-    $("#bt-03-07").button().click(function(){
-		loadSlide("quadro4");
-		disableElement("#bt-03-07");
     });
-}
 	
-function start_quadro4(){
-
-    $("#parada-9").hide();	
-	$("#parada-10").hide();	
-	$("#errou01").hide();
-    $("#acertou01").hide();
-	$("#errou02").hide();
-    $("#acertou02").hide();
-
+    $("#bt-03-07").button().click(function(){
+        $("#parada-8").show();
+		disableElement("#bt-03-07");
+        $('#etapaAtual').scrollTop(300);
+    });
+	
     $("#bt-03-08").button().click(function(){
 		$( "#sl-03-dom-01" ).attr("disabled",true);
 	
@@ -151,6 +178,7 @@ function start_quadro4(){
 			oaData.slides.resp_03_03_01 = $("select[name='sl-03-dom-01'] :selected").val();
 	
 		$("#parada-9").show();
+        $('#etapaAtual').scrollTop(1300);
 		disableElement("#bt-03-08");		
 	});	
 		
@@ -170,34 +198,26 @@ function start_quadro4(){
 			 $("#errou02").show();
 			oaData.slides.score_02_03 = 0;
 		}
-			oaData.slides.resp_03_03_02 = $("select[name='sl-03-dom-02'] :selected").val();		
-			$("#parada-10").show();		
+			oaData.slides.resp_03_03_02 = $("select[name='sl-03-dom-02'] :selected").val();
+		
+			$("#parada-10").show();
+        $('#etapaAtual').scrollTop(1300);
 			disableElement("#bt-03-09");		
 	});	
+	    
 	$("#bt-03-10").button().click(function(){
-		loadSlide("quadro5");
+        $("#parada-11").show();
 		disableElement("#bt-03-10");
+        $('#etapaAtual').scrollTop(1300);
     });
-}
-
-
-function start_quadro5(){
-	$("#parada-12").hide();
-	$("#parada-13").hide();
-	$("#errou03").hide();
-    $("#acertou03").hide();
-	$("#acertou03-1").hide();
-    $("#acertou03-2").hide();
-	$("#acertou03-3").hide();
-    $("#acertou03-4").hide();
-	$("#errou03-1").hide();
-    $("#errou03-2").hide();
-	$("#errou03-3").hide();
-    $("#errou03-4").hide();
-	    	
+	
 	$("#bt-03-11").button().click(function(){
-		$("#parada-12").show();
-		$( "#sl-03-dom-03" ).attr("disabled",true);
+        loadSlide("quadro4")
+        $('#etapaAtual').scrollTop(0);
+        //$("#parada-12").show();
+		//$( "#sl-03-dom-03" ).attr("disabled",true);
+        //$('#etapaAtual').scrollTop(1300);
+
 		
 		//Avaliar o select	
 		if($("#sl-03-dom-03").val() == 'aberto') 

@@ -52,8 +52,6 @@
 			<p class="visible">O objetivo é reduzir $\delta$ até que a vizinhança de $(x,y)$ fique toda dentro ou fora do domínio. Faça isso: reduza $\delta$, amplie a figura, reduza ainda mais $\delta$, amplie de novo... Qual é a sua conclusão?</p>
 			<p><button type="button" name="bt-03-07" id="bt-03-07">OK</button></p>
 			</span>
-		</span>
-		<span id="quadro4" class="etapa breakpoint">
 			<span id="parada-8">			
 			<p class="visible">Perceba que, mesmo estando na fronteira, $(x,y)$ pertence ao domínio. Ainda assim, não podemos classificá-lo como ponto interior. Com isto em mente, responda: o domínio {${(x,y)\in\mathbb{R}^{2}|x\geq 0\wedge y\geq 0)}$} é aberto ou fechado?</p>
 			<p class="visible">
@@ -62,7 +60,7 @@
 			<p id="errou01" class="errado invisible">Este domínio é <i>fechado</i>, pois os pontos que ficam na fronteira não são pontos interiores, e ainda assim fazem parte do domínio. Logo, nem todos os pontos do domínio são interiores (definição de domínio aberto).</p>
 			<p id="acertou01" class="correto invisible">Resposta correta!</p>
 			<p><button type="button" name="bt-03-08" id="bt-03-08">OK</button></p>
-			</span>			
+			</span>
 			<span id="parada-9">
 			<p class="visible">E se alterarmos a desigualdade em $x$ e $y$, voltando para a definição inicial de $D_{f}$, isto é, {${(x,y)\in\mathbb{R}^{2}|x>0\wedge y> 0)}$}. É aberto ou fechado?</p>
 			<p class="visible"><select id="sl-03-dom-02"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p>
@@ -74,8 +72,6 @@
 			<p class="visible">Mas cuidado: não podemos simplesmente associar desigualdades a domínios abertos. Vejamos um exemplo: suponha que nosso retângulo tenha lados <i>maiores ou iguais</i> a $\pi$, um número irracional: $x\geq \pi$ e $y\geq \pi$ (veja figura acima). Veja se você consegue encontrar algum ponto na fronteira.</p>
 			<p><button type="button" name="bt-03-10" id="bt-03-10">OK</button></p>
 			</span>
-		</span>
-		<span id="quadro5" class="etapa breakpoint">
 			<span id="parada-11">
 			<p class="visible">Este domínio é aberto ou fechado?</p>
 			<p class="visible"><select id="sl-03-dom-03"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p>
@@ -83,48 +79,52 @@
 			<p id="acertou03" class="correto invisible">Resposta correta!</p>
 			<p><button type="button" name="bt-03-11" id="bt-03-11">OK</button></p>
 			</span>
-			<span id="parada-12">
+
+		</span>
+
+        <span id="quadro4" class="etapa breakpoint">
+            			<span id="aaaparada-12">
 			<p class="visible">Desta vez não foi possível encontrar um ponto de fronteira porque, apesar de usar uma igualdade na restrição de $x$ e $y$, $\pi$ é um número irracional. Ou seja, nós podemos sempre fazer $x =$ 3.14, $x =$ 3.141, $x =$ 3,1415... sem nunca chegar a $\pi$ (na verdade, a fronteira não existe neste caso). E pelo mesmo motivo, podemos sempre encontrar um $\delta$ suficientemente pequeno para garantir que a vizinhança de $(x,y)$ esteja dentro domínio. Assim, apesar da igualdade, todos os pontos deste domínio são interiores. Logo o domínio é <i>aberto</i>.</p>
 			<p class="visible">Para exercitar esses conceitos, classifique os domínios abaixo (eles não têm relação com a figura acima):</p>
 				<table>
-				<tr>
-					<td width="250px" height="60">{$(x,y)\in\mathbb{R}^{2}|x\geq e\wedge y\leq e$}</td>
-					<td style="vertical-align:middle"><select id="sl-03-dom-04"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
-				</tr>
-				<tr>
-					<td colspan="2"><p id="errou03-1" class="errado invisible">Este domínio é aberto pois <i>e</i> é um número irracional.</p>
-					<p id="acertou03-1" class="correto invisible">Resposta correta!</p></td>
-				</tr>
-				<tr>
-					<td height="60">{$(x,y)\in\mathbb{R}^{2}|x\geq \ln e\wedge y<0$}</td>
-					<td style="vertical-align:middle"><select id="sl-03-dom-05"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
-				</tr>
-				<tr>
-					<td colspan="2"><p id="errou03-2" class="errado invisible">Este domínio é fechado, pois $\ln e =$ 1, de modo que $x \geq$ 1.</p>
-					<p id="acertou03-2" class="correto invisible">Resposta correta!</p></td>
-				</tr>
-				<tr>
-					<td height="60"><p>{$(x,y)\in\mathbb{R}^{2}$}</td>
-					<td style="vertical-align:middle"><select id="sl-03-dom-06"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
-				</tr>
-				<tr>
-					<td colspan="2"><p id="errou03-3" class="errado invisible">Este domínio é aberto pois não há limites impostos a $x$ ou a $y$.</p>
-					<p id="acertou03-3" class="correto invisible">Resposta correta!</p></td>
-				</tr>
-				<tr>
-					<td height="60"><p>{$(x,y)\in\mathbb{R}^{2}|x\leq\frac{1}{3}\wedge y\geq 1$}</td>
-					<td style="vertical-align:middle"><select id="sl-03-dom-07"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></td>
-				</tr>
-				<tr>
-					<td colspan="2"><p id="errou03-4" class="errado invisible">Este domínio é fechado pois $\frac{1}{3}$ é um número racional.</p>
-					<p id="acertou03-4" class="correto invisible">Resposta correta!</p></td>
-				</tr>
-				</table>
+                    <tr>
+                        <td width="250px" height="60">{$(x,y)\in\mathbb{R}^{2}|x\geq e\wedge y\leq e$}</td>
+                        <td style="vertical-align:middle"><select id="sl-03-dom-04"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="errou03-1" class="errado invisible">Este domínio é aberto pois <i>e</i> é um número irracional.</p>
+                            <p id="acertou03-1" class="correto invisible">Resposta correta!</p></td>
+                    </tr>
+                    <tr>
+                        <td height="60">{$(x,y)\in\mathbb{R}^{2}|x\geq \ln e\wedge y<0$}</td>
+                        <td style="vertical-align:middle"><select id="sl-03-dom-05"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="errou03-2" class="errado invisible">Este domínio é fechado, pois $\ln e =$ 1, de modo que $x \geq$ 1.</p>
+                            <p id="acertou03-2" class="correto invisible">Resposta correta!</p></td>
+                    </tr>
+                    <tr>
+                        <td height="60"><p>{$(x,y)\in\mathbb{R}^{2}$}</td>
+                        <td style="vertical-align:middle"><select id="sl-03-dom-06"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="errou03-3" class="errado invisible">Este domínio é aberto pois não há limites impostos a $x$ ou a $y$.</p>
+                            <p id="acertou03-3" class="correto invisible">Resposta correta!</p></td>
+                    </tr>
+                    <tr>
+                        <td height="60"><p>{$(x,y)\in\mathbb{R}^{2}|x\leq\frac{1}{3}\wedge y\geq 1$}</td>
+                        <td style="vertical-align:middle"><select id="sl-03-dom-07"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="errou03-4" class="errado invisible">Este domínio é fechado pois $\frac{1}{3}$ é um número racional.</p>
+                            <p id="acertou03-4" class="correto invisible">Resposta correta!</p></td>
+                    </tr>
+                </table>
 			<p><button type="button" name="bt-03-12" id="bt-03-12">OK</button></p>
 			</span>
-			<span id="parada-13">
+			<span id="aaaparada-13">
 			<p class="visible">Que tal discutir o que você aprendeu até agora com seus colegas no <a href="#" title="Fórum" target="_blank">fórum</a> desta atividade <i><a href="#" title="Fórum" target="_blank">online</a></i> ? Talvez algum colega seu precise de ajuda, ou talvez você possa conseguir ajuda por lá.</p>
-		</span>
+        </span>
 		</span>
 		
 		

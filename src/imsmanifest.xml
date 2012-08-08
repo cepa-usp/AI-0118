@@ -36,9 +36,9 @@
 		<item identifier="item6" identifierref="resource_item6">
 			<title>A forma implícita</title>
 		</item>
-		<item identifier="item7" identifierref="resource_item7">
+		<!--item identifier="item7" identifierref="resource_item7">
 			<title>Limites e continuidade</title>
-		</item>
+		</item-->
 		<imsss:sequencing>
 			<imsss:controlMode choiceExit="true" flow="true"/>
 			<imsss:deliveryControls completionSetByContent="true" objectiveSetByContent="true"/>
