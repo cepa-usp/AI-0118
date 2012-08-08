@@ -168,7 +168,8 @@ function start_quadro3(){
 }
 
 function start_quadro4(){
-    //apenas para fins de declaração.
+    oaData.completed = true;
+    saveData()
 }
 
 

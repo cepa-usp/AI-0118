@@ -330,7 +330,8 @@ function avaliarQuadro4(){
         $("#quadro4_errado").show();
     }
     $("#encerrar").show();
-    saveData();
+    oaData.completed = true;
+   saveData();
 
 }
 

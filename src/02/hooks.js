@@ -150,7 +150,12 @@ function avaliarQuadro2() {
 
 
 
-    loadScreen("../swf/AI0119.swf", 640, 480)
+    loadScreen("../swf/AI0119.swf", 640, 460)
+    $("#btCalcular119").button().click(function(){
+        ai.performClick();
+    });
+
+
     onDownScreenComplete = function(){
         $('#etapaAtual').scrollTop(300);
     }
@@ -174,7 +179,8 @@ function onFlashAvaliou(){
 }
 
 function start_quadro4(){
-
+    oaData.completed = true;
+    saveData()
 }
 
 function start_quadro2meio(){

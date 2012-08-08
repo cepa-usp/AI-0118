@@ -52,6 +52,72 @@ function start_quadro1(){
 
 
 function start_quadro4(){
+    $("#bt-03-12").button().click(function(){
+        $("#parada-13").show();
+        $( "#sl-03-dom-04" ).attr("disabled",true);
+        $( "#sl-03-dom-05" ).attr("disabled",true);
+        $( "#sl-03-dom-06" ).attr("disabled",true);
+        $( "#sl-03-dom-07" ).attr("disabled",true);
+        disableElement("#bt-03-12");
+
+        //Avaliar o select
+        if($("#sl-03-dom-04").val() == 'aberto')
+        {
+            console.log("correto");
+            oaData.slides.score_02_03 = 100/4;
+            $("#acertou03-1").show();
+        }else
+        {
+            console.log("errado");
+            $("#errou03-1").show();
+            oaData.slides.score_02_03 = 0;
+        }
+
+        //Avaliar o select
+        if($("#sl-03-dom-05").val() == 'fechado')
+        {
+            console.log("correto");
+            oaData.slides.score_02_03 = 100/4;
+            $("#acertou03-2").show();
+        }else
+        {
+            console.log("errado");
+            $("#errou03-2").show();
+            oaData.slides.score_02_03 = 0;
+        }
+
+        //Avaliar o select
+        if($("#sl-03-dom-06").val() == 'aberto')
+        {
+            console.log("correto");
+            oaData.slides.score_02_03 = 100/4;
+            $("#acertou03-3").show();
+        }else
+        {
+            console.log("errado");
+            $("#errou03-3").show();
+            oaData.slides.score_02_03 = 0;
+        }
+
+        //Avaliar o select
+        if($("#sl-03-dom-07").val() == 'fechado')
+        {
+            console.log("correto");
+            oaData.slides.score_02_03 = 100/4;
+            $("#acertou03-4").show();
+        }else
+        {
+            console.log("errado");
+            $("#errou03-4").show();
+            oaData.slides.score_02_03 = 0;
+        }
+
+        oaData.completed = true;
+        saveData()
+
+
+    });
+
 
 }
 
@@ -234,67 +300,7 @@ function start_quadro3(){
 		disableElement("#bt-03-11");
     });
 
-	$("#bt-03-12").button().click(function(){
-		$("#parada-13").show();
-		$( "#sl-03-dom-04" ).attr("disabled",true);
-		$( "#sl-03-dom-05" ).attr("disabled",true);
-		$( "#sl-03-dom-06" ).attr("disabled",true);
-		$( "#sl-03-dom-07" ).attr("disabled",true);
-		disableElement("#bt-03-12");
-	
-		//Avaliar o select	
-		if($("#sl-03-dom-04").val() == 'aberto') 
-		{
-			console.log("correto");
-			oaData.slides.score_02_03 = 100/4;
-			 $("#acertou03-1").show();
-		}else 
-		{
-			console.log("errado");
-			 $("#errou03-1").show();
-			oaData.slides.score_02_03 = 0;
-		}
 
-		//Avaliar o select	
-		if($("#sl-03-dom-05").val() == 'fechado') 
-		{
-			console.log("correto");
-			oaData.slides.score_02_03 = 100/4;
-			 $("#acertou03-2").show();
-		}else 
-		{
-			console.log("errado");
-			 $("#errou03-2").show();
-			oaData.slides.score_02_03 = 0;
-		}	
-		
-		//Avaliar o select	
-		if($("#sl-03-dom-06").val() == 'aberto') 
-		{
-			console.log("correto");
-			oaData.slides.score_02_03 = 100/4;
-			 $("#acertou03-3").show();
-		}else 
-		{
-			console.log("errado");
-			 $("#errou03-3").show();
-			oaData.slides.score_02_03 = 0;
-		}	
-	
-		//Avaliar o select	
-		if($("#sl-03-dom-07").val() == 'fechado') 
-		{
-			console.log("correto");
-			oaData.slides.score_02_03 = 100/4;
-			 $("#acertou03-4").show();
-		}else 
-		{
-			console.log("errado");
-			 $("#errou03-4").show();
-			oaData.slides.score_02_03 = 0;
-		}
-
-    });
 
 }
 
