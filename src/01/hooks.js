@@ -73,8 +73,10 @@ function persistirQuadro1(){
 
 function avaliarQuadro1(){
 		var tx = $("#txResposta1").val();
+        tx = tx.replace("*", "");
+        tx = tx.replace(".", "");
 		if(tx=="") return;
-		$("#suaresposta1").text(tx)
+		$("#suaresposta1").text(tx);
 		if(tx=="xy" || tx=="yx"){
 			$("#correto1").show();
             oaData.score = 100;
@@ -92,12 +94,11 @@ function avaliarQuadro1(){
 
 
 function start_quadro_1_2(){
-	$("#btConcluir02").button().click(function(){
-		//loadSlide("quadro_1_1")
-		oaData.completed = true;
-        scorm.set("cmi.exit", "suspend");
-        commit(oaData);
-	});
+    oaData.completed = true;
+    scorm.set("cmi.exit", "suspend");
+    commit(oaData);
+
+
 }
 
 function eval_quadro_1_2(){
