@@ -145,14 +145,14 @@ function start_quadro2() {
             loadSlide('quadro3');
         })
 
-        if(oaData.a_sort==-9999){
+        if(oaData.slides.a_sort==-9999){
             a_sort = Math.floor(Math.random()*(a.length-1));
             c_sort = Math.floor(Math.random()*(c.length-1));
-            oaData.a_sort = a_sort;
-            oaData.c_sort = c_sort;
+            oaData.slides.a_sort = a_sort;
+            oaData.slides.c_sort = c_sort;
         } else {
-            a_sort = oaData.a_sort;
-            c_sort = oaData.c_sort;
+            a_sort = oaData.slides.a_sort;
+            c_sort = oaData.slides.c_sort;
         }
 
 
@@ -164,12 +164,12 @@ function start_quadro2() {
         $("#coefa").html(a_sort);
         $("#coefc").html(c_sort);
         downScreen();
-        bindData();
+        //bindData();
 
 
-if(oaData.txQuadro2A!=""){
-    $("#txQuadro2A").val(dt.txQuadro2A);
-    $("#txQuadro2C ").val(dt.txQuadro2C);
+if(oaData.slides.txQuadro2A!=""){
+    $("#txQuadro2A").val(oaData.slides.txQuadro2A);
+    $("#txQuadro2C ").val(oaData.slides.txQuadro2C);
 
     avaliarQuadro2();
 }
@@ -190,9 +190,9 @@ function avaliarQuadro2(){
     $("#coefa-aluno").html(r_a);
     $("#coefc-aluno").html(r_c);
 
-    oaData.score2 = 0;
-    if(a_sort==r_a) oaData.score2 += 50;
-    if(c_sort==r_c) oaData.score2 += 50;
+    oaData.slides.score2 = 0;
+    if(a_sort==r_a) oaData.slides.score2 += 50;
+    if(c_sort==r_c) oaData.slides.score2 += 50;
     oaData.slides.txQuadro2A = $("#txQuadro2A").val()
     oaData.slides.txQuadro2C = $("#txQuadro2C").val()
 
@@ -249,10 +249,10 @@ function avaliarQuadro3(){
     disableElement("#txQ3_1")
     disableElement("#txQ3_2")
     disableElement("#txQ3_3")
-    oaData.score3 = 0;
-    if(r_a==1) oaData.score3+=33;
-    if(r_b==0) oaData.score3+=33;
-    if(r_c==-1) oaData.score3+=34;
+    oaData.slides.score3 = 0;
+    if(r_a==1) oaData.slides.score3+=33;
+    if(r_b==0) oaData.slides.score3+=33;
+    if(r_c==-1) oaData.slides.score3+=34;
     oaData.slides.txQ3_1 = $("#txQ3_1").val()
     oaData.slides.txQ3_2 = $("#txQ3_2").val()
     oaData.slides.txQ3_3 = $("#txQ3_3").val()
@@ -318,13 +318,20 @@ function avaliarQuadro4(){
     disableElement("#txQ4_1")
     disableElement("#txQ4_2")
     disableElement("#txQ4_3")
+
+    oaData.slides.score4 = 0;
+    if(r_a=='-m') oaData.slides.score4 += 33;
+    if(r_b=='1') oaData.slides.score4 += 33;
+    if(r_c == 'mx0-y0') oaData.slides.score4 += 34;
+
     if(r_a=='-m' && r_b=='1' & r_c == 'mx0-y0'){
         $("#quadro4_correto").show();
     } else {
         $("#quadro4_errado").show();
     }
     $("#encerrar").show();
-    saveData();
+    oaData.completed = true;
+   saveData();
 
 }
 

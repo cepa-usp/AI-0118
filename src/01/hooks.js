@@ -91,7 +91,8 @@ function avaliarQuadro1(){
 function start_quadro_1_2(){
 	$("#btConcluir02").button().click(function(){
 		//loadSlide("quadro_1_1")
-		alert("fim")
+		oaData.completed = true;
+        commit(oaData);
 	});
 }
 

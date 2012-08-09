@@ -14,21 +14,26 @@ function AILocalStorageData() {
     this.cp2 = "";
     this.cp3 = "";
     this.cp4 = "";
-    this.score_02_02 = 0;
-    this.score_02_03 = 0;
-    this.resp_02_03_verify = "";
+    this.score2 = 0;
+    this.score3 = 0;
+
+
 }
 var ai_data;
 
 function startAI(){
     oaData = fetch();
-    oaData.slides = new AILocalStorageData()
-//    if(oaData.slides==undefined) oaData.slides = new AILocalStorageData();
+    //oaData.slides = new AILocalStorageData()
+    if(oaData.slides==undefined) oaData.slides = new AILocalStorageData();
     loadScreen("../swf/AI-0111.swf", 700, 350);
 	loadContent();
 
 }
 
+function saveData(){
+    oaData.score = (oaData.slides.score2 + oaData.slides.score3)/2
+    commit(oaData);
+}
 
 
 /**
@@ -60,9 +65,9 @@ function sendToJavaScript()
 
 
     ai.finish();
-    oaData.slides.score_02_03 = ai.getScore();
-    oaData.slides.resp_02_03_verify = "done";
-    commit(state);
+    oaData.slides.score3 = ai.getScore();
+    //oaData.slides.resp_02_03_verify = "done";
+    saveData();
     loadSlide("quadro4");
 
 }
@@ -75,10 +80,7 @@ function start_quadro2(){
     $("#acertou01").hide();
     $("#resp").hide();
     downScreen();
-    $("#aDownScreen1").click(function(){
 
-        $('#etapaAtual').fadeIn().delay(1000).scrollTop(300);
-    });
 
 
 
@@ -88,6 +90,16 @@ function start_quadro2(){
     $("#bt-02-02").button().click(function(){
         avaliarQuadro2()
     });
+    $("#cp1").val(oaData.slides.cp1);
+    $("#cp2").val(oaData.slides.cp2);
+    $("#cp3").val(oaData.slides.cp3);
+    $("#cp4").val(oaData.slides.cp4);
+    if(oaData.slides.cp1!=""){
+        disableElement("#cp1");
+        disableElement("#cp2");
+        disableElement("#cp3");
+        disableElement("#cp4");
+    }
 }
 
 function avaliarQuadro2() {
@@ -101,56 +113,58 @@ function avaliarQuadro2() {
     if($("select[name='cp1'] :selected").val() == "maior" && $("select[name='cp2'] :selected").val() == "0" && $("select[name='cp3'] :selected").val() == "maior" && $("select[name='cp4'] :selected").val() == "0")
     {
         //console.log("correto");
-        oaData.slides.score_02_02 = 100;
+        oaData.slides.score2 = 100;
     }else if($("select[name='cp1'] :selected").val() == "maiorigual" && $("select[name='cp2'] :selected").val() == "0" && $("select[name='cp3'] :selected").val() == "maior" && $("select[name='cp4'] :selected").val() == "0")
     {
         //console.log("correto/2-1");
-        oaData.slides.score_02_02 = 90;
+        oaData.slides.score2 = 90;
     }else if($("select[name='cp1'] :selected").val() == "maior" && $("select[name='cp2'] :selected").val() == "0" && $("select[name='cp3'] :selected").val() == "maiorigual" && $("select[name='cp4'] :selected").val() == "0")
     {
         //console.log("correto/2-2");
-        oaData.slides.score_02_02 = 90;
+        oaData.slides.score2 = 90;
     }else if($("select[name='cp1'] :selected").val() == "maiorigual" && $("select[name='cp2'] :selected").val() == "0" && $("select[name='cp3'] :selected").val() == "maiorigual" && $("select[name='cp4'] :selected").val() == "0")
     {
         //console.log("correto/2-3");
 
-        oaData.slides.score_02_02 = 80;
+        oaData.slides.score2 = 80;
     }else
     {
         //console.log("errado");
 
-        oaData.slides.score_02_02 = 0;
+        oaData.slides.score2 = 0;
     }
     //console.log(oaData.slides.score_02_02);
     //console.log("saindo");
     //Armazenando os valores no array de avaliação dos selects
-    oaData.slides.resp_02_02_01 = $("select[name='cp1'] :selected").val();
-    oaData.slides.resp_02_02_02 = $("select[name='cp2'] :selected").val();
-    oaData.slides.resp_02_02_03 = $("select[name='cp3'] :selected").val();
-    oaData.slides.resp_02_02_04 = $("select[name='cp4'] :selected").val();
+    oaData.slides.cp1 = $("select[name='cp1'] :selected").val();
+    oaData.slides.cp2 = $("select[name='cp2'] :selected").val();
+    oaData.slides.cp3 = $("select[name='cp3'] :selected").val();
+    oaData.slides.cp4 = $("select[name='cp4'] :selected").val();
 
     //Atualizando a visibilidade da próxima parte
-    disableElement("cp1");
-    disableElement("cp2");
-    disableElement("cp3");
-    disableElement("cp4");
+    disableElement("#cp1");
+    disableElement("#cp2");
+    disableElement("#cp3");
+    disableElement("#cp4");
     disableElement("#bt-02-02");
 
 
 
-    loadScreen("../swf/AI0119.swf", 640, 480)
+    loadScreen("../swf/AI0119.swf", 640, 460)
+    $("#btCalcular119").button().click(function(){
+        ai.performClick();
+    });
+
+
     onDownScreenComplete = function(){
         $('#etapaAtual').scrollTop(300);
     }
 
     downScreen();
-    onDownScreenComplete = function(){
-        //
-    }
     //alert(oaData.slides.score_02_02)
 
-
-    if(oaData.slides.score_02_02 < 100)
+    saveData()
+    if(oaData.slides.score2 < 100)
     {
         $("#errou01").show();
     }else{
@@ -165,7 +179,8 @@ function onFlashAvaliou(){
 }
 
 function start_quadro4(){
-
+    oaData.completed = true;
+    saveData()
 }
 
 function start_quadro2meio(){
@@ -173,7 +188,9 @@ function start_quadro2meio(){
         loadSlide("quadro4");
         upScreen();
     })
-    var eq_score = movie.getScore();
+    var eq_score = oaData.slides.score3;
+    oaData.slides.score3 = eq_score;
+    saveData()
     $("#acertoseq").html(eq_score);
 
 }

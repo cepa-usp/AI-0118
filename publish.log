@@ -40,6 +40,8 @@ sent 313964 bytes  received 850 bytes  209876.00 bytes/sec
 total size is 15481650  speedup is 49.18
 =======
 AI-0118_PIF.zip
+<<<<<<< HEAD
+=======
 expressInstall.swf
 imsmanifest.xml
 index.html
@@ -61,3 +63,4 @@ index.html
 04/
 04/conteudo.html
 >>>>>>> 271aee2df79b05a6cb6bafaff7d79a64d1d7ca2c
+>>>>>>> 6d92cc33e7d3ccaf6627602079af32e9fa4aba3a
