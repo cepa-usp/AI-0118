@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>05</title>
+</head>
+<body>
+<div id="global">
+	<div id="top">
+	</div>
+	<div id="content">
+
+		<span id="quadro1" class="etapa breakpoint">
+			<p>Rigorosamente, o <i>gráfico de $f$</i> é simplesmente o conjunto de todos os
+                <b>ternos</b> $(x, y, z)$ com $z=f(x,y)$. Mas é quando definimos um sistema de coordenadas e
+                interpretamos esses número como coordenadas que surge a idéia de gráfico como <i>lugar geométrico</i>
+                dos <b>pontos</b> $(x, y, z)$ com $z=f(x,y)$. É o que
+                exploraremos agora.</p>
+			<p>Discuta com seus colegas: por que eu usei a palavra "terno" no começo do parágrafo anterior, e "ponto" no final.</p>
+			<p>Existem vários <i>softwares</i> capazes de desenhar gráficos, muitos deles gratuitos. No entanto,
+                a análise de problemas que podem ser representados por gráficos geralmente requer conhecimento da
+                <i>estrutura</i> do gráfico. E para isso, saber <i>esboçar</i> um gráfico é uma habilidade sempre
+                bem-vinda.</p>
+			<p>Uma maneira de fazer isso, bastante utilizada por <i>softwares</i>, é definir uma malha regular de
+                pontos (x; y) e calcular $z=f(x,y)$. Mas quando precisamos esboçar o
+                gráfico de uma função, em geral não estamos interessados nos <i>valores</i> $f(x,y)$,
+                e sim na <i>estrutura</i> de $f$. Para estes casos há uma técnica simples, mas que exigirá algum
+                treinamento da sua parte. Vejamos como ela funciona para a nossa função,
+                $f(x,y)=xy$, através do aplicativo acima.</p>
+			<p><button type="button" id="btAbrirQuadro2">OK</button></p>
+		</span>
+		<span id="quadro2" class="etapa breakpoint">
+			<p>A ideia consiste em fixar uma das variáveis e determinar o comportamento de $f$ como função da outra
+                variável apenas. Por exemplo, fazendo $y=1$ nossa função fica $z=f(x, 1) = x$, uma reta com
+                coeficiente angular 1 e que passa pela origem do sistema de coordenadas.</p>
+			<p>Veja na figura acima: à esquerda temos o plano $y=1$, no qual esboçamos o gráfico de
+                $z=f(x,1)$ (observe que os eixos coordenados são $x$ e $z$); e à direita vemos como este plano se
+                encaixa no sistema de coordenadas cartesiano de três dimensões. A lista à esquerda relaciona os
+                planos para os quais desenhamos $f(x,1)$.
+                Por enquanto há apenas um: o plano $y=1$.</p>
+			<p><button type="button" id="btAbrirQuadro3">OK</button></p>
+		</span>
+		<span id="quadro3" class="etapa breakpoint">
+			<p>Agora, vamos juntos criar o plano $y=2$. Neste caso $z=f(x,2) = 2x$, de modo que precisamos desenhar
+                uma reta de coeficiente anular 2 e que passa pela origem do sistema de coordenadas. Uma dica é usar a
+                grade que aparece na área de desenho. Ou podemos perceber que nossa reta deve partir de $(0,0)$ e
+                atingir o valor máximo de $z(5)$ em $x=2,5$.</p>
+			<p>De qualquer modo, o primeiro passo é adicionar o plano $y = 2$ à lista: pressione o botão "+"
+                logo acima dela e, na janela que abre, selecione $y$ (a variável que manteremos fixa). Em seguida,
+                digite o valor de $y$: 2. Pressione "ok" para começar a desenhar $f(y,2)$.</p>
+			<p><button type="button" id="btAbrirQuadro31">OK</button></p>
+		</span>
+		<span id="quadro31" class="etapa breakpoint">
+			<p>Agora, vamos juntos criar o plano $y=2$. Neste caso $z=f(x,2) = 2x$, de modo que precisamos desenhar
+                uma reta de coeficiente anular 2 e que passa pela origem do sistema de coordenadas. Uma dica é usar a
+                grade que aparece na área de desenho. Ou podemos perceber que nossa reta deve partir de $(0,0)$ e
+                atingir o valor máximo de $z(5)$ em $x=2,5$.</p>
+			<p>De qualquer modo, o primeiro passo é adicionar o plano $y = 2$ à lista: pressione o botão "+"
+                logo acima dela e, na janela que abre, selecione $y$ (a variável que manteremos fixa). Em seguida,
+                digite o valor de $y$: 2. Pressione "ok" para começar a desenhar $f(y,2)$.</p>
+			<p>A área de desenho agora está vazia, aguardando que você desenhe a função $f(x, 2)$.
+                Com a <i>ferramenta lápis</i> (à esquerda) selecionada, pressione o mouse perto de (0,0) e
+                arraste-o até $(2.5 , 5)$. Não seja perfeccionista. Afinal, é apenas um esboço.
+                Para apagar partes do seu desenho, selecione a <i>ferramenta borracha</i> e arraste o <i>mouse</i>
+                sobre a área a ser apagada. Experimente fazer isso pressionando a tecla <i>shift</i> para manter a continuidade do traço.</p>
+			<p><button type="button" id="btAbrirQuadro4">OK</button></p>
+		</span>
+		<span id="quadro4" class="etapa breakpoint">
+			<p>Agora é sua vez: esboce o gráfico de $f$ no plano $y = 0,5$. Depois, faça o mesmo para os planos $x = 2$, $x = 1$ e $x = 0,5$.</p>
+			<p><button type="button" id="btAvaliarQuadro4">OK</button></p>
+		</span>
+		<span id="quadro5" class="etapa breakpoint">
+			<p>Desse estudo nós podemos tirar duas conclusões acerca da área do nosso retângulo: a primeira é que, se
+                fixarmos um dos lados, a área varia <i>linearmente</i> com o outro lado; segundo, a taxa dessa variação
+                (derivada) é igual à medida do outro lado.</p>
+			<p>Estas conclusões também pode ser obtidas diretamente da expressão de $f$ e de sua derivada.
+                Veja, se fixarmos $y = 1$ podemos reescrever $f(x, 1)$ como uma função
+                $g$ de $x$ apenas. Assim:</p>
+			<p>Área = $f(x, 1) = g(x) = lx$.</p>
+
+            <p>Logo, a área é diretamente proporcional ao lado $x$ (primeira conclusão).
+                Além disso, se derivarmos $g(x)$ com relação a $x$,</p>
+			<p>$$\frac{dg}{dx} = l$$</p>
+			<p>Ou seja, a taxa de variação da área é igual à medida do outro lado: $1$ (segunda conclusão).</p>
+			<p>É importante aprender a utilizar essas ferramentas algébricas, como a derivação e a integração,
+                pois elas ajudam muito nessas análises. Além disso, muitas vezes as funções com as quais temos de
+                trabalhar têm mais de duas variáveis, o que torna impossível representá-las graficamente
+                (pois estamos limitados ao espaço tridimensinal).
+                Nestes casos essas ferramentas são <b>as ferramentas</b> de análise.</p>
+			<p><button type="button" id="btAbrirQuadro6">OK</button></p>
+		</span>
+		<span id="quadro6" class="etapa breakpoint">
+			<p>Mas a nossa análise gráfica não terminou. Da mesma maneira que fixamos $x$ e $y$, nós podemos fixar $z$.
+                Ou seja, podemos fixar a área do retângulo e perguntar: quais $(x,y)$ resultam um mesmo
+                $z = f(x,y)$? O procedimento é similar ao que já fizemos para $x$ e $y$, exceto que tem um passo a mais:
+                nós precisamos inverter $f$.</p>
+			<p>Nada como um exemplo: primeiro, fixamos $z=1$. Depois invertemos $f$ de modo a isolar $y$:</p>
+			<p>$z = 1 = xy$ &#8658; $y = \frac{1}{x}$ .</p>
+			<p>Veja como fica na figura acima (note que eu adicionei o plano $z=1 $). Esta curva é chamada de <i>hipérbole</i>.</p>
+			<p><button type="button" id="btAbrirQuadro7">OK</button></p>
+		</span>
+		<span id="quadro7" class="etapa breakpoint">
+			<p>Agora é a sua vez: refaça o procedimento acima para $z = 2$ e para $z = 4$. A dica é procurar três ou
+                quatro pontos fáceis de calcular e ligá-los com uma curva similar àquela para $z = 1$.
+                Afinal, a estrutura de $y = zx$ não muda; só os valores de $(x, y)$.</p>
+			<p><button type="button" id="btAbrirQuadro8">OK</button></p>
+		</span>
+		<span id="quadro8" class="etapa breakpoint">
+			<div id="#movie-0113"></div>
+			<p>Essas curvas para $f(x,y)$ constante são particularmente importantes na análise de gráficos, e por isso recebem um nome próprio: <i>curvas de nível</i>.</p>
+			<p>Veja a figura a seguir, que apresenta o gráfico de f à esquerda (agora não é um esboço).
+                Se interpretarmos $x$, $y$ e $z$ como coordenadas <i>espaciais</i>, $f$ será então uma <i>superfície</i>
+                que lembra um aclive. E se desenharmos neste gráfico um plano $z=h$ (constante), a interseção dele com
+                $f$ será justamente o conjunto de pontos $(x, y)$ que têm a mesma altura/nível $h$. Daí o nome curvas de nível.</p>
+			<p>Se olharmos a interseção do plano com o gráfico de $f$, veremos as curvas desenhadas à direita.
+                Experimente variar  $z=h$ para cima e para baixo, observando a interseção com $f$ e as curvas de nível que ela gera, à direita.
+                Compare-as com as curvas que você desenhou há pouco.</p>
+			<!--p><button type="button" id="btAbrirQuadro9">Avançar</button></p-->
+		</span>
+	</div>
+	<div id="botton">
+		
+	</div>
+</div>
+</body>
+</html>
