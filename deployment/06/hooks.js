@@ -19,14 +19,29 @@ var a=[-2,-1.5,-1,-0.5,0,0.5,1,1.5,2];
 var c=[-5,-4.5,-4,-3.5,-3,-2.5,-2,-1.5,-1,-0.5,0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5];
 var a_sort;
 var c_sort;
+var score1, score2, score3, score4 = 0;
 
 
 var oaName = "AI-0118_6"
 function AILocalStorageData() {
-    this.resp_06_01_verify = "";
+    this.tx0601 = "";
+    this.txQuadro2A = "";
+    this.txQuadro2C = "";
+    this.txQ3_1 = "";
+    this.txQ3_2 = "";
+    this.txQ3_3 = "";
+    this.txQ4_1 = "";
+    this.txQ4_2 = "";
+    this.txQ4_3 = "";
+    this.a_sort = -9999;
+    this.c_sort = -9999;
+    this.score1 = 0;
+    this.score2 = 0;
+    this.score3 = 0;
+    this.score4 = 0;
 
 }
-var ai_data;
+//var ai_data;
 
 function startAI(){
     loadScreen("../swf/AI-0115.swf", 640, 480);
@@ -34,11 +49,31 @@ function startAI(){
 
 }
 
+function bindData(){
+    oaData = fetch();
+    dt = oaData.slides;
+    if(dt==undefined) {
+        dt = oaData.slides = new AILocalStorageData();
+        return;
+    }
+}
+
+function saveData(){
+    //if(ai_data==null) ai_data = new AILocalStorageData();
+
+
+    var ai_data = oaData.slides;
+
+    oaData.score = (ai_data.score1 + ai_data.score2 + ai_data.score3 + ai_data.score4)/4
+    commit(oaData);
+}
+
 
 /**
  Determinar o comportamento inicial da atividade que está sendo inserida
  */
 function onInitialize(){
+
     loadSlide('quadro1');
 
 }
@@ -57,10 +92,19 @@ function start_quadro1(){
         loadSlide('quadro2');
     });
 
+    bindData();
+
+    if(oaData.slides.tx0601!=""){
+        $("#06-01").val(dt.tx0601);
+        avaliarQuadro1();
+    }
+
+
 }
 
 function avaliarQuadro1() {
     var r_user = $("#06-01").val();
+    oaData.slides.tx0601 = $("#06-01").val();
     r_user = r_user.trim().toLowerCase();
     r_user = r_user.replace(" ", "");
     r_user = r_user.replace(" ", "");
@@ -83,10 +127,13 @@ function avaliarQuadro1() {
     disableElement("#bt-06-01");
     disableElement("#06-01");
 
+
+
+    saveData();
+
 }
 
-function start_quadro2()
-{
+function start_quadro2() {
 
         $("#quadro2_errado").hide();
         $("#quadro2_correto").hide();
@@ -98,16 +145,34 @@ function start_quadro2()
             loadSlide('quadro3');
         })
 
-        a_sort = Math.floor(Math.random()*(a.length-1));
-        c_sort = Math.floor(Math.random()*(c.length-1));
+        if(oaData.a_sort==-9999){
+            a_sort = Math.floor(Math.random()*(a.length-1));
+            c_sort = Math.floor(Math.random()*(c.length-1));
+            oaData.a_sort = a_sort;
+            oaData.c_sort = c_sort;
+        } else {
+            a_sort = oaData.a_sort;
+            c_sort = oaData.c_sort;
+        }
+
+
         //ai.sendToActionScript(a_sort, -1, c_sort);
         ai.setA(a_sort, false)
         ai.setB(-1, false)
         ai.setC(c_sort, false);
         ai.update();
-        $("#coefa").html(a_sort.toString());
-        $("#coefc").html(c_sort.toString());
+        $("#coefa").html(a_sort);
+        $("#coefc").html(c_sort);
         downScreen();
+        bindData();
+
+
+if(oaData.txQuadro2A!=""){
+    $("#txQuadro2A").val(dt.txQuadro2A);
+    $("#txQuadro2C ").val(dt.txQuadro2C);
+
+    avaliarQuadro2();
+}
 
 
 }
@@ -125,13 +190,21 @@ function avaliarQuadro2(){
     $("#coefa-aluno").html(r_a);
     $("#coefc-aluno").html(r_c);
 
+    oaData.score2 = 0;
+    if(a_sort==r_a) oaData.score2 += 50;
+    if(c_sort==r_c) oaData.score2 += 50;
+    oaData.slides.txQuadro2A = $("#txQuadro2A").val()
+    oaData.slides.txQuadro2C = $("#txQuadro2C").val()
+
+
     if(a_sort==r_a && c_sort==r_c){
         $("#quadro2_correto").show();
     } else {
         $("#quadro2_errado").show();
     }
     $("#quadro2_prosseguir").show();
-
+    $('#etapaAtual').scrollTop(1300);
+    saveData();
 }
 
 
@@ -147,6 +220,8 @@ function start_quadro3()
     ai.setC(q3c, false);
     ai.update();
 
+
+
     $("#quadro3_errado").hide();
     $("#quadro3_correto").hide();
     $("#quadro3_prosseguir").hide();
@@ -156,6 +231,14 @@ function start_quadro3()
     $("#btAbrirQuadro4").button().click(function(){
         loadSlide('quadro4');
     })
+
+    $("#txQ3_1").val(dt.txQ3_1);
+    $("#txQ3_2").val(dt.txQ3_2);
+    $("#txQ3_3").val(dt.txQ3_3);
+    if(dt.txQ3_3!=""){
+        avaliarQuadro3()
+    }
+
 }
 
 function avaliarQuadro3(){
@@ -166,6 +249,15 @@ function avaliarQuadro3(){
     disableElement("#txQ3_1")
     disableElement("#txQ3_2")
     disableElement("#txQ3_3")
+    oaData.score3 = 0;
+    if(r_a==1) oaData.score3+=33;
+    if(r_b==0) oaData.score3+=33;
+    if(r_c==-1) oaData.score3+=34;
+    oaData.slides.txQ3_1 = $("#txQ3_1").val()
+    oaData.slides.txQ3_2 = $("#txQ3_2").val()
+    oaData.slides.txQ3_3 = $("#txQ3_3").val()
+
+
     if(r_a==1 && r_b==0 & r_c == -1){
         $("#quadro3_correto").show();
     } else {
@@ -176,6 +268,11 @@ function avaliarQuadro3(){
 
     }
     $("#quadro3_prosseguir").show();
+    saveData();
+    $('#etapaAtual').scrollTop(1300);
+
+
+
 }
 
 function start_quadro4(){
@@ -189,6 +286,11 @@ function start_quadro4(){
     $("#btEncerrar").button().click(function(){
         loadSlide('quadro4');
     })
+
+    $("#txQ4_1").val(dt.txQ4_1);
+    $("#txQ4_2").val(dt.txQ4_2);
+    $("#txQ4_3").val(dt.txQ4_3);
+    if(dt.txQ4_1!="") avaliarQuadro4();
 }
 
 function limpar(tx){
@@ -207,6 +309,11 @@ function avaliarQuadro4(){
     var r_a = limpar($("#txQ4_1").val());
     var r_b = limpar($("#txQ4_2").val());
     var r_c = limpar($("#txQ4_3").val());
+
+    oaData.slides.txQ4_1 = $("#txQ4_1").val()
+    oaData.slides.txQ4_2 = $("#txQ4_2").val()
+    oaData.slides.txQ4_3 = $("#txQ4_3").val()
+
     disableElement("#btAvaliarQuadro4");
     disableElement("#txQ4_1")
     disableElement("#txQ4_2")
@@ -217,6 +324,7 @@ function avaliarQuadro4(){
         $("#quadro4_errado").show();
     }
     $("#encerrar").show();
+    saveData();
 
 }
 
@@ -566,137 +674,4 @@ function finish () {
 		alert("Falha ao enviar dados para o LMS.");
 	}
 
-}
-
-/*
- * Inicia a conexão SCORM.
- */ 
-function fetch () {
- 
-	var ans = {};
-	//ans.completed = false;
-	//ans.try_completed = false;
-	//ans.score = 0;
-	//ans.learner = "";
-	//ans.connected = false;
-	ans.part = 6;
-	ans.parte6 = {};
-	ans.parte6.part_stop = 1;
-	ans.parte6.complete_06 = false;
-	ans.parte6.resp_06_01_verify = "";
-	ans.parte6.resp_06_02_verify = "";
-	ans.parte6.resp_06_03_verify = "";
-	ans.parte6.resp_06_04_verify = "";
-	ans.parte6.resp_06_01 = "";
-	ans.parte6.resp_06_02_sort_01 = "";
-	ans.parte6.resp_06_02_sort_02 = "";
-	ans.parte6.resp_06_02_01 = "";
-	ans.parte6.resp_06_02_02 = "";
-	ans.parte6.resp_06_03_01 = "";
-	ans.parte6.resp_06_03_02 = "";
-	ans.parte6.resp_06_03_03 = "";
-	ans.parte6.resp_06_04_01 = "";
-	ans.parte6.resp_06_04_02 = "";
-	ans.parte6.resp_06_04_03 = "";
-	ans.parte6.score_06_01 = 0;
-	ans.parte6.score_06_02 = 0;
-	ans.parte6.score_06_03 = 0;
-	ans.parte6.score_06_04 = 0;
-	
-	// Conecta-se ao LMS
-	session_connected = scorm.init();
-    
-	// Verifica se a AI já foi concluída.
-	var completionstatus = scorm.get("cmi.completion_status");
-
-	// A AI já foi concluída.
-	switch (completionstatus) {
-
-	  // Primeiro acesso à AI
-	  case "not attempted":
-	  case "unknown":
-	  default:
-		//ans.learner = scorm.get("cmi.learner_name");
-		//ans.completed = <valor padrão>;
-		//ans.try_completed = <valor padrão>;
-		//ans.count = <valor padrão>;
-		//ans.score = <valor padrão>;
-		//ans.choices = <valor padrão>;
-		ans.connected = session_connected;
-		//ans.standalone = session_standalone;
-		//ans.tries = <valor padrão>;
-		break;
-		
-	  // Continuando a AI...
-	  case "incomplete":
-		var stream = scorm.get("cmi.location");
-		if (stream != "") ans = JSON.parse(stream);
-		ans.part = 6;
-		//ans.learner = scorm.get("cmi.learner_name");
-		//ans.completed = false;
-		//ans.try_completed = false;
-		//ans.count = <obtido de cmi.location>;
-		//ans.score = <obtido de cmi.location>;
-		//ans.choices = <obtido de cmi.location>;
-		ans.connected = session_connected;
-		//ans.standalone = session_standalone;
-		//ans.tries = <obtido de cmi.location>;
-		break;
-		
-	  // A AI já foi completada.
-	  case "completed":
-		var stream = scorm.get("cmi.location");
-		if (stream != "") ans = JSON.parse(stream);
-		//ans.learner = scorm.get("cmi.learner_name");
-		//ans.completed = true;
-		//ans.try_completed = true;
-		//ans.count = <obtido de cmi.location>;
-		//ans.score = <obtido de cmi.location>;
-		//ans.choices = <obtido de cmi.location>;
-		ans.connected = session_connected;
-		//ans.standalone = session_standalone;
-		//ans.tries = <obtido de cmi.location>;
-		break;
-	}    
-  
-  return ans;
-}
-
-/*
- * Salva cmi.score.raw, cmi.location e cmi.completion_status no LMS
- */ 
-function commit (data) {
-
-  var success = false;
-
-  // Garante que a nota do usuário é um inteiro entre 0 e 100.
-  data.score = (state.parte6.score_06_01 + state.parte6.score_06_02 + state.parte6.score_06_03 + state.parte6.score_06_04)/4
-  
-  // Se estiver rodando como stand-alone, usa local storage (HTML 5)
-  if (data.standalone) {
-	
-    var stream = JSON.stringify(data);
-    localStorage.setItem("ai_0006_redefor-memento", stream);
-    
-    success = true;
-  }
-  // Se estiver conectado a um LMS, usa SCORM
-  else {  
-
-    //if (scorm.connection.isActive) {
-    if (data.connected) {
-    
-      // Salva no LMS a nota do aluno.
-      success = scorm.set("cmi.score.raw", data.score);
-      
-      // Salva no LMS o status da atividade: completada ou não.
-      success = scorm.set("cmi.completion_status", (data.completed ? "completed" : "incomplete"));
-      
-      // Salva no LMS os demais dados da atividade.
-      var stream = JSON.stringify(data);      
-      success = scorm.set("cmi.location", stream);
-    }
-  }
-  
-  return success;
 }

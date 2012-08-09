@@ -9,7 +9,9 @@ var oaData = new Object();
 var lastBreakpoint = 1;
 var currentSlide;
 var projetor = false;
-
+var onDownScreenComplete = function(){
+    // nada
+};
 var positions = new Object();
 
 function Position(name) {
@@ -111,10 +113,12 @@ function upScreen(){
 	$( "#etapaAtual" ).animate({height: (AI_HEIGHT - AI_NAV_HEIGHT - AI_MOVIE_HEIGHT_MIN) + "px"}, 500)
 }
 
+
 function downScreen(){
 	//$( "#flscontent" ).show();
-	$( "#fls" ).animate({height:  + AI_MOVIE_HEIGHT + "px"}, 500)
-	$( "#etapaAtual" ).animate({height: (AI_HEIGHT - AI_NAV_HEIGHT - AI_MOVIE_HEIGHT) + "px"}, 500)
+	var AI_MOVIE_HEIGHT2 = $("#ai").height();
+    $( "#fls" ).animate({height:  + AI_MOVIE_HEIGHT2 + "px"}, 500)
+	$( "#etapaAtual" ).animate({height: (AI_HEIGHT - AI_NAV_HEIGHT - AI_MOVIE_HEIGHT2) + "px"}, 500, onDownScreenComplete)
 	
 }
 
@@ -348,16 +352,14 @@ function enableElement(elementString){
 function iluminar(){
 	resetarBlocos();
 	var b = positions[currentSlide].breakpoint-1;
-    //  alert(b);
 	$("#bl_"+b).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_active.png")');
 }
 
 function resetarBlocos(){
 	var qtde = $(".bloco").size();
 	for(var i=0; i<qtde;i++){
-		//$(".bloco").css("backgroundColor", "#000000")
-		//$(".bloco").css("color", "#FFFFFF")
-        $("#bl_"+i).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step.png")');
+		if(i <= lastBreakpoint - 1) $("#bl_"+i).css('background-image','url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_hover.png")');
+		else $("#bl_"+i).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step.png")');
 	}
 
 }
