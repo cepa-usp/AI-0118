@@ -5,6 +5,7 @@
 	Toda vez que um slide é carregado, caso exista a função relacionada, ela é executada.
 	Elas servem para carregar o conjunto adequado de métodos do SWF que são disponibilizados via ExternalInterface.
 */
+
 var DEBUG = false; //MUDE DEBUG PARA TRUE PRA FACILITAR A NAVEGAÇÃO PELA ATIVIDADE!!!
 
 var oaName = "AI-0118_1"
@@ -76,11 +77,11 @@ function avaliarQuadro1(){
 		$("#suaresposta1").text(tx)
 		if(tx=="xy" || tx=="yx"){
 			$("#correto1").show();
-            oaData.score = 0;
+            oaData.score = 100;
 		} else {
 			$("#errado1").show();
 			$("#errado2").show();
-            oaData.score = 100;
+            oaData.score = 0;
 			
 		}
 		$("#avancar1").show();
