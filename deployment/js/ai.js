@@ -12,6 +12,9 @@ var projetor = false;
 var onDownScreenComplete = function(){
     // nada
 };
+var onFlashContentLoaded = function(){
+    // nada
+};
 var positions = new Object();
 
 function Position(name) {
@@ -79,7 +82,7 @@ function loadScreen(swfpath, w, h){
 	attributes.id = "ai";
 	attributes.align = "middle";
 
-	swfobject.embedSWF(flashvars.ai, "flscontent", flashvars.width, flashvars.height, "10.0.0", "expressInstall.swf", flashvars, params, attributes);		
+	swfobject.embedSWF(flashvars.ai, "flscontent", flashvars.width, flashvars.height, "10.0.0", "expressInstall.swf", flashvars, params, attributes, onFlashContentLoaded);
 		
 	movie = $("#ai")[0];
 	}
@@ -352,14 +355,16 @@ function enableElement(elementString){
 function iluminar(){
 	resetarBlocos();
 	var b = positions[currentSlide].breakpoint-1;
+    //  alert(b);
 	$("#bl_"+b).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_active.png")');
 }
 
 function resetarBlocos(){
 	var qtde = $(".bloco").size();
 	for(var i=0; i<qtde;i++){
-		if(i <= lastBreakpoint - 1) $("#bl_"+i).css('background-image','url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_hover.png")');
-		else $("#bl_"+i).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step.png")');
+		//$(".bloco").css("backgroundColor", "#000000")
+		//$(".bloco").css("color", "#FFFFFF")
+        $("#bl_"+i).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step.png")');
 	}
 
 }

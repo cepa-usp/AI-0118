@@ -74,11 +74,13 @@ function avaliarQuadro1(){
 		var tx = $("#txResposta1").val();
 		if(tx=="") return;
 		$("#suaresposta1").text(tx)
-		if(tx=="xy"){
+		if(tx=="xy" || tx=="yx"){
 			$("#correto1").show();
+            oaData.score = 0;
 		} else {
 			$("#errado1").show();
 			$("#errado2").show();
+            oaData.score = 100;
 			
 		}
 		$("#avancar1").show();
@@ -92,6 +94,7 @@ function start_quadro_1_2(){
 	$("#btConcluir02").button().click(function(){
 		//loadSlide("quadro_1_1")
 		oaData.completed = true;
+        scorm.set("cmi.exit", "suspend");
         commit(oaData);
 	});
 }

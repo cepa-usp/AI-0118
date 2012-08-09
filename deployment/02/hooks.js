@@ -42,9 +42,9 @@ function saveData(){
 function onInitialize(){	
 
 	loadSlide("quadro1");
-	
-	
 }
+
+
 
 
 function start_quadro1(){
@@ -148,7 +148,9 @@ function avaliarQuadro2() {
     disableElement("#cp4");
     disableElement("#bt-02-02");
 
-
+    onFlashContentLoaded = function(){
+        downScreen();
+    }
 
     loadScreen("../swf/AI0119.swf", 640, 460)
     $("#btCalcular119").button().click(function(){
@@ -160,7 +162,7 @@ function avaliarQuadro2() {
         $('#etapaAtual').scrollTop(300);
     }
 
-    downScreen();
+
     //alert(oaData.slides.score_02_02)
 
     saveData()
@@ -180,6 +182,7 @@ function onFlashAvaliou(){
 
 function start_quadro4(){
     oaData.completed = true;
+    scorm.set("cmi.exit", "suspend");
     saveData()
 }
 
