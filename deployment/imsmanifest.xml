@@ -26,6 +26,14 @@
         <title>A forma implícita</title>
       </item>
       <imsss:sequencing>
+        <imsss:sequencingRules>
+          <imsss:postConditionRule>
+            <imsss:ruleConditions conditionCombination="all">
+              <imsss:ruleCondition operator="noOp" condition="completed" />
+            </imsss:ruleConditions>
+            <imsss:ruleAction action="continue" />
+          </imsss:postConditionRule>
+        </imsss:sequencingRules>
         <imsss:rollupRules objectiveMeasureWeight="1.0000">
           <imsss:rollupRule childActivitySet="all">
             <imsss:rollupConditions conditionCombination="all">
