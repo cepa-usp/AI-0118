@@ -383,15 +383,13 @@ function enableElement(elementString){
 function iluminar(){
 	resetarBlocos();
 	var b = positions[currentSlide].breakpoint-1;
-    //  alert(b);
 	$("#bl_"+b).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_active.png")');
 }
 
 function resetarBlocos(){
 	var qtde = $(".bloco").size();
 	for(var i=0; i<qtde;i++){
-		//$(".bloco").css("backgroundColor", "#000000")
-		//$(".bloco").css("color", "#FFFFFF")
+		if(i <= lastBreakpoint - 1) $("#bl_"+i).css('background-image','url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_hover.png")');
         $("#bl_"+i).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step.png")');
 	}
 
