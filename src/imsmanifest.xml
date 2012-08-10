@@ -8,41 +8,8 @@
     <organization identifier="CEPA">
       <title>Funções de muitas variáveis</title>
       <item identifier="item1" identifierref="resource_item1">
-        <title>Introdução</title>
+        <title>Funções de muitas variáveis</title>
       </item>
-      <item identifier="item2" identifierref="resource_item2">
-        <title>O domínio de f</title>
-      </item>
-      <item identifier="item3" identifierref="resource_item3">
-        <title>Domínio aberto ou fechado?</title>
-      </item>
-      <item identifier="item4" identifierref="resource_item4">
-        <title>Função inversa</title>
-      </item>
-      <item identifier="item5" identifierref="resource_item5">
-        <title>Gráficos e curvas de nível</title>
-      </item>
-      <item identifier="item6" identifierref="resource_item6">
-        <title>A forma implícita</title>
-      </item>
-      <imsss:sequencing>
-        <imsss:sequencingRules>
-          <imsss:postConditionRule>
-            <imsss:ruleConditions conditionCombination="all">
-              <imsss:ruleCondition operator="noOp" condition="completed" />
-            </imsss:ruleConditions>
-            <imsss:ruleAction action="continue" />
-          </imsss:postConditionRule>
-        </imsss:sequencingRules>
-        <imsss:rollupRules objectiveMeasureWeight="1.0000">
-          <imsss:rollupRule childActivitySet="all">
-            <imsss:rollupConditions conditionCombination="all">
-              <imsss:rollupCondition operator="noOp" condition="completed" />
-            </imsss:rollupConditions>
-            <imsss:rollupAction action="completed" />
-          </imsss:rollupRule>
-        </imsss:rollupRules>
-      </imsss:sequencing>
     </organization>
   </organizations>
   <resources>
@@ -50,32 +17,7 @@
       <file href="01/index.html" />
       <dependency identifierref="shared_resources" />
     </resource>
-    <resource identifier="resource_item2" adlcp:scormType="sco" href="02/index.html" type="webcontent">
-      <file href="02/index.html" />
-      <dependency identifierref="shared_resources" />
-    </resource>
-    <resource identifier="resource_item3" adlcp:scormType="sco" href="03/index.html" type="webcontent">
-      <file href="03/index.html" />
-      <dependency identifierref="shared_resources" />
-    </resource>
-    <resource identifier="resource_item4" adlcp:scormType="sco" href="04/index.html" type="webcontent">
-      <file href="04/index.html" />
-      <dependency identifierref="shared_resources" />
-    </resource>
-    <resource identifier="resource_item5" adlcp:scormType="sco" href="05/index.html" type="webcontent">
-      <file href="05/index.html" />
-      <dependency identifierref="shared_resources" />
-    </resource>
-    <resource identifier="resource_item6" adlcp:scormType="sco" href="06/index.html" type="webcontent">
-      <file href="06/index.html" />
-      <dependency identifierref="shared_resources" />
-    </resource>
-    <!--<resource identifier="resource_item7" adlcp:scormType="sco" href="07/index.html" type="webcontent">
-		<file href="07/index.html"/>
-		<file href="07/js/ai.js"/>
-		<file href="07/css/oa.css.js"/>
-		<dependency identifierref="shared_resources"/>
-	</resource>-->
+
     <resource identifier="shared_resources" adlcp:scormType="asset">
       <file href="./src/01" />
       <file href="./src/02" />

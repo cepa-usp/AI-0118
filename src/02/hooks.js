@@ -60,15 +60,17 @@ function start_quadro1(){
 /**
  * A função que recebe o conteúdo da AI-0119
  */
-function sendToJavaScript()
+function finishAI()
 {
 
 
-    ai.finish();
+    //ai.finish();
+    //alert("findou")
     oaData.slides.score3 = ai.getScore();
     //oaData.slides.resp_02_03_verify = "done";
+
     saveData();
-    loadSlide("quadro4");
+    loadSlide("quadro2meio");
 
 }
 
@@ -177,6 +179,7 @@ function avaliarQuadro2() {
 }
 
 function onFlashAvaliou(){
+    sendToJavaScript();
     loadSlide("quadro2meio");
 }
 

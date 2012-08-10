@@ -140,14 +140,29 @@ h1 {
 	border:1px solid red;*/
 }
 
+#combo {
+    float:left;
+    width:200px;
+    height:50px;
+    margin-right:10px;
+    border:1px solid red
+}
+#seletor {
+    height:20px;
+}
+
+#navegacaointeira {
+    margin-top:5px;
+    margin-left:auto;
+    margin-right:auto;
+    width:700px;
+    height:25px;
+}
+
 #navegador {
 	background-color:white;
-	width:700px;
-	height:20px;
 	padding-left:20px;
-	margin-top:5px;
-	margin-left:auto;
-	margin-right:auto;
+
 }
 
 .bloco {
@@ -166,6 +181,13 @@ h1 {
 	cursor:hand;
 }
 
+.bloco:hover {
+	padding-top:6px;
+	height:29px;
+	width:29px;
+	background-image:url('http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_hover.png');
+	background-repeat:no-repeat;
+}
 
 .linha {
 	height:8px;

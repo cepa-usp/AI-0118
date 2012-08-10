@@ -69,7 +69,7 @@ function persistirQuadro1(){
 	ai_data.txResposta1 = $("#txResposta1").val();	
 	oaData.slides = ai_data;
 	commit(oaData);
-}
+    }
 
 function avaliarQuadro1(){
 		var tx = $("#txResposta1").val();

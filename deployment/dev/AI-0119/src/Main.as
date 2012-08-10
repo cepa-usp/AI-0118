@@ -28,15 +28,30 @@ package
 		private var istut:Boolean = false;
 		private var cable:Cabo = null;
 		private var expressoes:Vector.<SimbExpr> = new Vector.<SimbExpr>();
+		private var bt:BotaoOK;
 		
 		public function Main():void 
 		{
 			if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
 			if(ExternalInterface.available){
-				ExternalInterface.addCallback("getScore", getScore)
-				
+				ExternalInterface.addCallback("getScore", getScore)				
+				ExternalInterface.addCallback("performClick", performClick)				
 			}
+		}
+		
+		public function finishAI():void {
+			if(ExternalInterface.available){
+				ExternalInterface.call("finishAI")
+			}
+		}
+		
+		public function performClick():void {
+			if (istut) return;
+			Sprite(bt).removeEventListener(MouseEvent.CLICK, onBtClick);
+			if (cable != null) return;
+			avaliar();
+			Actuate.tween(Sprite(bt), 0.5, { alpha:0 } ).onComplete(finishAI);
 		}
 		
 		private function fazTutorial():void {
@@ -95,21 +110,17 @@ package
 			prepareExpr();
 			prepareEq();
 			stage.addEventListener(MouseEvent.MOUSE_DOWN, onStageMouseDown)
-			var b:BotaoOK = new BotaoOK();
-			b.addEventListener(MouseEvent.CLICK, onBtClick);
-			addChild(b);
-			b.x = stage.stageWidth - (b.width/2)  - 10;
-			b.y = stage.stageHeight - (b.height/2) - 10;
+			bt = new BotaoOK();
+			bt.addEventListener(MouseEvent.CLICK, onBtClick);
+			addChild(bt);
+			bt.x = stage.stageWidth - (bt.width/2)  - 10;
+			bt.y = stage.stageHeight - (bt.height/2) - 10;
 			fazTutorial()
 		}
 		
 		private function onBtClick(e:MouseEvent):void 
 		{
-			if (istut) return;
-			Sprite(e.target).removeEventListener(MouseEvent.CLICK, onBtClick);
-			if (cable != null) return;
-			avaliar();
-			Actuate.tween(Sprite(e.target), 0.5, { alpha:0 } );
+			performClick();
 		}
 		
 		private function avaliar():void 
@@ -227,6 +238,7 @@ package
 		
 		private function releaseCable(e:MouseEvent):void 
 		{
+			if (istut) return;
 			if (cable != null) {
 				cable.setDestination(SimbExpr(e.target))
 				cable = null;
@@ -280,6 +292,7 @@ package
 		
 		private function startCable(e:MouseEvent):void 
 		{
+			if (istut) return;
 			startCable2(SimbMat(e.target), e.stageX, e.stageY, stage.mouseX, stage.mouseY);
 			e.stopImmediatePropagation();
 		}

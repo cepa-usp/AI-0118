@@ -64,8 +64,14 @@ function setInitialSizes(){
 	
 }
 
+var currentPath = "";
 function loadScreen(swfpath, w, h){
 	if(swfpath!=""){
+    if(currentPath==swfpath){
+        return;
+    } else {
+        currentPath = swfpath;
+    }
 	//loadScreen("flash/AI0125.swf", 640, 480)
 	var flashvars = {};
 	flashvars.ai = swfpath;
@@ -389,8 +395,11 @@ function iluminar(){
 function resetarBlocos(){
 	var qtde = $(".bloco").size();
 	for(var i=0; i<qtde;i++){
-		if(i <= lastBreakpoint - 1) $("#bl_"+i).css('background-image','url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_hover.png")');
         $("#bl_"+i).css('background-image', 'url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step.png")');
+        if(i <= lastBreakpoint - 1) {
+            $("#bl_"+i).css('background-image','url("http://midia.atp.usp.br/atividades-interativas/AI-0118/figures/step_hover.png")');
+        }
+
 	}
 
 }

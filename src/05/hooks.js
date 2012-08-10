@@ -46,12 +46,14 @@ function onInitialize(){
 }
 
 function start_quadro1(){
+    upScreen();
     $("#btAbrirQuadro2").button().click(function (){
         loadSlide("quadro2")
     });
 }
 
 function start_quadro2(){
+    loadScreen("../swf/AI-0112.swf", 640, 480);
     downScreen();
     config_parada2();
     $("#btAbrirQuadro3").button().click(function (){
@@ -60,12 +62,14 @@ function start_quadro2(){
 }
 
 function start_quadro3(){
+    loadScreen("../swf/AI-0112.swf", 640, 480);
     $("#btAbrirQuadro31").button().click(function (){
         loadSlide("quadro31")
     });
 }
 
 function start_quadro31(){
+    loadScreen("../swf/AI-0112.swf", 640, 480);
     $("#btAbrirQuadro4").button().click(function (){
         loadSlide("quadro4")
     });
