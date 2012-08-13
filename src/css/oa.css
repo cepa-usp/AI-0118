@@ -142,10 +142,11 @@ h1 {
 
 #combo {
     float:left;
-    width:200px;
-    height:50px;
-    margin-right:10px;
-    border:1px solid red
+    width:196px;
+    height:20px;
+	padding: 3px;
+    margin-right:5px;
+    border:1px dashed #dbdbdb
 }
 #seletor {
     height:20px;
