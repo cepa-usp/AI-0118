@@ -12,9 +12,9 @@
 
 		<span id="quadro1" class="etapa breakpoint">
 			<span class="title">Domínio aberto ou fechado?</span>
-			<p class="visible">Sempre que falamos em domínio de uma função, precisamos saber identificar se ele é <i>aberto</i> ou <i>fechado</i>. Esta característica é importante porque ela está no cerne da definição de limites e derivadas, que veremos em breve.</p>
-			<p class="visible">Dizemos que <i>um domínio é aberto se todos os seus pontos são interiores</i>. E por exclusão, um domínio é fechado se ele não for aberto. Mas, o que são <i>pontos interiores</i>? A resposta é mais ou menos a que você espera, com alguma sutilezas. Vamos começar analisando a figura na janela de atividades, que agora exibe o domínio de $f$ no nosso contexto (em cinza); (caso você não esteja vendo a atividade <a href="javascript:downScreen()">clique aqui</a>).</p>
-			<p class="visible">Ao redor do ponto $(x,y)$ definimos um círculo de raio $\delta$; (cinza escuro) e o chamamos de <i>a vizinhança de $(x,y)$</i>. Assim, $(x,y)$ será um ponto interior a $D_{f}$ se pudermos ajustar $\delta$; de tal modo que toda a vizinhança de $(x,y)$ também pertença a $D_{f}$. Visualmente isto significa que o círculo ao redor de $(x,y)$ deve ficar inteiramente dentro de $D_{f}$.</p>
+			<p class="visible">Sempre que falamos em domínio de uma função, precisamos saber identificar se ele é <i>aberto</i> ou <i>fechado</i>. Esta característica é importante porque ela está no cerne da definição de limites e derivadas.</p>
+			<p class="visible">Dizemos que <i>um domínio é aberto se todos os seus pontos são interiores</i>. E por exclusão, um domínio é fechado se ele não for aberto. Mas, o que são <i>pontos interiores</i>? A resposta é mais ou menos a que você espera, com algumas sutilezas. Vamos começar analisando a figura na janela de atividades, que agora exibe o domínio de $f$ no nosso contexto, em cinza; (caso você não esteja vendo a atividade <a href="javascript:downScreen()">clique aqui</a>).</p>
+			<p class="visible">Ao redor do ponto $(x,y)$ definimos um círculo de raio $\delta$ (cinza escuro) e o chamamos de <i>a vizinhança de $(x,y)$</i>. Assim, $(x,y)$ será um ponto interior a $D_{f}$ se pudermos ajustar $\delta$ de tal modo que toda a vizinhança de $(x,y)$ também pertença a $D_{f}$. Visualmente isto significa que o círculo ao redor de $(x,y)$ deve ficar inteiramente dentro de $D_{f}$.</p>
 			<p class="visible"><button type="button" id="avancar1">Avançar</button></p>
 		</span>
 		<span id="quadro2" class="etapa breakpoint">
@@ -26,11 +26,11 @@
 			<p><button type="button" name="bt-03-02" id="bt-03-02">OK</button></p>		
 			</span>
 			<span id="parada-3">
-			<p><b>Passo 3:</b> amplie a figura (botão +) e volte ao passo 1. Refaça esses passos algumas vezes antes de continuar.</p>
+			<p><b>Passo 3:</b> amplie a figura (botão +) e volte ao passo 1. Refaça esses passos algumas vezes antes de continuar, ou seja, aproxime $(x,y)$ da fronteira e ajuste $\delta$ de modo que a vizinhança fique dentro do domínio.</p>
 			<p><button type="button" name="bt-03-03" id="bt-03-03">OK</button></p>
 			</span>
 			<span id="parada-4">
-			<p>Você percebe que é possível continuar assim indefinidamente, e que sempre é possível ajustar $\delta$; de modo que toda a vizinhança de $(x,y)$ fique dentro de $D_{f}$? Isto acontece porque $(x,y)$, nesta situação, é um ponto interior. Ou seja: <i>ponto interior a um domínio é aquele para o qual é possível definir uma vizinhança inteiramente contida no domínio.</i></p>
+			<p>Você percebe que é possível continuar assim indefinidamente, e que sempre é possível ajustar $\delta$ de modo que toda a vizinhança de $(x,y)$ fique dentro de $D_{f}$? Isto acontece porque $(x,y)$, nesta situação, é um ponto interior. Ou seja: <i>ponto interior a um domínio é aquele para o qual é possível definir uma vizinhança inteiramente contida no domínio.</i></p>
 			<p><button type="button" name="bt-03-04" id="bt-03-04">OK</button></p>
 			</span>
 			<span id="parada-5">
@@ -79,48 +79,52 @@
 			<p id="acertou03" class="correto invisible">Resposta correta!</p>
 			<p><button type="button" name="bt-03-11" id="bt-03-11">OK</button></p>
 			</span>
-			<span id="parada-12">
+
+		</span>
+
+        <span id="quadro4" class="etapa breakpoint">
+            			<span id="aaaparada-12">
 			<p class="visible">Desta vez não foi possível encontrar um ponto de fronteira porque, apesar de usar uma igualdade na restrição de $x$ e $y$, $\pi$ é um número irracional. Ou seja, nós podemos sempre fazer $x =$ 3.14, $x =$ 3.141, $x =$ 3,1415... sem nunca chegar a $\pi$ (na verdade, a fronteira não existe neste caso). E pelo mesmo motivo, podemos sempre encontrar um $\delta$ suficientemente pequeno para garantir que a vizinhança de $(x,y)$ esteja dentro domínio. Assim, apesar da igualdade, todos os pontos deste domínio são interiores. Logo o domínio é <i>aberto</i>.</p>
 			<p class="visible">Para exercitar esses conceitos, classifique os domínios abaixo (eles não têm relação com a figura acima):</p>
 				<table>
-				<tr>
-					<td width="250px" height="60">{$(x,y)\in\mathbb{R}^{2}|x\geq e\wedge y\leq e$}</td>
-					<td style="vertical-align:middle"><select id="sl-03-dom-04"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
-				</tr>
-				<tr>
-					<td colspan="2"><p id="errou03-1" class="errado invisible">Este domínio é aberto pois <i>e</i> é um número irracional.</p>
-					<p id="acertou03-1" class="correto invisible">Resposta correta!</p></td>
-				</tr>
-				<tr>
-					<td height="60">{$(x,y)\in\mathbb{R}^{2}|x\geq \ln e\wedge y<0$}</td>
-					<td style="vertical-align:middle"><select id="sl-03-dom-05"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
-				</tr>
-				<tr>
-					<td colspan="2"><p id="errou03-2" class="errado invisible">Este domínio é fechado, pois $\ln e =$ 1, de modo que $x \geq$ 1.</p>
-					<p id="acertou03-2" class="correto invisible">Resposta correta!</p></td>
-				</tr>
-				<tr>
-					<td height="60"><p>{$(x,y)\in\mathbb{R}^{2}$}</td>
-					<td style="vertical-align:middle"><select id="sl-03-dom-06"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
-				</tr>
-				<tr>
-					<td colspan="2"><p id="errou03-3" class="errado invisible">Este domínio é aberto pois não há limites impostos a $x$ ou a $y$.</p>
-					<p id="acertou03-3" class="correto invisible">Resposta correta!</p></td>
-				</tr>
-				<tr>
-					<td height="60"><p>{$(x,y)\in\mathbb{R}^{2}|x\leq\frac{1}{3}\wedge y\geq 1$}</td>
-					<td style="vertical-align:middle"><select id="sl-03-dom-07"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></td>
-				</tr>
-				<tr>
-					<td colspan="2"><p id="errou03-4" class="errado invisible">Este domínio é fechado pois $\frac{1}{3}$ é um número racional.</p>
-					<p id="acertou03-4" class="correto invisible">Resposta correta!</p></td>
-				</tr>
-				</table>
+                    <tr>
+                        <td width="250px" height="60">{$(x,y)\in\mathbb{R}^{2}|x\geq e\wedge y\leq e$}</td>
+                        <td style="vertical-align:middle"><select id="sl-03-dom-04"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="errou03-1" class="errado invisible">Este domínio é aberto pois <i>e</i> é um número irracional.</p>
+                            <p id="acertou03-1" class="correto invisible">Resposta correta!</p></td>
+                    </tr>
+                    <tr>
+                        <td height="60">{$(x,y)\in\mathbb{R}^{2}|x\geq \ln e\wedge y<0$}</td>
+                        <td style="vertical-align:middle"><select id="sl-03-dom-05"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="errou03-2" class="errado invisible">Este domínio é fechado, pois $\ln e =$ 1, de modo que $x \geq$ 1.</p>
+                            <p id="acertou03-2" class="correto invisible">Resposta correta!</p></td>
+                    </tr>
+                    <tr>
+                        <td height="60"><p>{$(x,y)\in\mathbb{R}^{2}$}</td>
+                        <td style="vertical-align:middle"><select id="sl-03-dom-06"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="errou03-3" class="errado invisible">Este domínio é aberto pois não há limites impostos a $x$ ou a $y$.</p>
+                            <p id="acertou03-3" class="correto invisible">Resposta correta!</p></td>
+                    </tr>
+                    <tr>
+                        <td height="60"><p>{$(x,y)\in\mathbb{R}^{2}|x\leq\frac{1}{3}\wedge y\geq 1$}</td>
+                        <td style="vertical-align:middle"><select id="sl-03-dom-07"><option value="" selected>Selecione:</option><option value="aberto">aberto</option><option value="fechado">fechado</option></select></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="errou03-4" class="errado invisible">Este domínio é fechado pois $\frac{1}{3}$ é um número racional.</p>
+                            <p id="acertou03-4" class="correto invisible">Resposta correta!</p></td>
+                    </tr>
+                </table>
 			<p><button type="button" name="bt-03-12" id="bt-03-12">OK</button></p>
 			</span>
-			<span id="parada-13">
-			<p class="visible">Que tal discutir o que você aprendeu até agora com seus colegas no <a href="#" title="Fórum" target="_blank">fórum</a> desta atividade <i><a href="#" title="Fórum" target="_blank">online</a></i> ? Talvez algum colega seu precise de ajuda, ou talvez você possa conseguir ajuda por lá.</p>
-		</span>
+			<span id="aaaparada-13">
+			<p class="visible"></p>
+        </span>
 		</span>
 		
 		

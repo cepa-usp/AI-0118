@@ -19,7 +19,8 @@ scorm.version = "2004"; // Versão da API SCORM
 
 var DEBUG = false; //MUDE DEBUG PARA TRUE PRA FACILITAR A NAVEGAÇÃO PELA ATIVIDADE!!!
 
-var oaName = "AI-0118_5"
+var oaName = "AI-0118"
+
 function AILocalStorageData() {
     this.part_stop = 1;
     this.complete_05 = false;
@@ -27,10 +28,14 @@ function AILocalStorageData() {
     this.score_05 = 0;
 }
 var ai_data;
-
+function initStep(){
+    setCurrentAtv(5);
+}
 function startAI(){
-    loadScreen("../swf/AI-0112.swf", 640, 480);
-    loadContent();
+
+    loadScreen("swf/AI-0112.swf", 640, 480);
+    //loadContent();
+
 
 }
 
@@ -44,12 +49,14 @@ function onInitialize(){
 }
 
 function start_quadro1(){
+    upScreen();
     $("#btAbrirQuadro2").button().click(function (){
         loadSlide("quadro2")
     });
 }
 
 function start_quadro2(){
+    loadScreen("swf/AI-0112.swf", 640, 480);
     downScreen();
     config_parada2();
     $("#btAbrirQuadro3").button().click(function (){
@@ -58,12 +65,14 @@ function start_quadro2(){
 }
 
 function start_quadro3(){
+    loadScreen("swf/AI-0112.swf", 640, 480);
     $("#btAbrirQuadro31").button().click(function (){
         loadSlide("quadro31")
     });
 }
 
 function start_quadro31(){
+    loadScreen("swf/AI-0112.swf", 640, 480);
     $("#btAbrirQuadro4").button().click(function (){
         loadSlide("quadro4")
     });
@@ -83,7 +92,7 @@ function start_quadro5(){
 }
 
 function start_quadro6(){
-    loadScreen("../swf/AI-0113.swf", 640, 480);
+    loadScreen("swf/AI-0113.swf", 640, 480);
     $("#btAbrirQuadro7").button().click(function (){
         loadSlide("quadro7")
     });
@@ -96,7 +105,8 @@ function start_quadro7(){
 }
 
 function start_quadro8(){
-
+    oaData[5].score = 100;
+    concluirAtividade();
 }
 
 /*
@@ -206,5 +216,7 @@ function config_parada6()
 	var str = ai.sendPointsToJs();
 	var nova_str = str.concat(aux);
 	ai.receivePointsFromJs(nova_str);
+
+
 }
 

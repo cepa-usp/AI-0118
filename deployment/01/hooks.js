@@ -5,17 +5,22 @@
 	Toda vez que um slide é carregado, caso exista a função relacionada, ela é executada.
 	Elas servem para carregar o conjunto adequado de métodos do SWF que são disponibilizados via ExternalInterface.
 */
+
 var DEBUG = false; //MUDE DEBUG PARA TRUE PRA FACILITAR A NAVEGAÇÃO PELA ATIVIDADE!!!
 
-var oaName = "AI-0118_1"
+var oaName = "AI-0118"
 function AILocalStorageData() {
 	this.txResposta1 = "";
 }
 var ai_data;
+function initStep(){
+    setCurrentAtv(1);
+}
 
 function startAI(){
 	//loadScreen("../flash/AI0125.swf", 640, 480);
-	loadContent();
+
+	//loadContent();
 
 }
 
@@ -68,17 +73,21 @@ function persistirQuadro1(){
 	ai_data.txResposta1 = $("#txResposta1").val();	
 	oaData.slides = ai_data;
 	commit(oaData);
-}
+    }
 
 function avaliarQuadro1(){
 		var tx = $("#txResposta1").val();
+        tx = tx.replace("*", "");
+        tx = tx.replace(".", "");
 		if(tx=="") return;
-		$("#suaresposta1").text(tx)
-		if(tx=="xy"){
+		$("#suaresposta1").text(tx);
+		if(tx=="xy" || tx=="yx"){
 			$("#correto1").show();
+            oaData.score = 100;
 		} else {
 			$("#errado1").show();
 			$("#errado2").show();
+            oaData.score = 0;
 			
 		}
 		$("#avancar1").show();
@@ -89,10 +98,12 @@ function avaliarQuadro1(){
 
 
 function start_quadro_1_2(){
-	$("#btConcluir02").button().click(function(){
-		//loadSlide("quadro_1_1")
-		alert("fim")
-	});
+    //oaData.completed = true;
+    //scorm.set("cmi.exit", "suspend");
+    //commit(oaData);
+    concluirAtividade();
+
+
 }
 
 function eval_quadro_1_2(){

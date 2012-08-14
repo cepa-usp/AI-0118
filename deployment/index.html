@@ -2,17 +2,73 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-	<title>AI-0118 - Índice</title>
-  </head>
-  <body>
-			<ul>
-			<li><a href="./01/index.html">Introdução</a></li>
-			<li><a href="./02/index.html">O domínio de f</a></li>
-			<li><a href="./03/index.html">Domínio aberto ou fechado?</a></li>
-			<li><a href="./04/index.html">Função inversa</a></li>
-			<li><a href="./05/index.html">Gráficos e curvas de nível</a></li>
-			<li><a href="./06/index.html">A forma implícita</a></li>
-			<!--li><a href="./07/index.html">Limites e continuidade</a></li-->
-			</ul>
+  	<title>Objeto de Aprendizagem</title>
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<link type="text/css" href="css/oa.css" rel="stylesheet"/>
+  	<link type="text/css" href="css/smoothness/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
+  
+  	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+  	<script type="text/javascript" src="js/swfobject.js"></script>
+   	<script type="text/javascript" src="js/scorm_wrapper.min.js"></script>
+	<script type="text/javascript" src="js/ai.js"></script>
+   	<script type="text/javascript" src="js/jquery-ui-1.8.22.custom.min.js"></script>
+  	
+	<!--script type="text/javascript" src="hooks.js"></script-->
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+
+	<script type="text/javascript"
+	  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full">
+	</script>
+	</head>  
+  <body>	
+	<div id="aicontainer">	
+		<!-- esta é a div onde vai o navegador -->
+		<div id="navegacaointeira">
+            <div id="combo">
+                <select id="seletor">
+                    <option id="atv01">Introdução</option>
+                    <option id="atv02">O domínio de f</option>
+                    <option id="atv03">Domínio aberto ou fechado?</option>
+                    <option id="atv04">Função inversa</option>
+                    <option id="atv05">Gráficos e curvas de nível</option>
+                    <option id="atv06">A forma implícita</option>
+
+                </select>
+            </div>
+            <div id="navegador"></div>
+            <div style="clear:both"></div>
+        </div>
+		<div id="textos"> 
+			<div id="atividade">			
+				<!-- esta é a div onde vai o arquivo swf -->
+				<div id="fls"><div id="flscontent">&nbsp;</div></div>
+
+				<!-- esta é a div onde vai o conteúdo de texto -->
+				<div id="etapaAtual">
+					<h2 style="text-align:center">Carregando atividade, por favor aguarde.<br /><img src="figures/ampulheta.gif" /></h2>
+				</div >		
+			</div>
+		<div id="paginaleitura">
+			
+		</div>
+	</div>
+		
+		<!--a href="#" onClick="downScreen()">down</a>
+	<a href="#" onClick="upScreen()">up</a-->
+		
+	</div>
+
+		
+
+	<div class="bor"></div>
+	<div id="posicaoconteudo"></div>
+	
+	<div id="total"></div>
+	<div id="debug">debug</div>
+
+
+	
   </body>
 </html>

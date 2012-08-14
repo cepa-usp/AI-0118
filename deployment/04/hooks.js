@@ -1,282 +1,186 @@
 
 /*
-	MÉTODOS start_FRAMENAME
-	SÃO EXECUTADOS AUTOMATICAMENTE, AO FINAL DO MÉTODO loadSlide(FRAMENAME)
-	Toda vez que um slide é carregado, caso exista a função relacionada, ela é executada.
-	Elas servem para carregar o conjunto adequado de métodos do SWF que são disponibilizados via ExternalInterface.
-*/
+ MÉTODOS start_FRAMENAME
+ SÃO EXECUTADOS AUTOMATICAMENTE, AO FINAL DO MÉTODO loadSlide(FRAMENAME)
+ Toda vez que um slide é carregado, caso exista a função relacionada, ela é executada.
+ Elas servem para carregar o conjunto adequado de métodos do SWF que são disponibilizados via ExternalInterface.
+ */
 var DEBUG = false; //MUDE DEBUG PARA TRUE PRA FACILITAR A NAVEGAÇÃO PELA ATIVIDADE!!!
 
-var oaName = "AI-0118_4"
+var oaName = "AI-0118"
 
 function AILocalStorageData() {
-	this.cp1 = "";
-    this.cp2 = "";
-    this.cp3 = "";
-    this.cp4 = "";
+    this.tx01 =  "";
+    this.tx02 =  "";
+    this.tx03 =  "";
+    this.score1=  0;
+    this.score2=  0;
+    this.score3=  0;
+
 }
 var ai_data;
-
+function initStep(){
+    setCurrentAtv(4);
+}
 function startAI(){
-    oaData = fetch();
-	state = fetch();
-	
-    if(oaData.slides==undefined) oaData.slides = new AILocalStorageData();
-    loadScreen("../swf/AI-0114.swf", 640, 480);
-	loadContent();
-	
-	
+
+    state = fetch();
+
+    if(oaData[4].slides==undefined) oaData[4].slides = new AILocalStorageData();
+    loadScreen("swf/AI-0114.swf", 640, 480);
+    //loadContent();
+
+
 }
 
+function bindData(){
+    oaData = fetch();
+    dt = oaData[4].slides;
+    if(dt==undefined) {
+        dt = oaData[4].slides = new AILocalStorageData();
+        return;
+    }
+}
 
+function saveData(){
+    //if(ai_data==null) ai_data = new AILocalStorageData();
+
+
+    var ai_data = oaData[4].slides;
+    oaData[4].score = (ai_data.score1 + ai_data.score2 + ai_data.score3)/3
+
+    concluirAtividade();
+}
 
 /**
-	Determinar o comportamento inicial da atividade que está sendo inserida
-*/
-function onInitialize(){	
+ Determinar o comportamento inicial da atividade que está sendo inserida
+ */
+function onInitialize(){
 
-	loadSlide("quadro1");
-	$("#acertou1").hide();
-	$("#errou1").hide();
-	
-	
+    loadSlide("quadro1");
+    $("#acertou1").hide();
+    $("#errou1").hide();
+
+
 }
 
 
 function start_quadro1(){
-	
-	// popular o slide com as variáveis colhidas do scorm;
-	$("#bt-04-01").button().click(function(){
-		disableElement("#bt-04-01");
-		$( "#04-01" ).attr("disabled",true);
-		
-		//Avalia resposta
-		if($("#04-01").val() == 6)
-		{
-			$("#acertou1").show();
-			//state.parte4.score_04_01 = 100;
-		}
-		else
-		{
-			$("#errou1").show();
-			//state.parte4.score_04_01 = 0;
-		}		
-    });	
-	
-	$("#avancar1").button().click(function(){
-		loadSlide("quadro2");
+    upScreen();
+    // popular o slide com as variáveis colhidas do scorm;
+    $( "#04-01").val(oaData[4].slides.tx01);
+    if(oaData[4].slides.tx01!="") disableElement("#04-01")
 
-	});	
+    $("#bt-04-01").button().click(function(){
+        disableElement("#bt-04-01");
+        oaData[4].slides.tx01 = $( "#04-01").val();
+        $( "#04-01" ).attr("disabled",true);
+
+        //Avalia resposta
+        if($("#04-01").val() == 6)
+        {
+            oaData[4].slides.score1 = 100;
+            $("#acertou1").show();
+            //state.parte4.score_04_01 = 100;
+        }
+        else
+        {
+            oaData[4].slides.score1 = 0;
+            $("#errou1").show();
+            //state.parte4.score_04_01 = 0;
+        }
+        saveData();
+    });
+
+    $("#avancar1").button().click(function(){
+        loadSlide("quadro2");
+
+    });
 }
 
 
 
 function start_quadro2(){
-	$("#errou2").hide();
-	$("#acertou2").hide();
+    $("#errou2").hide();
+    $("#acertou2").hide();
+    $( "#04-02").val(oaData[4].slides.tx02);
+    if(oaData[4].slides.tx02!="") disableElement("#04-02")
 
-	$("#bt-04-02").button().click(function(){
-		disableElement("#bt-04-02");
-		$( "#04-02" ).attr("disabled",true);
-		
-		//Avalia resposta
-		var i;
-		var x;
-		var z;
-		var y;
-		var correct = 0;
-		for (i = 8; i > 0; i--)
-		{
-			x = Math.floor(Math.random()*100);
-			z = Math.floor(Math.random()*100);
-			if(eval(z/x) == eval($("#04-02").val()))
-			{
-				correct = correct + 1;
-			}
-		}
-		//var state = $("#04-02").val();
-		if(correct == 8)
-		{	
-			$("#acertou2").show();
-			//state.parte4.score_04_02 = 100;
-		}
-		else
-		{
-			$("#errou2").show();
-			//state.parte4.score_04_02 = 0;
-		}		
-    });	
-	
-	$("#avancar2").button().click(function(){
-		loadSlide("quadro3");
+    $("#bt-04-02").button().click(function(){
+        oaData[4].slides.tx02 = $( "#04-02").val();
+        disableElement("#bt-04-02");
+        $( "#04-02" ).attr("disabled",true);
 
-	});
+        //Avalia resposta
+        var i;
+        var x;
+        var z;
+        var y;
+        var correct = 0;
+        for (i = 8; i > 0; i--)
+        {
+            x = Math.floor(Math.random()*100);
+            z = Math.floor(Math.random()*100);
+            if(eval(z/x) == eval($("#04-02").val()))
+            {
+                correct = correct + 1;
+            }
+        }
+        //var state = $("#04-02").val();
+        if(correct == 8)
+        {
+            oaData[4].slides.score2 = 100;
+            $("#acertou2").show();
+            //state.parte4.score_04_02 = 100;
+        }
+        else
+        {
+            oaData[4].slides.score2 = 100;
+            $("#errou2").show();
+            //state.parte4.score_04_02 = 0;
+        }
+        saveData();
+    });
+
+    $("#avancar2").button().click(function(){
+        loadSlide("quadro3");
+
+    });
 }
 
 function start_quadro3(){
-	$("#errou3").hide();
+    $("#errou3").hide();
+
+    $( "#04-03").val(oaData[4].slides.tx03);
+    if(oaData[4].slides.tx03!="") disableElement("#04-03")
+
 
     $("#bt-04-03").button().click(function(){
-		disableElement("#bt-04-03");
-		$("#errou3").show();
-		$( "#04-03" ).attr("disabled",true);		
+        oaData[4].slides.tx03 = $( "#04-03").val();
+        disableElement("#bt-04-03");
+        saveData();
+
+        $("#errou3").show();
+        $( "#04-03" ).attr("disabled",true);
     });
-	
-	$("#avancar3").button().click(function(){
-		loadSlide("quadro4");
-	});
+
+    $("#avancar3").button().click(function(){
+        loadSlide("quadro4");
+    });
 }
 
 function start_quadro4(){
-    //apenas para fins de declaração.
+    oaData.completed = true;
+    saveData()
 }
 
-/*
- * Inicia a conexão SCORM.
- */ 
-function fetch () {
- 
-	var ans = {};
-	ans.completed = false;
-	//ans.try_completed = false;
-	//ans.score = 0;
-	//ans.learner = "";
-	//ans.connected = false;
-	ans.part = 3;
-	ans.parte3 = {};
-	ans.parte3.part_stop = 1;
-	ans.parte3.complete_03 = false;
-	ans.parte3.resp_03_01_verify = "";
-	ans.parte3.resp_03_02_verify = "";
-	ans.parte3.resp_03_03_verify = "";
-	ans.parte3.resp_03_04_verify = "";
-	ans.parte3.resp_03_05_verify = "";
-	ans.parte3.resp_03_06_verify = "";
-	ans.parte3.resp_03_07_verify = "";
-	ans.parte3.resp_03_08_verify = "";
-	ans.parte3.resp_03_09_verify = "";
-	ans.parte3.resp_03_10_verify = "";
-	ans.parte3.resp_03_11_verify = "";
-	ans.parte3.resp_03_12_verify = "";
-	ans.parte3.resp_03_13_verify = "";
-	ans.parte3.score_03_08 = 0;
-	ans.parte3.resp_03_08_01 = "";
-	ans.parte3.score_03_09 = 0;
-	ans.parte3.resp_03_09_01 = "";
-	ans.parte3.score_03_12 = 0;
-	ans.parte3.resp_03_12_01 = "";
-	ans.parte3.score_03_13 = 0;
-	ans.parte3.resp_03_13_01 = "";
-	ans.parte3.resp_03_13_02 = "";
-	ans.parte3.resp_03_13_03 = "";
-	ans.parte3.resp_03_13_04 = "";
-	ans.parte3.score_03 = 0;
-	
-	// Conecta-se ao LMS
-	session_connected = scorm.init();
-    
-	// Verifica se a AI já foi concluída.
-	var completionstatus = scorm.get("cmi.completion_status");
-	//console.log(completionstatus);
-	// A AI já foi concluída.
-	switch (completionstatus) {
-
-	  // Primeiro acesso à AI
-	  case "not attempted":
-	  case "unknown":
-	  default:
-		//ans.learner = scorm.get("cmi.learner_name");
-		ans.completed = false;
-		//ans.try_completed = <valor padrão>;
-		//ans.count = <valor padrão>;
-		//ans.score = <valor padrão>;
-		//ans.choices = <valor padrão>;
-		ans.connected = session_connected;
-		//ans.standalone = session_standalone;
-		//ans.tries = <valor padrão>;
-		break;
-		
-	  // Continuando a AI...
-	  case "incomplete":
-		var stream = scorm.get("cmi.location");
-		if (stream != "") ans = JSON.parse(stream);
-		ans.part = 3;
-		//ans.learner = scorm.get("cmi.learner_name");
-		ans.completed = false;
-		//ans.try_completed = false;
-		//ans.count = <obtido de cmi.location>;
-		//ans.score = <obtido de cmi.location>;
-		//ans.choices = <obtido de cmi.location>;
-		ans.connected = session_connected;
-		//ans.standalone = session_standalone;
-		//ans.tries = <obtido de cmi.location>;
-		break;
-		
-	  // A AI já foi completada.
-	  case "completed":
-		var stream = scorm.get("cmi.location");
-		if (stream != "") ans = JSON.parse(stream);
-		//ans.learner = scorm.get("cmi.learner_name");
-		ans.completed = true;
-		//ans.try_completed = true;
-		//ans.count = <obtido de cmi.location>;
-		//ans.score = <obtido de cmi.location>;
-		//ans.choices = <obtido de cmi.location>;
-		ans.connected = session_connected;
-		//ans.standalone = session_standalone;
-		//ans.tries = <obtido de cmi.location>;
-		break;
-	}    
-  
-  return ans;
-}
-
-/*
- * Salva cmi.score.raw, cmi.location e cmi.completion_status no LMS
- */ 
-function commit (data) {
-
-  var success = false;
-
-  // Garante que a nota do usuário é um inteiro entre 0 e 100.
-  data.score = (state.parte3.score_03_08+state.parte3.score_03_09+state.parte3.score_03_12+state.parte3.score_03_13)/4;
-  
-  // Se estiver rodando como stand-alone, usa local storage (HTML 5)
-  if (data.standalone) {
-	
-    var stream = JSON.stringify(data);
-    localStorage.setItem("ai_0006_redefor-memento", stream);
-    
-    success = true;
-  }
-  // Se estiver conectado a um LMS, usa SCORM
-  else {  
-
-    //if (scorm.connection.isActive) {
-    if (data.connected) {
-    
-      // Salva no LMS a nota do aluno.
-      success = scorm.set("cmi.score.raw", data.score);
-      
-      // Salva no LMS o status da atividade: completada ou não.
-      success = scorm.set("cmi.completion_status", (data.completed ? "completed" : "incomplete"));
-      
-      // Salva no LMS os demais dados da atividade.
-      var stream = JSON.stringify(data);      
-      success = scorm.set("cmi.location", stream);
-    }
-  }
-  
-  return success;
-}
 
 // Checks if given selector (type input) is a valid number. If not, resets field.
 function validateAnswer (selector) {
-  var value = $(selector).val().replace(",", ".");
-  var isValid = !isNaN(value) && value != "";
-  if (!isValid) $(selector).val("");
-  return isValid;
+    var value = $(selector).val().replace(",", ".");
+    var isValid = !isNaN(value) && value != "";
+    if (!isValid) $(selector).val("");
+    return isValid;
 }
 
 
- 
