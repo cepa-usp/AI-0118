@@ -154,12 +154,20 @@ h1 {
 }
 
 #navegacaointeira {
+<<<<<<< HEAD
     margin-top:2px;
     margin-left:auto;
     margin-right:auto;
     width:700px;
 
 
+=======
+    margin-top:5px;
+    margin-left:auto;
+    margin-right:auto;
+    width:700px;
+    height:25px;
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 }
 
 #navegador {

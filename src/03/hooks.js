@@ -64,51 +64,80 @@ function start_quadro4(){
         if($("#sl-03-dom-04").val() == 'aberto')
         {
             console.log("correto");
+<<<<<<< HEAD
             oaData[3].slides.score_02_03 = 100/4;
+=======
+            oaData.slides.score_02_03 = 100/4;
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
             $("#acertou03-1").show();
         }else
         {
             console.log("errado");
             $("#errou03-1").show();
+<<<<<<< HEAD
             oaData[3].slides.score_02_03 = 0;
+=======
+            oaData.slides.score_02_03 = 0;
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
         }
 
         //Avaliar o select
         if($("#sl-03-dom-05").val() == 'fechado')
         {
             console.log("correto");
+<<<<<<< HEAD
             oaData[3].slides.score_02_03 = 100/4;
+=======
+            oaData.slides.score_02_03 = 100/4;
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
             $("#acertou03-2").show();
         }else
         {
             console.log("errado");
             $("#errou03-2").show();
+<<<<<<< HEAD
             oaData[3].slides.score_02_03 = 0;
+=======
+            oaData.slides.score_02_03 = 0;
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
         }
 
         //Avaliar o select
         if($("#sl-03-dom-06").val() == 'aberto')
         {
             console.log("correto");
+<<<<<<< HEAD
             oaData[3].slides.score_02_03 = 100/4;
+=======
+            oaData.slides.score_02_03 = 100/4;
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
             $("#acertou03-3").show();
         }else
         {
             console.log("errado");
             $("#errou03-3").show();
+<<<<<<< HEAD
             oaData[3].slides.score_02_03 = 0;
+=======
+            oaData.slides.score_02_03 = 0;
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
         }
 
         //Avaliar o select
         if($("#sl-03-dom-07").val() == 'fechado')
         {
             console.log("correto");
+<<<<<<< HEAD
             oaData[3].slides.score_02_03 = 100/4;
+=======
+            oaData.slides.score_02_03 = 100/4;
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
             $("#acertou03-4").show();
         }else
         {
             console.log("errado");
             $("#errou03-4").show();
+<<<<<<< HEAD
             oaData[3].slides.score_02_03 = 0;
         }
 
@@ -116,6 +145,13 @@ function start_quadro4(){
         oaData[3].score = 100;
         //commitaqui();
         concluirAtividade();
+=======
+            oaData.slides.score_02_03 = 0;
+        }
+
+        oaData.completed = true;
+        saveData()
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 
 
     });

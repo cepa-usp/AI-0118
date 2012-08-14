@@ -42,9 +42,13 @@ function AILocalStorageData() {
 
 }
 //var ai_data;
+<<<<<<< HEAD
 function initStep(){
     setCurrentAtv(6);
 }
+=======
+
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 function startAI(){
     if(oaData[6].slides==undefined) oaData[6].slides = new AILocalStorageData();
     loadScreen("swf/AI-0115.swf", 640, 480);
@@ -63,6 +67,25 @@ function saveData(){
     oaData[6].score = (ai_data.score1 + ai_data.score2 + ai_data.score3 + ai_data.score4)/4
 
 
+}
+
+function bindData(){
+    oaData = fetch();
+    dt = oaData.slides;
+    if(dt==undefined) {
+        dt = oaData.slides = new AILocalStorageData();
+        return;
+    }
+}
+
+function saveData(){
+    //if(ai_data==null) ai_data = new AILocalStorageData();
+
+
+    var ai_data = oaData.slides;
+
+    oaData.score = (ai_data.score1 + ai_data.score2 + ai_data.score3 + ai_data.score4)/4
+    commit(oaData);
 }
 
 
@@ -89,9 +112,15 @@ function start_quadro1(){
         loadSlide('quadro2');
     });
 
+<<<<<<< HEAD
 
 
     if(oaData[6].slides.tx0601!=""){
+=======
+    bindData();
+
+    if(oaData.slides.tx0601!=""){
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
         $("#06-01").val(dt.tx0601);
         avaliarQuadro1();
     }
@@ -101,7 +130,11 @@ function start_quadro1(){
 
 function avaliarQuadro1() {
     var r_user = $("#06-01").val();
+<<<<<<< HEAD
     oaData[6].slides.tx0601 = $("#06-01").val();
+=======
+    oaData.slides.tx0601 = $("#06-01").val();
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
     r_user = r_user.trim().toLowerCase();
     r_user = r_user.replace(" ", "");
     r_user = r_user.replace(" ", "");
@@ -142,6 +175,7 @@ function start_quadro2() {
             loadSlide('quadro3');
         })
 
+<<<<<<< HEAD
         if(oaData[6].slides.a_sort==-9999){
             a_sort = Math.floor(Math.random()*(a.length-1));
             c_sort = Math.floor(Math.random()*(c.length-1));
@@ -150,6 +184,16 @@ function start_quadro2() {
         } else {
             a_sort = oaData[6].slides.a_sort;
             c_sort = oaData[6].slides.c_sort;
+=======
+        if(oaData.slides.a_sort==-9999){
+            a_sort = Math.floor(Math.random()*(a.length-1));
+            c_sort = Math.floor(Math.random()*(c.length-1));
+            oaData.slides.a_sort = a_sort;
+            oaData.slides.c_sort = c_sort;
+        } else {
+            a_sort = oaData.slides.a_sort;
+            c_sort = oaData.slides.c_sort;
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
         }
 
 
@@ -164,9 +208,15 @@ function start_quadro2() {
         //bindData();
 
 
+<<<<<<< HEAD
 if(oaData[6].slides.txQuadro2A!=""){
     $("#txQuadro2A").val(oaData[6].slides.txQuadro2A);
     $("#txQuadro2C ").val(oaData[6].slides.txQuadro2C);
+=======
+if(oaData.slides.txQuadro2A!=""){
+    $("#txQuadro2A").val(oaData.slides.txQuadro2A);
+    $("#txQuadro2C ").val(oaData.slides.txQuadro2C);
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 
     avaliarQuadro2();
 }
@@ -187,11 +237,19 @@ function avaliarQuadro2(){
     $("#coefa-aluno").html(r_a);
     $("#coefc-aluno").html(r_c);
 
+<<<<<<< HEAD
     oaData[6].slides.score2 = 0;
     if(a_sort==r_a) oaData[6].slides.score2 += 50;
     if(c_sort==r_c) oaData[6].slides.score2 += 50;
     oaData[6].slides.txQuadro2A = $("#txQuadro2A").val()
     oaData[6].slides.txQuadro2C = $("#txQuadro2C").val()
+=======
+    oaData.slides.score2 = 0;
+    if(a_sort==r_a) oaData.slides.score2 += 50;
+    if(c_sort==r_c) oaData.slides.score2 += 50;
+    oaData.slides.txQuadro2A = $("#txQuadro2A").val()
+    oaData.slides.txQuadro2C = $("#txQuadro2C").val()
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 
 
     if(a_sort==r_a && c_sort==r_c){
@@ -246,6 +304,7 @@ function avaliarQuadro3(){
     disableElement("#txQ3_1")
     disableElement("#txQ3_2")
     disableElement("#txQ3_3")
+<<<<<<< HEAD
     oaData[6].slides.score3 = 0;
     if(r_a==1) oaData[6].slides.score3+=33;
     if(r_b==0) oaData[6].slides.score3+=33;
@@ -253,6 +312,15 @@ function avaliarQuadro3(){
     oaData[6].slides.txQ3_1 = $("#txQ3_1").val()
     oaData[6].slides.txQ3_2 = $("#txQ3_2").val()
     oaData[6].slides.txQ3_3 = $("#txQ3_3").val()
+=======
+    oaData.slides.score3 = 0;
+    if(r_a==1) oaData.slides.score3+=33;
+    if(r_b==0) oaData.slides.score3+=33;
+    if(r_c==-1) oaData.slides.score3+=34;
+    oaData.slides.txQ3_1 = $("#txQ3_1").val()
+    oaData.slides.txQ3_2 = $("#txQ3_2").val()
+    oaData.slides.txQ3_3 = $("#txQ3_3").val()
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 
 
     if(r_a==1 && r_b==0 & r_c == -1){
@@ -307,19 +375,32 @@ function avaliarQuadro4(){
     var r_b = limpar($("#txQ4_2").val());
     var r_c = limpar($("#txQ4_3").val());
 
+<<<<<<< HEAD
     oaData[6].slides.txQ4_1 = $("#txQ4_1").val()
     oaData[6].slides.txQ4_2 = $("#txQ4_2").val()
     oaData[6].slides.txQ4_3 = $("#txQ4_3").val()
+=======
+    oaData.slides.txQ4_1 = $("#txQ4_1").val()
+    oaData.slides.txQ4_2 = $("#txQ4_2").val()
+    oaData.slides.txQ4_3 = $("#txQ4_3").val()
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 
     disableElement("#btAvaliarQuadro4");
     disableElement("#txQ4_1")
     disableElement("#txQ4_2")
     disableElement("#txQ4_3")
 
+<<<<<<< HEAD
     oaData[6].slides.score4 = 0;
     if(r_a=='-m') oaData[6].slides.score4 += 33;
     if(r_b=='1') oaData[6].slides.score4 += 33;
     if(r_c == 'mx0-y0') oaData[6].slides.score4 += 34;
+=======
+    oaData.slides.score4 = 0;
+    if(r_a=='-m') oaData.slides.score4 += 33;
+    if(r_b=='1') oaData.slides.score4 += 33;
+    if(r_c == 'mx0-y0') oaData.slides.score4 += 34;
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 
     if(r_a=='-m' && r_b=='1' & r_c == 'mx0-y0'){
         $("#quadro4_correto").show();
@@ -327,12 +408,17 @@ function avaliarQuadro4(){
         $("#quadro4_errado").show();
     }
     $("#encerrar").show();
+<<<<<<< HEAD
     oaData[6].score = 100;
     saveData();
     oaData.score = 100;// (oaData[1].score + oaData[2].score + oaData[3].score + oaData[4].score + oaData[5].score + oaData[6].score)/6
     oaData.completed = true;
     concluirAtividade();
 
+=======
+    oaData.completed = true;
+   saveData();
+>>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 
 }
 
