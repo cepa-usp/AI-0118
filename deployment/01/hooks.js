@@ -98,16 +98,10 @@ function avaliarQuadro1(){
 
 
 function start_quadro_1_2(){
-<<<<<<< HEAD
     //oaData.completed = true;
     //scorm.set("cmi.exit", "suspend");
     //commit(oaData);
     concluirAtividade();
-=======
-    oaData.completed = true;
-    scorm.set("cmi.exit", "suspend");
-    commit(oaData);
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 
 
 }

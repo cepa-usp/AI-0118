@@ -35,7 +35,6 @@ function startAI(){
 
 function bindData(){
     oaData = fetch();
-<<<<<<< HEAD
     dt = oaData[4].slides;
     if(dt==undefined) {
         dt = oaData[4].slides = new AILocalStorageData();
@@ -43,41 +42,14 @@ function bindData(){
     }
 }
 
-=======
-    state = fetch();
-
-    if(oaData.slides==undefined) oaData.slides = new AILocalStorageData();
-    loadScreen("../swf/AI-0114.swf", 640, 480);
-    loadContent();
-
-
-}
-
-function bindData(){
-    oaData = fetch();
-    dt = oaData.slides;
-    if(dt==undefined) {
-        dt = oaData.slides = new AILocalStorageData();
-        return;
-    }
-}
-
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 function saveData(){
     //if(ai_data==null) ai_data = new AILocalStorageData();
 
 
-<<<<<<< HEAD
     var ai_data = oaData[4].slides;
     oaData[4].score = (ai_data.score1 + ai_data.score2 + ai_data.score3)/3
 
     concluirAtividade();
-=======
-    var ai_data = oaData.slides;
-
-    oaData.score = (ai_data.score1 + ai_data.score2 + ai_data.score3)/3
-    commit(oaData);
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 }
 
 /**
@@ -94,7 +66,6 @@ function onInitialize(){
 
 
 function start_quadro1(){
-<<<<<<< HEAD
     upScreen();
     // popular o slide com as variáveis colhidas do scorm;
     $( "#04-01").val(oaData[4].slides.tx01);
@@ -103,36 +74,18 @@ function start_quadro1(){
     $("#bt-04-01").button().click(function(){
         disableElement("#bt-04-01");
         oaData[4].slides.tx01 = $( "#04-01").val();
-=======
-
-    // popular o slide com as variáveis colhidas do scorm;
-    $( "#04-01").val(oaData.slides.tx01);
-    if(oaData.slides.tx01!="") disableElement("#04-01")
-
-    $("#bt-04-01").button().click(function(){
-        disableElement("#bt-04-01");
-        oaData.slides.tx01 = $( "#04-01").val();
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
         $( "#04-01" ).attr("disabled",true);
 
         //Avalia resposta
         if($("#04-01").val() == 6)
         {
-<<<<<<< HEAD
             oaData[4].slides.score1 = 100;
-=======
-            oaData.slides.score1 = 100;
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
             $("#acertou1").show();
             //state.parte4.score_04_01 = 100;
         }
         else
         {
-<<<<<<< HEAD
             oaData[4].slides.score1 = 0;
-=======
-            oaData.slides.score1 = 0;
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
             $("#errou1").show();
             //state.parte4.score_04_01 = 0;
         }
@@ -150,19 +103,11 @@ function start_quadro1(){
 function start_quadro2(){
     $("#errou2").hide();
     $("#acertou2").hide();
-<<<<<<< HEAD
     $( "#04-02").val(oaData[4].slides.tx02);
     if(oaData[4].slides.tx02!="") disableElement("#04-02")
 
     $("#bt-04-02").button().click(function(){
         oaData[4].slides.tx02 = $( "#04-02").val();
-=======
-    $( "#04-02").val(oaData.slides.tx02);
-    if(oaData.slides.tx02!="") disableElement("#04-02")
-
-    $("#bt-04-02").button().click(function(){
-        oaData.slides.tx02 = $( "#04-02").val();
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
         disableElement("#bt-04-02");
         $( "#04-02" ).attr("disabled",true);
 
@@ -184,21 +129,13 @@ function start_quadro2(){
         //var state = $("#04-02").val();
         if(correct == 8)
         {
-<<<<<<< HEAD
             oaData[4].slides.score2 = 100;
-=======
-            oaData.slides.score2 = 100;
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
             $("#acertou2").show();
             //state.parte4.score_04_02 = 100;
         }
         else
         {
-<<<<<<< HEAD
             oaData[4].slides.score2 = 100;
-=======
-            oaData.slides.score2 = 100;
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
             $("#errou2").show();
             //state.parte4.score_04_02 = 0;
         }
@@ -214,21 +151,12 @@ function start_quadro2(){
 function start_quadro3(){
     $("#errou3").hide();
 
-<<<<<<< HEAD
     $( "#04-03").val(oaData[4].slides.tx03);
     if(oaData[4].slides.tx03!="") disableElement("#04-03")
 
 
     $("#bt-04-03").button().click(function(){
         oaData[4].slides.tx03 = $( "#04-03").val();
-=======
-    $( "#04-03").val(oaData.slides.tx03);
-    if(oaData.slides.tx03!="") disableElement("#04-03")
-
-
-    $("#bt-04-03").button().click(function(){
-        oaData.slides.tx03 = $( "#04-03").val();
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
         disableElement("#bt-04-03");
         saveData();
 

@@ -19,11 +19,7 @@ scorm.version = "2004"; // Versão da API SCORM
 
 var DEBUG = false; //MUDE DEBUG PARA TRUE PRA FACILITAR A NAVEGAÇÃO PELA ATIVIDADE!!!
 
-<<<<<<< HEAD
 var oaName = "AI-0118"
-=======
-var oaName = "AI-0118_5"
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 
 function AILocalStorageData() {
     this.part_stop = 1;
@@ -36,16 +32,10 @@ function initStep(){
     setCurrentAtv(5);
 }
 function startAI(){
-<<<<<<< HEAD
 
     loadScreen("swf/AI-0112.swf", 640, 480);
     //loadContent();
 
-=======
-    loadScreen("../swf/AI-0112.swf", 640, 480);
-    loadContent();
-    fetch(oaData);
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 
 }
 
@@ -66,11 +56,7 @@ function start_quadro1(){
 }
 
 function start_quadro2(){
-<<<<<<< HEAD
     loadScreen("swf/AI-0112.swf", 640, 480);
-=======
-    loadScreen("../swf/AI-0112.swf", 640, 480);
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
     downScreen();
     config_parada2();
     $("#btAbrirQuadro3").button().click(function (){
@@ -79,22 +65,14 @@ function start_quadro2(){
 }
 
 function start_quadro3(){
-<<<<<<< HEAD
     loadScreen("swf/AI-0112.swf", 640, 480);
-=======
-    loadScreen("../swf/AI-0112.swf", 640, 480);
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
     $("#btAbrirQuadro31").button().click(function (){
         loadSlide("quadro31")
     });
 }
 
 function start_quadro31(){
-<<<<<<< HEAD
     loadScreen("swf/AI-0112.swf", 640, 480);
-=======
-    loadScreen("../swf/AI-0112.swf", 640, 480);
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
     $("#btAbrirQuadro4").button().click(function (){
         loadSlide("quadro4")
     });
@@ -127,13 +105,8 @@ function start_quadro7(){
 }
 
 function start_quadro8(){
-<<<<<<< HEAD
     oaData[5].score = 100;
     concluirAtividade();
-=======
-    oaData.completed = true;
-    commit(oaData)
->>>>>>> d7ff194d7bcd226751f362e512225bf26724f9b4
 }
 
 /*
